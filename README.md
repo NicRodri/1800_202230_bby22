@@ -7,6 +7,7 @@
 ## General Info
 This browser based web application to ...
 * This is a bullet point by Lucas.
+* Hi my name is Nicolas. I'm excited about this project because ...
 	
 ## Technologies
 Technologies used for this project:
