@@ -10,7 +10,7 @@ This browser based web application to ...
 	
 ## Technologies
 Technologies used for this project:
-* HTML, CSS
+* HTML, CSSgit
 * JavaScript
 * Bootstrap 
 * ...
