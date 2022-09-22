@@ -7,6 +7,8 @@
 ## General Info
 This browser based web application to ...
 *Hi my name is Bingdi Zhou. I am excited about this project because it is interesting.
+* This is a bullet point by Lucas.
+* Hi my name is Nicolas. I'm excited about this project because ...
 	
 ## Technologies
 Technologies used for this project:
