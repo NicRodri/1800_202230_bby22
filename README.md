@@ -15,7 +15,7 @@ Technologies used for this project:
 * HTML, CSSgit
 * JavaScript
 * Bootstrap 
-* ...
+* java
 	
 ## Content
 Content of the project folder:
