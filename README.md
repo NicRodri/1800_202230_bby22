@@ -6,6 +6,7 @@
 
 ## General Info
 This browser based web application to ...
+*Hi my name is Bingdi Zhou. I am excited about this project because it is interesting.
 	
 ## Technologies
 Technologies used for this project:
