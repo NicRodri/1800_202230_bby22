@@ -6,6 +6,7 @@
 
 ## General Info
 This browser based web application to ...
+* This is a bullet point by Lucas.
 	
 ## Technologies
 Technologies used for this project:
