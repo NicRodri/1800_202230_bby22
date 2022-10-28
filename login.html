@@ -38,6 +38,8 @@
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
+
+    <!--Nav bar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container-fluid">
             <img class="navbar-brand" src="./images/balance.svg" alt="" width="72" height="57">
@@ -65,51 +67,11 @@
         </div>
     </nav>
 
-    <!--Login buttons and Mission Statment-->
-    <div class="px-4 py-5 my-5 text-center">
-        <h1 class="display-5 fw-bold">Mission Statement</h1>
-        <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">Our team BBY22 (Nicolas, Bingdi, Lucas) is developing BaLaNce(web application) to help
-                busy people to increase their personal time by automatically organizing their times and schedules based
-                on urgency factors and due dates.</p>
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <a href="login.html" class="btn btn-info btn-lg px-4 gap-3">Sign up/Login</a>
-                <!--NOTE!!! This feature will be implimented if we have time-->
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Continue as Guest</button>
-            </div>
-        </div>
+    <div class="container">
+        <h1>Let's Login!</h1>
     </div>
-
-    <!--Content (cards with text and pictures)-->
-    <div class="card-group">
-        <div class="card">
-            <img src="images/Function_Preview_Main_Highlighted.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Automatic Scheduler</h5>
-                <p class="card-text"> After having added your tasks and activities, click on "Schedule" to organize your
-                    busy life!</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="images/Function_Share_highlighted.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Share Sub-function</h5>
-                <p class="card-text">This share function can do one contact choice or multiple contacts choices.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="images/Notifications Function preview.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Notifications</h5>
-                <p class="card-text">Go to "My Profiles" and there you can turn on the useful function called
-                    "notifications" where the app can remind you of important notices and events so you do not forget or
-                    fall behind.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-    </div>
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>
 
     <!--Page Footer-->
     <div class="container">
