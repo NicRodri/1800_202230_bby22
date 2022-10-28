@@ -2,6 +2,3 @@
 *.logs
 node_modules/
 .vscode/
-firebaseAPI_Team22.js
-
-test.js
