@@ -3,7 +3,7 @@
 // (navbar, footer, and other things) into html doc. 
 //---------------------------------------------------
 function loadSkeleton(){
-    console.log($('#navbarPlaceholder').load('./StaticContent/nav.html'));
-    console.log($('#footerPlaceholder').load('./StaticContent/footer.html'));
+    console.log($('#navbarPlaceholder').load('/StaticContent/nav.html'));
+    console.log($('#footerPlaceholder').load('/StaticContent/footer.html'));
 }
 loadSkeleton();  //invoke the function
