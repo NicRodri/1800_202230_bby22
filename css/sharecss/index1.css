@@ -1,0 +1,111 @@
+@media screen and (max-width: 980px) {
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    #container {
+        background-color: orange;
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 10% 20% 50% 10%;
+        overflow: auto;
+      }
+      .top-menu{
+        display: grid;
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        background-color: blue;
+      
+      }
+      .topnav {
+        display: grid;
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+        background-color: rgb(37, 236, 149);
+        grid-template-rows: 50% 50%;
+      }
+      
+      .close {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        background-color: rgb(227, 35, 35);
+      }
+      
+      .follow {
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+        background-color: rgb(218, 231, 38);
+      }
+      
+      .recent {
+        display: grid;
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 1;
+        background-color: yellow;
+        grid-template-rows: 20% 80%;
+      }
+      .r1{
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        background-color: rgb(222, 28, 148);
+      }
+      
+      .r2{
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+        background-color: rgb(151, 28, 222);
+      }
+      .contact{
+        display: grid;
+        grid-column: 1 / span 1;
+        grid-row: 4 / span 1;
+        background-color: rgb(37, 236, 149);
+        grid-template-rows: 10% 90%;
+      }
+      .c1{
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        background-color: pink;
+      }
+      .c2{
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+        background-color: white;
+      }
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      .topnav a {
+        float: left;
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+    
+      .follow input[type="text"] {
+        float: none;
+        display: block;
+        text-align: center;
+        width: 300%;
+        margin: 0;
+        padding: 14px;
+      }
+      .topnav input[type="text"] {
+        border: 1px solid #ccc;
+      }
+      
+      
+    }      

@@ -1,0 +1,58 @@
+
+@media screen and (max-width: 980px) {
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .iconfont {
+    float: left;
+    display: block;
+    position: relative;
+    margin-top: 1500px;
+  }
+  .icon {
+    width: 30%;
+  }
+  .text {
+    float: left;
+    text-decoration: none;
+    display: block;
+  }
+
+  .item {
+    position: relative;
+    float: left;
+    text-align: center;
+    list-style: none;
+    margin-left: 3%;
+  }
+
+  .text {
+    display: block;
+    height: 25px;
+    line-height: 60px;
+    border-bottom: 2px;
+    margin-left: 150px;
+    color: black;
+  }
+  li {
+    width: 20%;
+    margin-top: 3%;
+  }
+  #share {
+    margin-top: 7%;
+    margin-left: 68px;
+  }
+  #download {
+    margin-left: 65px;
+  }
+  #copy {
+    margin-left: 70px;
+  }
+  #delete {
+    margin-left: 78px;
+  }
+  
+
+
+}
