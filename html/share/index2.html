@@ -2,10 +2,13 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>index1</title>
-  <link rel="stylesheet" type="text/css" href="/css/sharecss/index2.css" />
+  <!------------------------>
+  <!-- Required meta tags -->
+  <!------------------------>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <!------------------------------------------>
   <!-- Bootstrap Library CSS JS CDN go here -->
   <!------------------------------------------>
@@ -30,11 +33,16 @@
   <!-------------------------------------------->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/sharecss/index2.css" />
 </head>
 
 <body>
+  <!-- navigation at top -->
   <nav id="navbarPlaceholder"></nav>
-  <div id="container">
+  <!-- Pop up for add button -->
+  <div id="addPlaceholder"></div>
+
+  <div id="container" class="spacing-footer">
   
     <div class="topnav">
       <div class="close">
@@ -130,7 +138,14 @@
 
   <nav id="footerPlaceholder"></nav>
 
-  <script src="/scripts/skeleton.js"></script>
+    <!---------------------------------------------->
+    <!-- Your own JavaScript functions go here    -->
+    <!---------------------------------------------->
+    <script src="/scripts/firebaseAPI_TEAM22.js"></script>
+    <script src="/scripts/skeleton.js"></script>
+    <script src="/scripts/main.js"></script>
+
+    <!-- <script src="./scripts/script.js"></script> -->
 
 </body>
 
