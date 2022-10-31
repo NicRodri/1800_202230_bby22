@@ -45,7 +45,7 @@
         <!------------------------------>
 
         <!-- our own navbar goes here -->
-        <div class="container d-flex justify-content-between bg-info pt-5 pb-2 ps-2 pe-2">
+        <div class="d-flex justify-content-between bg-info pt-5 pb-2 ps-2 pe-2">
             <div class="d-flex gap-3 ">
                 <i class="material-icons md-36">arrow_back</i>
                 <div class="d-flex column align-items-center">
@@ -55,40 +55,75 @@
         </div>
 
         <!-- the body of your page goes here -->
-        <!-- stuff -->
+
         <div class="container-fluid bg-light text-dark pt-4">
-            <div class="container ms-2">
-                <p><span class="fs-3">Add task name</span></p>
-                <p><span class="fs-5">Add details</span></p>
+            <!-- add activity name and details -->
+            <div class="container">
+                <div class="container d-flex align-items-center gap-1 p-0">
+                    <i class="material-icons md-24">edit_note</i>
+                    <p class="m-0"><span class="fs-3">Add activity name</span></p>
+                </div>
+                <div class="container d-flex align-items-center gap-1 p-0 mt-3">
+                    <i class="material-icons md-24">edit_note</i>
+                    <p class="m-0"><span class="fs-5">Add details</span></p>
+                </div>
             </div>
-    
-            <div class="container mt-4 ms-2">
-                <p><span class="h1">Date/Time</span></p>
-                <div class="container d-flex justify-content-between mt-4">
+            <!-- Estimated time -->    
+            <div class="container mt-4 ">
+                <div class="container d-flex align-items-center gap-1 p-0">
+                    <p class="m-0"><span class="h1">Estimated Time</span></p>
+                    <i class="material-icons md-18">help</i>
+                </div>
+                <div class="container d-flex align-items-center mt-3">
+                    <p class="m-0">10</p>
+                    <i class="material-icons md-18">arrow_drop_down</i>
+                    <p class="m-0">Minutes</p>
+                    <i class="material-icons md-18">arrow_drop_down</i>
+                </div>
+            </div>
+            <!-- Due by -->    
+            <div class="container mt-4 ">
+                <div class="container d-flex align-items-center gap-1 p-0">
+                    <p class="m-0"><span class="h1">Due by</span></p>
+                    <i class="material-icons md-18">help</i>
+                </div>
+                <div class="container d-flex justify-content-between mt-3">
                     <button class="date"></button>
                     <button class="time me-3"></button>
                 </div>
-                <div class="container d-flex align-items-center mt-4">
-                    <i class="material-icons md-18 me-2">event_repeat</i>
-                    <p class="m-0"><span class="fs-6">Does not repeat</span></p>
-                </div>
             </div>
-    
-            <div class="container mt-4 ms-2">
-                <p><span class="h1">Commuting Time</span></p>
-                <div class="container d-flex align-items-center">
+            <!-- Commuting Time -->        
+            <div class="container mt-4">
+                <div class="container d-flex align-items-center gap-1 p-0">
+                    <p class="m-0"><span class="h1">Commuting Time</span></p>
+                    <i class="material-icons md-18">help</i>
+                </div>
+                <div class="container d-flex align-items-center mt-3">
                     <p class="m-0">10</p>
                     <i class="material-icons md-18">arrow_drop_down</i>
                     <p class="m-0">Minutes</p>
                 </div>
             </div>
-     
-            <div class="container d-grid col-6 gap-3 mt-4 ms-auto">
-                <button class="btn-lg">Add another task</button>
+            <!-- Urgency Factors -->       
+            <div class="container mt-4">
+                <div class="container d-flex align-items-center gap-1 p-0">
+                    <p class="m-0"><span class="h1">Urgency Factor</span></p> 
+                    <i class="material-icons md-18">help</i>
+                </div>
+                <div class="container d-flex align-items-center mt-3">
+                    <p class="m-0">3</p>
+                    <i class="material-icons md-18">arrow_drop_down</i>
+                    <!--Importance will be replaced with the value user choses ranging from
+                    1 for not important and 5 for very important-->
+                    <p class="m-0"><span>Importance</span></p>
+                </div>
+            </div>
+            <!-- Buttons at the end -->            
+            <div class="container d-grid col-7 gap-3 mt-4 ms-auto">
+                <button class="btn-lg">Add another activity</button>
                 <button class="btn-lg btn-dark">Done</button>
             </div>
         </div>
-
         <!-- our own footer goes here-->
         <nav id="footerPlaceholder"></nav>
 
