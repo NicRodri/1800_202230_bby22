@@ -5,21 +5,21 @@ body {
 #container {
   /* background-color: orange; */
   display: grid;
-  height: 100vh;
+  height: 85vh;
   grid-template-columns: 100%;
-  grid-template-rows: 10% 10% 20% 50% 10%;
+  grid-template-rows: 15% 25% 60% ;
   overflow: auto;
 }
-.top-menu {
+/* .top-menu {
   display: grid;
   grid-column: 1 / span 1;
-  grid-row: 1 / span 1;
+  grid-row: 1 / span 1; */
   /* background-color: blue;       */
-}
+
 .topnav {
   display: grid;
   grid-column: 1 / span 1;
-  grid-row: 2 / span 1;
+  grid-row: 1 / span 1;
   /* background-color: rgb(37, 236, 149); */
   grid-template-rows: 50% 50%;
 }
@@ -52,7 +52,7 @@ body {
 .recent {
   display: grid;
   grid-column: 1 / span 1;
-  grid-row: 3 / span 1;
+  grid-row: 2 / span 1;
   /* background-color: yellow; */
   grid-template-rows: 20% 80%;
 }
@@ -98,7 +98,7 @@ body {
 .contact {
   display: grid;
   grid-column: 1 / span 1;
-  grid-row: 4 / span 1;
+  grid-row: 3 / span 1;
   /* background-color: rgb(37, 236, 149); */
   grid-template-rows: 10% 90%;
 }
