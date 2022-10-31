@@ -4,13 +4,13 @@ function add(){
   const sleep = document.getElementById("Sleep-Schedule");
 
   function toTask(){
-    window.location.href = "/html/Tasks_And_Activities/task.html"
+    window.location.href = "/html/Tasks_And_Activities/task.html";
   }
   function toActivity(){
-    window.location.href = "/html/Tasks_And_Activities/activity.html"
+    window.location.href = "/html/Tasks_And_Activities/activity.html";
   }
   function toSleep(){
-    window.location.href = "/html/Sleep_Time/sleep.html"
+    window.location.href = "/html/Sleep_Time/sleep.html";
   }
 
   task.addEventListener("click", toTask);
