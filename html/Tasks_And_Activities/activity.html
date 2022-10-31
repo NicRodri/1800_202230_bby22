@@ -45,8 +45,7 @@
         <!------------------------------>
 
         <!-- our own navbar goes here -->
-        <!-- our own navbar goes here -->
-        <div class="d-flex justify-content-between bg-info pt-5 pb-2 ps-2 pe-2">
+        <div class="container d-flex justify-content-between bg-info pt-5 pb-2 ps-2 pe-2">
             <div class="d-flex gap-3 ">
                 <i class="material-icons md-36">arrow_back</i>
                 <div class="d-flex column align-items-center">
@@ -57,11 +56,36 @@
 
         <!-- the body of your page goes here -->
         <!-- stuff -->
-        <div class="container-fluid bg-light text-dark p-5">
-            <div class="container bg-light p-5">
-                <h1 class="display-4">Good morning <span id="name-goes-here"></span></h1>
-                <hr>
-                <p>Quote of the day: The best view comes after the hardest climb.</p>
+        <div class="container-fluid bg-light text-dark pt-4">
+            <div class="container ms-2">
+                <p><span class="fs-3">Add task name</span></p>
+                <p><span class="fs-5">Add details</span></p>
+            </div>
+    
+            <div class="container mt-4 ms-2">
+                <p><span class="h1">Date/Time</span></p>
+                <div class="container d-flex justify-content-between mt-4">
+                    <button class="date"></button>
+                    <button class="time me-3"></button>
+                </div>
+                <div class="container d-flex align-items-center mt-4">
+                    <i class="material-icons md-18 me-2">event_repeat</i>
+                    <p class="m-0"><span class="fs-6">Does not repeat</span></p>
+                </div>
+            </div>
+    
+            <div class="container mt-4 ms-2">
+                <p><span class="h1">Commuting Time</span></p>
+                <div class="container d-flex align-items-center">
+                    <p class="m-0">10</p>
+                    <i class="material-icons md-18">arrow_drop_down</i>
+                    <p class="m-0">Minutes</p>
+                </div>
+            </div>
+     
+            <div class="container d-grid col-6 gap-3 mt-4 ms-auto">
+                <button class="btn-lg">Add another task</button>
+                <button class="btn-lg btn-dark">Done</button>
             </div>
         </div>
 
@@ -74,6 +98,8 @@
         <script src="/scripts/firebaseAPI_TEAM22.js"></script>
         <script src="/scripts/skeleton.js"></script>
         <script src="/scripts/main.js"></script>
+        <script src="/scripts/date.js"></script>
+        <script src="/scripts/time.js"></script>
         <!-- <script src="./scripts/script.js"></script> -->
 
     </body>
