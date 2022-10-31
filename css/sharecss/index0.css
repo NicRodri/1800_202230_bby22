@@ -69,22 +69,27 @@ body {
   grid-row: 2 / span 1;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
+  background-color: gainsboro;
 }
 .share {
   grid-column: 1 / span 1;
   grid-row: 1 / span 1;
+  margin-top: 60%;
 }
 .download {
   grid-column: 2 / span 1;
   grid-row: 1 / span 1;
+  margin-top: 60%;
 }
 .copy {
   grid-column: 3 / span 1;
   grid-row: 1 / span 1;
+  margin-top: 60%;
 }
 .delete {
   grid-column: 4 / span 1;
   grid-row: 1 / span 1;
+  margin-top: 60%;
 }
 .icon{
  width:50%;
@@ -92,4 +97,36 @@ body {
 a{
   text-decoration: none;
   color: black;
+  
+}
+#shareimage{
+  width:55%;
+  margin-left: 20%;
+  margin-bottom:11%;
+}
+#copyimage{
+  width:58%;
+  margin-left: 9%;
+ 
+  
+}
+#deleteimage{
+  width:52%;
+  margin-left: 8%;
+  margin-bottom: 8%;
+}
+#downloadimage{
+  margin-left: 9%;
+  margin-bottom: 7%;
+}
+#share{
+  margin-left: 18%;
+
+}
+#copy{
+  margin-left: 20%;
+}
+#delete{
+  margin-left: 9%;
+  
 }

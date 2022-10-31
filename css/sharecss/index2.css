@@ -150,7 +150,7 @@ body {
 }
 
 .icon {
-  width: 50%;
+  width: 58%;
 }
 .item a {
   font-size: xx-large;
@@ -180,7 +180,7 @@ body {
 
 
 
-input[type="radio"] {
+.r2 input[type="radio"] {
   content: "";
   display: inline-block;
   border: 3px solid #000;
@@ -188,7 +188,20 @@ input[type="radio"] {
   margin: 0 0.5em;
   width: 2em;
   height: 2em;
+  margin-top: 25%;
 }
 
+.text{
+margin-left: 35%;
 
-
+}
+.c2 input[type="radio"] {
+  content: "";
+  display: inline-block;
+  border: 3px solid #000;
+  border-radius: 50%;
+  margin: 0 0.5em;
+  width: 2em;
+  height: 2em;
+  margin-top: 5%;
+}
