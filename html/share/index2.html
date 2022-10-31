@@ -38,7 +38,16 @@
 
 <body>
   <!-- navigation at top -->
-  <nav id="navbarPlaceholder"></nav>
+        <!-- our own navbar goes here -->
+        <div class="d-flex justify-content-between bg-info pt-5 pb-2 ps-2 pe-2">
+          <div class="d-flex gap-3 ">
+              <i id="back" class="material-icons md-36">arrow_back</i>
+              <div class="d-flex column align-items-center">
+                  <p class="m-0"><span id="nav2" class="h3">Share</span></p>
+              </div>
+          </div>
+      </div>
+
   <!-- Pop up for add button -->
   <div id="addPlaceholder"></div>
 
@@ -143,7 +152,7 @@
     <!---------------------------------------------->
     <script src="/scripts/firebaseAPI_TEAM22.js"></script>
     <script src="/scripts/skeleton.js"></script>
-    <script src="/scripts/main.js"></script>
+    <script src="/scripts/EventListeners/navigation.js" ></script>
 
     <!-- <script src="./scripts/script.js"></script> -->
 
