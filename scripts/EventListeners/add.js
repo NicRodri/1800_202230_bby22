@@ -13,9 +13,9 @@ function add(){
     window.location.href = "/html/Sleep_Time/sleep.html"
   }
 
-  task.addEventListener("click", toTask)
-  activity.addEventListener("click", toActivity)
-  sleep.addEventListener("click", toSleep)
+  task.addEventListener("click", toTask);
+  activity.addEventListener("click", toActivity);
+  sleep.addEventListener("click", toSleep);
 }
 
 add();
