@@ -1,11 +1,11 @@
 function shareSelect() {
-    const shares = document.getElementById("sharebutton");
+    const sharebutton = document.getElementById("shareimage");
 
     function shareSelect() {
-        window.location.href = "/html/share/index1.html";
+        window.location.href = "/html/share/share0.js";
     }
 
-    shares.addEventListener("click", shareSelect);
+    sharebutton.addEventListener("click", shareSelect);
 }
 
  shareSelect();
