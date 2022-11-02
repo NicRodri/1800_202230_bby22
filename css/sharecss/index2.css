@@ -77,7 +77,7 @@ body {
   /* background-color: rgb(151, 28, 222); */
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  overflow: auto;
+ 
 }
 #carly {
   grid-column: 1 / span 1;
