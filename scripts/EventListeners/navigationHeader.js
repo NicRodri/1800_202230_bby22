@@ -1,7 +1,7 @@
-function navigationHeader(){
+function navigationHeader() {
   const back = document.getElementById("back");
 
-  function getPrevious(){
+  function getPrevious() {
     window.history.back();
   }
 
