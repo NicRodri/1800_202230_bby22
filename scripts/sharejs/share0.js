@@ -1,5 +1,5 @@
 function shareSelect() {
-    const sharebutton = document.getElementById("shareimage");
+    const sharebutton = document.getElementById("sharebutton");
 
     function shareSelect() {
         window.location.href = "/html/share/share0.js";
