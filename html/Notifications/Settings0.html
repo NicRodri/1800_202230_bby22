@@ -56,47 +56,6 @@
         display: inline-block;
       }
 
-      .Container {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin-top: 5px;
-      }
-
-
-
-      .Container p {
-        display: contents;
-        text-align: center;
-        line-height: 0.1em;
-      }
-
-      .Container p:not(:last-of-type)::after {
-        content: "";
-        width: 8%;
-        height: 2px;
-      }
-
-      .text {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin-top: 5px;
-      }
-
-      .text p {
-        display: contents;
-        text-align: center;
-        line-height: 0.1em;
-      }
-
-      .text p:not(:last-of-type)::after {
-        content: "";
-        width: 8%;
-        height: 2px;
-      }
-
-
       .Top {
         display: flex;
         justify-content: space-around;
@@ -119,56 +78,29 @@
 
     <div class="Top">
 
-      <span class="dot"></span>
+      <div class="dot"></div>
 
-      <p id="rcorners1"></p>
+      <button id="rcorners1"></button>
 
     </div>
-
-    <br>
-    <hr>
-    <br>
-
-    <div class="Container">
-
-<<<<<<< HEAD
-      <i class="fa-solid fa-clock-rotate-left fa-4x"></i>
-      <i class="fa-solid fa-heart fa-4x"></i>
-      <i class="fa-solid fa-gear fa-4x"></i>
-=======
-      <div>
-        <i class="fa-solid fa-clock-rotate-left fa-4x"></i>
-        <p>History</p>
-      </div>
-
-      <div>
-        <i class="fa-solid fa-heart fa-4x"></i>
-        <p>Favorites</p>
-      </div>
-
-      <div>
-        <i class="fa-solid fa-gear fa-4x"></i>
-        <p>Settings</p>
-      </div>
-
->>>>>>> c22ea8da11885e348793fc71c4331447fdb48c8f
-    </div>
-
-    <br>
-
-<<<<<<< HEAD
-    <div class="text">
-      <p>History</p>
-      <p>Favorites</p>
-      <p>Settings</p>
-    </div>
-=======
-
->>>>>>> c22ea8da11885e348793fc71c4331447fdb48c8f
     <hr>
 
+      <div class="d-flex column justify-content-start">
+        <div class="d-flex row gap-1 m-0">
+          <i class="fa-solid fa-clock-rotate-left fa-4x"></i>
+          <p class="m-0"><span class="fs-5">History</span></p>
+        </div>
+        
+        <div class="d-flex row gap-1 m-0">
+          <i class="fa-solid fa-heart fa-4x"></i>
+            <p class="m-0"><span class="fs-5">Favorites</span></p>
+        </div>
 
-
+        <div class="d-flex row gap-1 m-0">
+          <i class="fa-solid fa-gear fa-4x"></i>
+            <p class="m-0"><span class="fs-5">Settings</span></p>
+        </div>
+    <hr>
 
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
