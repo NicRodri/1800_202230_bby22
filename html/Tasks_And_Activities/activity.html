@@ -1,142 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <title>My BCIT Project</title>
-        <meta name="comp1800 template" content="My 1800 App">
+  <head>
+    <title>My BCIT Project</title>
+    <meta name="comp1800 template" content="My 1800 App">
 
-        <!------------------------>
-        <!-- Required meta tags -->
-        <!------------------------>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!------------------------>
+    <!-- Required meta tags -->
+    <!------------------------>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!------------------------------------------>
-        <!-- Bootstrap Library CSS JS CDN go here -->
-        <!------------------------------------------>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-            </script>
+    <!------------------------------------------>
+    <!-- Bootstrap Library CSS JS CDN go here -->
+    <!------------------------------------------>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+      </script>
 
-        <!-------------------------------------------------------->
-        <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-        <!-------------------------------------------------------->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-        <link type="text/css" rel="stylesheet"
-            href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <!-------------------------------------------------------->
+    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+    <!-------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-        <!-------------------------------------------->
-        <!-- Other libraries and styles of your own -->
-        <!-------------------------------------------->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="/styles/style.css">
+    <!-------------------------------------------->
+    <!-- Other libraries and styles of your own -->
+    <!-------------------------------------------->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.css">
 
-    </head>
+  </head>
 
-    <body>
-        <!------------------------------>
-        <!-- Your HTML Layout go here -->
-        <!------------------------------>
+  <body>
+    <!------------------------------>
+    <!-- Your HTML Layout go here -->
+    <!------------------------------>
 
-        <!-- our own navbar goes here -->
-        <div class="d-flex justify-content-between bg-info pt-5 pb-2 ps-2 pe-2 fixed-top">
-            <div class="d-flex gap-3 ">
-                <i id="back" class="material-icons md-36">arrow_back</i>
-                <div class="d-flex column align-items-center">
-                    <p class="m-0"><span id="nav2" class="h3">Activity</span></p>
-                </div>
-            </div>
+    <!-- our own navbar goes here -->
+    <div class="d-flex justify-content-between bg-info pt-5 pb-2 ps-2 pe-2 fixed-top">
+      <div class="d-flex gap-3 ">
+        <i id="back" class="material-icons md-36">arrow_back</i>
+        <div class="d-flex column align-items-center">
+          <p class="m-0"><span id="nav2" class="h3">Activity</span></p>
         </div>
+      </div>
+    </div>
 
-        <!-- the body of your page goes here -->
-        <div class="container-fluid bg-light text-dark pt-4 spacing-footer spacing-header">
-            <!-- add activity name and details -->
-            <div class="container">
-                <div class="container d-flex align-items-center gap-1 p-0">
-                    <i class="material-icons md-24">edit_note</i>
-                    <p class="m-0"><span class="fs-3">Add activity name</span></p>
-                </div>
-                <div class="container d-flex align-items-center gap-1 p-0 mt-3">
-                    <i class="material-icons md-24">edit_note</i>
-                    <p class="m-0"><span class="fs-5">Add details</span></p>
-                </div>
-            </div>
-            <!-- Estimated time -->
-            <div class="container mt-4 ">
-                <div class="container d-flex align-items-center gap-1 p-0">
-                    <p class="m-0"><span class="h1">Estimated Time</span></p>
-                    <i class="material-icons md-18">help</i>
-                </div>
-                <div class="container d-flex align-items-center mt-3">
-                    <p class="m-0">10</p>
-                    <i class="material-icons md-18">arrow_drop_down</i>
-                    <p class="m-0">Minutes</p>
-                    <i class="material-icons md-18">arrow_drop_down</i>
-                </div>
-            </div>
-            <!-- Due by -->
-            <div class="container mt-4 ">
-                <div class="container d-flex align-items-center gap-1 p-0">
-                    <p class="m-0"><span class="h1">Due by</span></p>
-                    <i class="material-icons md-18">help</i>
-                </div>
-                <div class="container d-flex justify-content-between mt-3">
-                    <button class="date"></button>
-                    <button class="time me-3"></button>
-                </div>
-            </div>
-            <!-- Commuting Time -->
-            <div class="container mt-4">
-                <div class="container d-flex align-items-center gap-1 p-0">
-                    <p class="m-0"><span class="h1">Commuting Time</span></p>
-                    <i class="material-icons md-18">help</i>
-                </div>
-                <div class="container d-flex align-items-center mt-3">
-                    <p class="m-0">10</p>
-                    <i class="material-icons md-18">arrow_drop_down</i>
-                    <p class="m-0">Minutes</p>
-                </div>
-            </div>
-            <!-- Urgency Factors -->
-            <div class="container mt-4">
-                <div class="container d-flex align-items-center gap-1 p-0">
-                    <p class="m-0"><span class="h1">Urgency Factor</span></p>
-                    <i class="material-icons md-18">help</i>
-                </div>
-                <div class="container d-flex align-items-center mt-3">
-                    <p class="m-0">3</p>
-                    <i class="material-icons md-18">arrow_drop_down</i>
-                    <!--Importance will be replaced with the value user choses ranging from
-                    1 for not important and 5 for very important-->
-                    <p class="m-0"><span>Importance</span></p>
-                </div>
-            </div>
-            <!-- Buttons at the end -->
-            <div class="container d-grid col-7 gap-3 mt-4 ms-auto">
-                <button class="btn-lg">Add another activity</button>
-                <button class="btn-lg btn-dark">Done</button>
-            </div>
+    <!-- the body of your page goes here -->
+    <div class="container-fluid bg-light text-dark pt-4 spacing-footer spacing-header">
+      <form action="">
+        <!-- add activity name and details -->
+        <div class="container">
+          <div class="container d-flex align-items-center">
+            <i class="material-icons md-24 me-2">task_alt</i>
+            <input class="form-control" type="text" id="taskName" name="taskName" placeholder="Add activity name" required>
+          </div>
+          <div class="container d-flex align-items-center mt-2">
+            <i class="material-icons md-24 me-2">edit_note</i>
+            <textarea class="form-control" placeholder="Add activity details"></textarea>
+            </textarea>
+          </div>
         </div>
+        <!-- Estimated time -->
+        <div class="container mt-4 ">
+          <div class="container d-flex align-items-center gap-1 p-0">
+            <p class="m-0"><span class="h3">Estimated Time</span></p>
+            <i class="material-icons md-18">help</i>
+          </div>
+          <div class="container d-flex align-items-center mt-2">
+            <i class="material-icons md-24 me-2">watch</i>
+            <input type="number" id="estimatedTime" class="form-control" min="0" placeholder="Time" required>
+            <select class="form-select" name="estimatedTimeType" id="estimatedTimeType">
+              <option value="1">Minutes</option>
+              <option value="2">Hours</option>
+            </select>
 
-        <!-- our own footer goes here-->
-        <nav id="footerPlaceholder"></nav>
+          </div>
+        </div>
+        <!-- Due by -->
+        <div class="container mt-4 ">
+          <div class="container d-flex align-items-center gap-1 p-0">
+            <p class="m-0"><span class="h3">Due by</span></p>
+            <i class="material-icons md-18">help</i>
+          </div>
+          <div class="container d-flex align-items-center mt-2">
+            <i class="material-icons md-24 me-2">schedule</i>
+            <input type="date" class="form-control" required>
+            <input type="time" class="form-control" name="time" id="time" required>
+          </div>
+        </div>
+        <!-- Commuting Time -->
+        <div class="container mt-4">
+          <div class="container d-flex align-items-center gap-1 p-0">
+            <p class="m-0"><span class="h3">Commuting Time</span></p>
+            <i class="material-icons md-18">help</i>
+          </div>
+          <div class="container d-flex align-items-center mt-2 mb-0">
+            <i class="material-icons md-24 me-2">commute</i>
+            <input type="number" class="form-control" placeholder="Minutes" min="0">
+          </div>
+        </div>
+        <!-- Urgency Factors -->
+        <div class="container mt-4">
+          <div class="container d-flex align-items-center gap-1 p-0">
+            <p class="m-0"><span class="h3">Urgency Factor</span></p>
+            <i class="material-icons md-18">help</i>
+          </div>
+          <div class="container d-flex align-items-center mt-2">
+            <i class="material-icons md-24 me-2">priority_high</i>
+            <select class="form-select" name="urgency-factor" id="urgency-factor">
+              <option value="3">Must be done ASAP</option>
+              <option value="2">Can wait a little</option>
+              <option value="1">Can be done whenever</option>
+            </select>
+          </div>
+        </div>
+        <!-- Buttons at the end -->
+        <div class="container d-grid gap-3 mt-4">
+          <button class="btn-lg form-control">Add another task</button>
+          <button class="btn-lg btn-dark form-control">Done</button>
+        </div>
+      </form>
+    </div>
 
-        <!---------------------------------------------->
-        <!-- Your own JavaScript functions go here    -->
-        <!---------------------------------------------->
-        <script src="/scripts/firebaseAPI_TEAM22.js"></script>
-        <script src="/scripts/skeleton.js"></script>
-        <!-- <script src="/scripts/main.js"></script> -->
-        <script src="/scripts/date.js"></script>
-        <script src="/scripts/time.js"></script>
-        <script src="/scripts/EventListeners/navigationHeader.js" ></script>
+    <!-- our own footer goes here-->
+    <nav id="footerPlaceholder"></nav>
 
-    </body>
+    <!---------------------------------------------->
+    <!-- Your own JavaScript functions go here    -->
+    <!---------------------------------------------->
+    <script src="/scripts/firebaseAPI_TEAM22.js"></script>
+    <script src="/scripts/skeleton.js"></script>
+    <!-- <script src="/scripts/main.js"></script> -->
+    <!-- <script src="/scripts/date.js"></script>
+    <script src="/scripts/time.js"></script> -->
+    <script src="/scripts/EventListeners/navigationHeader.js"></script>
+
+  </body>
 
 </html>
