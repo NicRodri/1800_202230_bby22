@@ -55,7 +55,7 @@
 
     <!-- the body of your page goes here -->
     <div class="container-fluid bg-light text-dark pt-4 spacing-footer spacing-header">
-      <form action="">
+      <form id="task-information">
         <!-- add task name and details-->
         <div class="container">
           <div class="container d-flex align-items-center">
@@ -64,7 +64,7 @@
           </div>
           <div class="container d-flex align-items-center mt-2">
             <i class="material-icons md-24 me-2">edit_note</i>
-            <textarea class="form-control" placeholder="Add task details"></textarea>
+            <textarea id="taskDetails" class="form-control" placeholder="Add task details"></textarea>
             </textarea>
           </div>
         </div>
@@ -75,22 +75,24 @@
             <i class="material-icons md-18">help</i>
           </div>
 
+
+
           <div class="container d-flex align-items-center mt-2">
-            <p class="m-0"><span class="h6">From:</span></p>
+            <input id="date" type="date" class="form-control" required>
           </div>
 
           <div class="container d-flex align-items-center mt-1">
-            <input type="date" class="form-control" required>
-            <input type="time" class="form-control" name="time" id="time" required>
+            <p class="m-0"><span class="h6">From:</span></p>
           </div>
-
+          <div class="container d-flex align-items-center mt-1">
+            <input type="time" class="form-control" name="time" id="timeFrom" required>
+          </div>
           <div class="container d-flex align-items-center mt-0">
             <p class="m-0"><span class="h6">To:</span></p>
           </div>
 
           <div class="container d-flex align-items-center mt-1">
-            <input type="date" class="form-control" required>
-            <input type="time" class="form-control" name="time" id="time" required>
+            <input type="time" class="form-control" name="time" id="timeTo" required>
           </div>
 
           <div class="container d-flex align-items-center mt-4">
@@ -112,13 +114,12 @@
           </div>
           <div class="container d-flex align-items-center mt-3 mb-0">
             <i class="material-icons md-24 me-2">commute</i>
-            <input type="number" class="form-control" placeholder="Minutes" min="0">
+            <input id="commute" type="number" class="form-control" placeholder="Minutes" min="0">
           </div>
         </div>
         <!-- Buttons at the end-->
         <div class="container d-grid gap-3 mt-5">
-          <button class="btn-lg form-control">Add another task</button>
-          <button class="btn-lg btn-dark form-control">Done</button>
+          <button class="btn-lg btn-dark form-control" type="submit" id="submit">Done</button>
         </div>
       </form>
 
@@ -135,6 +136,7 @@
     <!-- <script src="/scripts/main.js"></script> -->
     <!-- <script src="/scripts/date.js"></script>
         <script src="/scripts/time.js"></script> -->
+    <script src="/scripts/Scheduler/tasks.js"></script>    
     <script src="/scripts/EventListeners/navigationHeader.js"></script>
 
   </body>
