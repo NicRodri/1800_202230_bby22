@@ -57,10 +57,16 @@
     </div>
 
     <div class="container spacing-footer">
-      <h1>Some popular hikes</h1>
-      <!-- Here is container for cards  -->
+      <h1>Tasks</h1>
+      <!-- Here is Task container for cards  -->
       <div class="container">
-        <div id="hikes-go-here" class="row row-cols-auto">
+        <div id="tasks-go-here" class="row row-cols-auto">
+        </div>
+      </div>
+      <h1>Activities</h1>
+      <!-- Here is Activity container for cards  -->
+      <div class="container">
+        <div id="activities-go-here" class="row row-cols-auto">
         </div>
       </div>
     </div>
@@ -70,6 +76,39 @@
 
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
+
+    <!-- Templates for general use, not displayed  TASKS-->
+    <template id="taskCardTemplate">
+      <div class="card py-2 mx-2" style="width: 18rem;">
+          <div class="card-body">
+              <!-- <h5 class="card-title">Card title</h5> -->
+              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p> -->   
+              <a class="btn btn-primary card-href card-title d-block">Get Details</a>
+              <div>
+                <p class="timeStart d-inline">Start Time goes here</p>
+                <p class="timeEnd d-inline">End Time goes here</p>
+              </div>
+
+          </div>
+      </div>
+  </template>
+
+      <!-- Templates for general use, not displayed  ACTIVITIES-->
+      <template id="activityCardTemplate">
+        <div class="card py-2 mx-2" style="width: 18rem;">
+            <div class="card-body">
+                <!-- <h5 class="card-title">Card title</h5> -->
+                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p> -->   
+                <a class="btn btn-primary card-href card-title d-block">Get Details</a>
+                <div>
+                  <p class="estimatedTime d-inline">Start Time goes here test</p>
+                </div>
+  
+            </div>
+        </div>
+    </template>
 
     <!-- Templates for general use, not displayed -->
     <template id="hikeCardTemplate">
