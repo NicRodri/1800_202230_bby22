@@ -51,42 +51,42 @@ function getDate() {
 }
 
 
-function addTask() {
-  //define a variable for the collection you want to create in Firestore to populate data
-  var tasksRef = db.collection("tasks");
+// function addTask() {
+//   //define a variable for the collection you want to create in Firestore to populate data
+//   var tasksRef = db.collection("tasks");
 
-  tasksRef.add({
-    code: "Task1",
-    taskName: "Comp1800 lecture",    //replace with your own city?
-    taskDetails: "projects lectures with carly",
-    date: getDate(),
-    timeStart: getTime(),
-    timeEnd: getTime(),
-    repeats: "Weekly",
-    commutingTime: "0",
-    last_updated: firebase.firestore.FieldValue.serverTimestamp()
-  });
-}
+//   tasksRef.add({
+//     code: "Task1",
+//     taskName: "Comp1800 lecture",    //replace with your own city?
+//     taskDetails: "projects lectures with carly",
+//     date: getDate(),
+//     timeStart: getTime(),
+//     timeEnd: getTime(),
+//     repeats: "Weekly",
+//     commutingTime: "0",
+//     last_updated: firebase.firestore.FieldValue.serverTimestamp()
+//   });
+// }
 
-//addTask(); // only use once to setup.
+// //addTask(); // only use once to setup.
 
-function addActivity() {
-  //define a variable for the collection you want to create in Firestore to populate data
-  var activitiesRef = db.collection("activities");
+// function addActivity() {
+//   //define a variable for the collection you want to create in Firestore to populate data
+//   var activitiesRef = db.collection("activities");
 
-  activitiesRef.add({
-    code: "Activity1",
-    activityName: "1510 assignment2",    //replace with your own city?
-    activityDetails: "Assignment 2 consisting of 4 questions",
-    estimatedTime: 10,
-    dueDate: getDate(),
-    commutingTime: 0,
-    urgencyFactor: "Weekly",
-    last_updated: firebase.firestore.FieldValue.serverTimestamp()
-  });
-}
+//   activitiesRef.add({
+//     code: "Activity1",
+//     activityName: "1510 assignment2",    //replace with your own city?
+//     activityDetails: "Assignment 2 consisting of 4 questions",
+//     estimatedTime: 10,
+//     dueDate: getDate(),
+//     commutingTime: 0,
+//     urgencyFactor: "Weekly",
+//     last_updated: firebase.firestore.FieldValue.serverTimestamp()
+//   });
+// }
 
-//addActivity(); // only use once to setup.
+// //addActivity(); // only use once to setup.
 
 function displayCardTasks(collection) {
   let cardTemplate = document.getElementById("taskCardTemplate");
@@ -127,13 +127,14 @@ function displayCardActivities(collection) {
     .then(snap => {
       var i = 1;  //if you want to use commented out section
       snap.forEach(doc => { //iterate thru each doc
-        var title = doc.data().activityName;
-        var timeEstimated = doc.data().estimatedTime;
+        var title = doc.data().name;
+        var timeEstimated = doc.data().timeEstimated;
+        var timeEstimatedType = doc.data().timeType;
         let newcard = cardTemplate.content.cloneNode(true);
 
         //update title and text and image
         newcard.querySelector(".card-title").innerHTML = title;
-        newcard.querySelector(".estimatedTime").innerHTML = "Estimated: " + timeEstimated + " Minutes";
+        newcard.querySelector(".estimatedTime").innerHTML = "Estimated: " + timeEstimated + " " + timeEstimatedType;
 
         //give unique ids to all elements for future use
         newcard.querySelector(".card-title").setAttribute("id", "ctitle" + i);
