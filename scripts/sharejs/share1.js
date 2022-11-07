@@ -21,3 +21,13 @@ function multipleSelect() {
 }
 
  closeSelect();
+ function confirmation(){
+    const singleSelect =document.getElementById("carly");
+    function toSingleSelect(){
+        window.location.href = "/html/share/confirmation.html";
+      }
+      singleSelect.addEventListener("click", toSingleSelect);
+   
+  }
+  
+  confirmation();
