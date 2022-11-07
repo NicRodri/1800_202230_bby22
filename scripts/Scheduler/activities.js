@@ -11,7 +11,6 @@ const activitySubmit = document.getElementById("submit");
 
 activitySubmit.addEventListener('click', (e) => {
   e.preventDefault();
-  console.log(x);
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
