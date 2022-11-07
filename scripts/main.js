@@ -91,31 +91,43 @@ function getDate() {
 function displayCardTasks(collection) {
   let cardTemplate = document.getElementById("taskCardTemplate");
 
-  db.collection(collection).get()
-    .then(snap => {
-      var i = 1;  //if you want to use commented out section
-      snap.forEach(doc => { //iterate thru each doc
-        var title = doc.data().name;        // get value of the "name" key
-        var timeStart = doc.data().timeFrom;
-        var timeEnd = doc.data().timeTo;
-        let newcard = cardTemplate.content.cloneNode(true);
 
-        //update title and text and image
-        newcard.querySelector('.card-title').innerHTML = title;
-        newcard.querySelector('.timeStart').innerHTML = timeStart + " - ";
-        newcard.querySelector('.timeEnd').innerHTML = timeEnd;
-
-        //give unique ids to all elements for future use
-        newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
-        newcard.querySelector('.timeStart').setAttribute("id", "tStart" + i);
-        newcard.querySelector('.timeEnd').setAttribute("id", "tEnd" + i);
-
-        //attach to gallery
-        document.getElementById(collection + "-go-here").appendChild(newcard);
-        i++;   //if you want to use commented out section
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      var uid = user.uid;
+      console.log(uid);
+      db.collection("users").doc(uid).collection(collection).get()
+      .then(snap => {
+        var i = 1;  //if you want to use commented out section
+        snap.forEach(doc => { //iterate thru each doc
+          var title = doc.data().name;        // get value of the "name" key
+          var timeStart = doc.data().timeFrom;
+          var timeEnd = doc.data().timeTo;
+          let newcard = cardTemplate.content.cloneNode(true);
+  
+          //update title and text and image
+          newcard.querySelector('.card-title').innerHTML = title;
+          newcard.querySelector('.timeStart').innerHTML = timeStart + " - ";
+          newcard.querySelector('.timeEnd').innerHTML = timeEnd;
+  
+          //give unique ids to all elements for future use
+          newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
+          newcard.querySelector('.timeStart').setAttribute("id", "tStart" + i);
+          newcard.querySelector('.timeEnd').setAttribute("id", "tEnd" + i);
+  
+          //attach to gallery
+          document.getElementById(collection + "-go-here").appendChild(newcard);
+          i++;   //if you want to use commented out section
+        })
       })
-    })
-
+      // ...
+    } else {
+      // User is signed out
+      // ...
+    }
+  });
 }
 
 
@@ -128,15 +140,8 @@ function displayCardActivities(collection) {
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
-
-
-
       var uid = user.uid;
-  
       console.log(uid);
-
-
-
       db.collection("users").doc(uid).collection(collection).get()
       .then(snap => {
         var i = 1;  //if you want to use commented out section
@@ -165,9 +170,6 @@ function displayCardActivities(collection) {
       // ...
     }
   });
-
-
-
 }
 
 displayCardActivities("activities");
