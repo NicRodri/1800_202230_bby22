@@ -1,7 +1,7 @@
 function confirmation(){
     const cancelbutton = document.getElementById("Cancel");
     const confirmbutton = document.getElementById("Confirm");
-    const singleSelect =document.getElementById("carly")
+    const singleSelect =document.getElementById("carly");
   
    
     function toCancel(){
