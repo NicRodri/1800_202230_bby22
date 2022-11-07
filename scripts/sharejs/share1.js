@@ -21,13 +21,17 @@ function multipleSelect() {
 }
 
  closeSelect();
- function confirmation(){
-    const singleSelect =document.getElementById("carly");
-    function toSingleSelect(){
-        window.location.href = "/html/share/confirmation.html";
-      }
-      singleSelect.addEventListener("click", toSingleSelect);
-   
-  }
+
+//  function confirmation(){
+//     const cancelbutton = document.getElementById("Cancel");
   
-  confirmation();
+   
+//     function toCancel(){
+//       window.location.href = "/html/share/index1.html";
+//     }
+
+//     cancelbutton.addEventListener("click", toCancel);
+
+//   }
+  
+//   confirmation();
