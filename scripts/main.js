@@ -118,34 +118,59 @@ function displayCardTasks(collection) {
 
 }
 
+
 displayCardTasks("tasks");
 
 function displayCardActivities(collection) {
   let cardTemplate = document.getElementById("activityCardTemplate");
 
-  db.collection(collection).get()
-    .then(snap => {
-      var i = 1;  //if you want to use commented out section
-      snap.forEach(doc => { //iterate thru each doc
-        var title = doc.data().name;
-        var timeEstimated = doc.data().timeEstimated;
-        var timeEstimatedType = doc.data().timeType;
-        let newcard = cardTemplate.content.cloneNode(true);
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
 
-        //update title and text and image
-        newcard.querySelector(".card-title").innerHTML = title;
-        newcard.querySelector(".estimatedTime").innerHTML = "Estimated: " + timeEstimated + " " + timeEstimatedType;
 
-        //give unique ids to all elements for future use
-        newcard.querySelector(".card-title").setAttribute("id", "ctitle" + i);
-        newcard.querySelector(".estimatedTime").setAttribute("id", "estimatedTime" + i);
 
-        //attach to gallery
-        document.getElementById(collection + "-go-here").appendChild(newcard);
-        i++;   //if you want to use commented out section
+      var uid = user.uid;
+  
+      console.log(uid);
+
+
+
+      db.collection("users").doc(uid).collection(collection).get()
+      .then(snap => {
+        var i = 1;  //if you want to use commented out section
+        snap.forEach(doc => { //iterate thru each doc
+          var title = doc.data().name;
+          var timeEstimated = doc.data().timeEstimated;
+          var timeEstimatedType = doc.data().timeType;
+          let newcard = cardTemplate.content.cloneNode(true);
+  
+          //update title and text and image
+          newcard.querySelector(".card-title").innerHTML = title;
+          newcard.querySelector(".estimatedTime").innerHTML = "Estimated: " + timeEstimated + " " + timeEstimatedType;
+  
+          //give unique ids to all elements for future use
+          newcard.querySelector(".card-title").setAttribute("id", "ctitle" + i);
+          newcard.querySelector(".estimatedTime").setAttribute("id", "estimatedTime" + i);
+  
+          //attach to gallery
+          document.getElementById(collection + "-go-here").appendChild(newcard);
+          i++;   //if you want to use commented out section
+        })
       })
-    })
+      // ...
+    } else {
+      // User is signed out
+      // ...
+    }
+  });
+
+
 
 }
 
 displayCardActivities("activities");
+
+
+
