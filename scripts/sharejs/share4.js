@@ -3,12 +3,12 @@ const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
 const emailAddress = document.getElementById("emailAddress");
 const phoneNumber = document.getElementById("phoneNumber");
-const contactSubmit = document.getElementById("submit");
+const infoSubmit = document.getElementById("submit");
 
-contactSubmit.addEventListener('click', (e) => {
+infoSubmit.addEventListener('click', (e) => {
   e.preventDefault();
-  firebase.auth().onAuthStateChanged((users) => {
-    if (users) {
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
 
