@@ -1,10 +1,11 @@
+const contactsInfo = document.getElementById("contact-information");
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
 const emailAddress = document.getElementById("emailAddress");
 const phoneNumber = document.getElementById("phoneNumber");
+const contactSubmit = document.getElementById("submit");
 
-
-tasksSubmit.addEventListener('click', (e) => {
+contactSubmit.addEventListener('click', (e) => {
   e.preventDefault();
   firebase.auth().onAuthStateChanged((users) => {
     if (users) {
@@ -26,7 +27,7 @@ tasksSubmit.addEventListener('click', (e) => {
         
       })
         .then(() => {
-          firstName.reset();
+          contactsInfo.reset();
           window.location.href = "/html/main.html";
         });
 
