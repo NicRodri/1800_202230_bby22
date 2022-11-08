@@ -1,96 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <title>My BCIT Project</title>
-    <meta name="comp1800 template" content="My 1800 App">
+<head>
+  <title>My BCIT Project</title>
+  <meta name="comp1800 template" content="My 1800 App">
 
-    <!------------------------>
-    <!-- Required meta tags -->
-    <!------------------------>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!------------------------>
+  <!-- Required meta tags -->
+  <!------------------------>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!------------------------------------------>
-    <!-- Bootstrap Library CSS JS CDN go here -->
-    <!------------------------------------------>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-      </script>
+  <!------------------------------------------>
+  <!-- Bootstrap Library CSS JS CDN go here -->
+  <!------------------------------------------>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 
-    <!-------------------------------------------------------->
-    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-    <!-------------------------------------------------------->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-    <!-------------------------------------------->
-    <!-- Other libraries and styles of your own -->
-    <!-------------------------------------------->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/style.css">
+  <!-------------------------------------------->
+  <!-- Other libraries and styles of your own -->
+  <!-------------------------------------------->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/style.css">
 
-  </head>
+</head>
 
-  <body>
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
+<body>
+  <!------------------------------>
+  <!-- Your HTML Layout go here -->
+  <!------------------------------>
 
-    <!-- our own navbar goes here -->
-    <div class="d-flex justify-content-between bg-info pt-5 pb-2 ps-2 pe-2 fixed-top">
-      <div class="d-flex gap-3 ">
-        <i id="back" class="material-icons md-36">arrow_back</i>
-        <div class="d-flex column align-items-center">
-          <p class="m-0"><span id="nav2" class="h3">+ New Contact</span></p>
-        </div>
+  <!-- our own navbar goes here -->
+  <div class="d-flex justify-content-between bg-info pt-5 pb-2 ps-2 pe-2 fixed-top">
+    <div class="d-flex gap-3 ">
+      <i id="back" class="material-icons md-36">arrow_back</i>
+      <div class="d-flex column align-items-center">
+        <p class="m-0"><span id="nav2" class="h3">+ New Contact</span></p>
       </div>
     </div>
+  </div>
 
-    <!-- the body of your page goes here -->
-    <div class="container-fluid bg-light text-dark pt-4 spacing-footer spacing-header">
-      <form id="task-information" method="post">
-        <!-- add task name and details-->
-        <div class="container">
-          <div class="container d-flex align-items-center">
-            <i class="material-icons md-24 me-2">task_alt</i>
-            <input class="form-control" type="text" id="taskName" name="taskName" placeholder="Add Contact Name"
-              required />    
-          </div>
-          
-          <div class="container d-flex align-items-center mt-2">
-            <i class="material-icons md-24 me-2">edit_note</i>
-            <input class="form-control" type="email" id="taskName" name="taskName" placeholder="Add Email Adress"
+  <!-- the body of your page goes here -->
+  <div class="container-fluid bg-light text-dark pt-4 spacing-footer spacing-header">
+    <form id="task-information" method="post">
+      <!-- add task name and details-->
+      <div class="container">
+        <div class="container d-flex align-items-center">
+          <i class="material-icons md-24 me-2">person_add</i>
+          <input class="form-control" type="text" id="firstName" name="firstName" placeholder="First Name"
             required />
-          </div>
         </div>
-        
-        <!-- Buttons at the end-->
-        <div class="container gap-3 mt-5">
-          <button class="btn-lg btn-dark form-control" type="submit" id="submit">Done</button>
-        </div>
-      </form>
-    </div>
-    <!-- our own footer goes here-->
-    <nav id="footerPlaceholder"></nav>
 
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-    <script src="/scripts/firebaseAPI_TEAM22.js"></script>
-    <script src="/scripts/skeleton.js"></script>
-    <!-- <script src="/scripts/main.js"></script> -->
-    <!-- <script src="/scripts/date.js"></script>
+        <div class="container d-flex align-items-center mt-2">
+          <i class="material-icons md-24 me-2">mood</i>
+          <input class="form-control" type="text" id="lastName" name="lastName" placeholder="Last Name"
+            required />
+        </div>
+      
+        <div class="container d-flex align-items-center mt-2">
+          <i class="material-icons md-24 me-2">mood</i>
+          <input class="form-control" type="email" id="emailAddress" name="emailAddress" placeholder="Email Address"
+            required />
+        </div>
+      
+        <div class="container d-flex align-items-center mt-2">
+          <i class="material-icons md-24 me-2">mood</i>
+          <input class="form-control" type="number" id="phoneNumber" name="phoneNumber" placeholder="Cellphone Number"
+            required />
+        </div>
+      
+      </div>
+
+      <!-- Buttons at the end-->
+      <div class="container gap-3 mt-5">
+        <button class="btn-lg btn-dark form-control" type="submit" id="submit">Save</button>
+      </div>
+    </form>
+  </div>
+  <!-- our own footer goes here-->
+  <nav id="footerPlaceholder"></nav>
+
+  <!---------------------------------------------->
+  <!-- Your own JavaScript functions go here    -->
+  <!---------------------------------------------->
+  <script src="/scripts/firebaseAPI_TEAM22.js"></script>
+  <script src="/scripts/skeleton.js"></script>
+  <!-- <script src="/scripts/main.js"></script> -->
+  <!-- <script src="/scripts/date.js"></script>
         <script src="/scripts/time.js"></script> -->
-    <script src="/scripts/Scheduler/tasks.js"></script>
-    <script src="/scripts/EventListeners/navigationHeader.js"></script>
+  <script src="/scripts/Scheduler/tasks.js"></script>
+  <script src="/scripts/EventListeners/navigationHeader.js"></script>
 
-  </body>
+</body>
 
 </html>
