@@ -9,38 +9,39 @@ const tasksCommute = document.getElementById("commute");
 const tasksSubmit = document.getElementById("submit");
 
 tasksSubmit.addEventListener('click', (e) => {
-    e.preventDefault();
-    firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-          // User is signed in, see docs for a list of available properties
-          // https://firebase.google.com/docs/reference/js/firebase.User
-    
-    
-    
-          var uid = user.uid;
-    
-          console.log(uid);
-    
-          db.collection("users").doc(uid).collection("tasks").doc().set({
-            name: tasksName.value,
-            details: tasksDetails.value,
-            date: tasksDate.value,
-            timeFrom: tasksTimeFrom.value,
-            timeTo: tasksTimeTo.value,
-            tasksDoesNotRepeat: tasksDoesNotRepeat.value,
-            tasksCommute: tasksCommute.value,
-          })
-            .then(() => {
-                tasksInfo.reset();
-                window.location.href = "/html/main.html";
-            });
-    
-          // ...
-        } else {
-          // User is signed out
-          // ...
-        }
-      });
+  e.preventDefault();
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+
+
+
+      var uid = user.uid;
+
+      console.log(uid);
+
+      db.collection("users").doc(uid).collection("tasks").doc().set({
+        // Can changed for different forms
+        name: tasksName.value,
+        details: tasksDetails.value,
+        date: tasksDate.value,
+        timeFrom: tasksTimeFrom.value,
+        timeTo: tasksTimeTo.value,
+        tasksDoesNotRepeat: tasksDoesNotRepeat.value,
+        tasksCommute: tasksCommute.value,
+      })
+        .then(() => {
+          tasksInfo.reset();
+          window.location.href = "/html/main.html";
+        });
+
+      // ...
+    } else {
+      // User is signed out
+      // ...
+    }
+  });
 });
 
 
