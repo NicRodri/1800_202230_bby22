@@ -22,7 +22,7 @@ tasksSubmit.addEventListener('click', (e) => {
       console.log(uid);
 
       db.collection("users").doc(uid).collection("tasks").doc().set({
-        // Can changed for different forms
+        // Can be changed for different forms
         name: tasksName.value,
         details: tasksDetails.value,
         date: tasksDate.value,
