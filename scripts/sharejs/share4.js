@@ -13,11 +13,11 @@ tasksSubmit.addEventListener('click', (e) => {
 
 
 
-      var uid = contact.uid;
+      var uid = user.uid;
 
       console.log(uid);
 
-      db.collection("users").doc(uid).collection("contact").doc().set({
+      db.collection("users").doc(uid).collection("contacts").doc().set({
         // Can be changed for different forms
         firstName: firstName.value,
         lastName: lastName.value,
