@@ -1,11 +1,11 @@
 function saveSelect() {
-    const rcorners1 = document.getElementById("rcorners1");
+    const submit = document.getElementById("submit");
 
     function getSave() {
         window.location.href = "/html/main.html";
     }
 
-    rcorners1.addEventListener("click", getSave);
+    submit.addEventListener("click", getSave);
 }
 
 saveSelect();
