@@ -17,7 +17,7 @@ const notificationsInfo = document.getElementById("notification-information");
 const notificationsSubmit = document.getElementById("submit");
 
 
-tasksSubmit.addEventListener('click', (e) => {
+notificationsSubmit.addEventListener('click', (e) => {
     e.preventDefault();
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
