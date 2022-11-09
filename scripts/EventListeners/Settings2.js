@@ -1,20 +1,25 @@
-function saveSelect() {
-    const submit = document.getElementById("submit");
+// function saveSelect() {
+//     const submit = document.getElementById("submit");
 
-    function getSave() {
-        window.location.href = "/html/main.html";
-    }
+//     function getSave() {
+//         window.location.href = "/html/main.html";
+//     }
 
-    submit.addEventListener("click", getSave);
-}
+//     submit.addEventListener("click", getSave);
+// }
 
-saveSelect();
+// saveSelect();
 
 
 
 
 const notificationsInfo = document.getElementById("notification-information");
 const notificationsSubmit = document.getElementById("submit");
+const turnOnNoti = document.getElementById("turn-on-noti");
+const sound = document.getElementById("sound");
+const pause = document.getElementById("pause");
+
+
 
 
 notificationsSubmit.addEventListener('click', (e) => {
@@ -32,10 +37,13 @@ notificationsSubmit.addEventListener('click', (e) => {
   
         db.collection("users").doc(uid).collection("notifications").doc().set({
           // Can be changed for different forms
-          notifications: notificationsInfo.value,
+          notifications: turnOnNoti.value,
+          sound: sound.value,
+          pause: pause.value,
+          
         })
           .then(() => {
-            tasksInfo.reset();
+            notificationsInfo.reset();
             window.location.href = "/html/main.html";
           });
   
