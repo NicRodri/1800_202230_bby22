@@ -43,7 +43,7 @@ notificationsSubmit.addEventListener('click', (e) => {
           
         })
           .then(() => {
-            notificationsInfo.reset();
+            // notificationsInfo.reset();
             window.location.href = "/html/main.html";
           });
   
