@@ -30,9 +30,9 @@ notificationsSubmit.addEventListener('click', (e) => {
   
         console.log(uid);
   
-        db.collection("users").doc(uid).collection("Settings2").doc().set({
+        db.collection("users").doc(uid).collection("notifications").doc().set({
           // Can be changed for different forms
-          notificationsInfo: notification-information.value,
+          notifications: notificationsInfo.value,
         })
           .then(() => {
             tasksInfo.reset();
