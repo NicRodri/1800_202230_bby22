@@ -3,8 +3,11 @@ const profileSubmit = document.getElementById("submit1");
 const names = document.getElementById("names");
 const email = document.getElementById("email");
 const phone = document.getElementById("phone");
-const gender = document.getElementById("setD");
-const light = document.getElementById("setD1");
+const genderMale = document.getElementById("setD_male");
+const genderFemale = document.getElementById("setD_female");
+const online = document.getElementById("setD_online");
+const offline = document.getElementById("setD_offline");
+const doNotDisturb = document.getElementById("setD_doNotDisturb");
 
 
 
@@ -26,8 +29,11 @@ profileSubmit.addEventListener('click', (e) => {
           name: names.value,
           email: email.value,
           phone: phone.value,
-          gender: gender.value,
-          lighting: light.value,
+          male: genderMale.value,
+          female: genderFemale.value,
+          online: online.value,
+          offline: offline.value,
+          do_not_disturb: doNotDisturb.value,
           
         })
           .then(() => {
