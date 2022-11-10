@@ -22,16 +22,3 @@ function multipleSelect() {
 
  closeSelect();
 
-//  function confirmation(){
-//     const cancelbutton = document.getElementById("Cancel");
-  
-   
-//     function toCancel(){
-//       window.location.href = "/html/share/index1.html";
-//     }
-
-//     cancelbutton.addEventListener("click", toCancel);
-
-//   }
-  
-//   confirmation();
