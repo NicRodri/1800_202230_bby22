@@ -124,6 +124,12 @@
       .border {
         padding: 20px;
       }
+
+      #submit {
+        border-radius: 25px;
+        background: #4483d5;
+        padding: 20px;
+      }
     </style>
 
   </head>
@@ -151,10 +157,11 @@
 
     <br>
     <hr>
+    <form id="notification-information">
     <div class="border3">
       <p style="font-size:larger"><b>Turn on Notifications</b>
         <label class="switch">
-          <input type="checkbox">
+          <input id="turn-on-noti" type="checkbox">
           <span class="slider round"></span>
         </label>
       </p>
@@ -164,7 +171,7 @@
     <div class="border2">
       <p style="font-size:larger"><b>Sounds</b>
         <label class="switch">
-          <input type="checkbox">
+          <input id="sound" type="checkbox">
           <span class="slider round"></span>
         </label>
       </p>
@@ -174,7 +181,7 @@
     <div class="border1">
       <p style="font-size:larger"><b>Pause All</b>
         <label class="switch">
-          <input type="checkbox">
+          <input id="pause" type="checkbox">
           <span class="slider round"></span>
         </label>
       </p>
@@ -185,7 +192,13 @@
       <p style="font-size:larger"><b>Advanced</b></p>
     </div>
 
+    <br>
 
+    
+    <div class="button">
+      <button  class="btn-lg btn-dark form-control" type="submit" id="submit">Save Changes</button>
+    </div>
+  </form>
 
 
 
