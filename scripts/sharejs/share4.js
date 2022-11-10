@@ -28,7 +28,7 @@ infoSubmit.addEventListener('click', (e) => {
       })
         .then(() => {
           contactsInfo.reset();
-          window.location.href = "/html/main.html";
+          window.location.href = "/html/share/index5.html";
         });
 
       // ...
