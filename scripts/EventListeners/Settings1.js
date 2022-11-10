@@ -11,3 +11,17 @@ function borderSelect() {
 }
 
 borderSelect();
+
+function profileSelect() {
+
+  const profile = document.getElementById("profile");
+
+  function getProfile() {
+      window.location.href = "/html/notifications/personal.html";
+  }
+
+  profile.addEventListener("click", getProfile);
+
+}
+
+profileSelect();
