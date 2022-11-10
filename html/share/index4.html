@@ -58,6 +58,16 @@
     <form id="contact-information" method="post">
       <!-- add task name and details-->
       <div class="container">
+        <!-- accept file input -->
+        <div class="container text-center py-3">
+          Upload Contact Portrait              
+         <!-- accept image file only -->
+         <!-- this is input ID -->
+        <div class="container text-center py-3">
+          <img id="mypic-goes-here" src="/images/share/Carly.svg" width=50 height=50/>
+          <input type="file" id="mypic-input" accept="image/*" />
+        </div>
+        
         <div class="container d-flex align-items-center">
           <i class="material-icons md-24 me-2">person_add</i>
           <input class="form-control" type="text" id="firstName" name="firstName" placeholder="First Name"
