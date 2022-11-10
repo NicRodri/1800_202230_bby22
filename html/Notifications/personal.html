@@ -49,6 +49,20 @@
         label {
             margin-right: 15px;
         }
+
+        #submit1 {
+            border-radius: 25px;
+            background: #4483d5;
+            padding: 20px;
+        }
+
+        #setD {
+            text-align: right;
+        }
+
+        #setD1 {
+            text-align: right;
+        }
     </style>
 
 </head>
@@ -68,79 +82,79 @@
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
-    <br>
-    <hr>
-    <br>
-    <br>
-    <br>
 
     <br>
 
-    <div class="border">
-        <div>
-            <form method="post">
-                <p style="font-size:larger"><b>Change Name:</b>
-                    <input type="text" id="name" name="name" value="" placeholder="Type Here"
-                        pattern="[A-Za-z]{2,20}" />
-                    <input id="submit" name="submit" value="Save" type="submit" />
-                </p>
-            </form>
+    <br>
+    <form id="profile-information">
+
+        <div class="border">
+            <div>
+                <form method="post">
+                    <p style="font-size:larger"><b>Change Name:</b>
+                        <input type="text" id="names" name="name" value="" placeholder="Type Here"
+                            pattern="[A-Za-z]{2,20}" class="form-control" />
+
+                    </p>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <div class="border">
-        <div>
-            <form method="post">
-                <p style="font-size:larger"><b>Change Email:</b>
-                    <input type="text" name="name" value="" placeholder="Type Here" pattern="[A-Za-z]{2,20}" />
-                    <input name="submit" value="Save" type="submit" />
-                </p>
-            </form>
+        <div class="border">
+            <div>
+                <form method="post">
+                    <p style="font-size:larger"><b>Change Email:</b>
+                        <input type="text" id="email" name="name" value="" placeholder="Type Here" pattern="[A-Za-z]{2,20}"
+                            class="form-control" />
+
+                    </p>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <div class="border">
-        <div>
-            <form method="post">
-                <p style="font-size:larger"><b>Change Phone Number:</b>
-                    <input type="text" name="name" value="" placeholder="Type Here" pattern="[A-Za-z]{2,20}" />
-                    <input name="submit" value="Save" type="submit" />
-                </p>
-            </form>
+        <div class="border">
+            <div>
+                <form method="post">
+                    <p style="font-size:larger"><b>Change Phone Number:</b>
+                        <input type="text" id="phone" name="name" value="" placeholder="Type Here" pattern="[A-Za-z]{2,20}"
+                            class="form-control" />
+
+                    </p>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <div class="border">
-        <fieldset id="setD">
-            <p style="font-size:larger"><b>Change Gender:</b>
-                <input id="setD_male" type="radio" name="setD_gender">
+        <div class="border">
+            <fieldset id="setD">
+                <p style="font-size:larger"><b>Change Gender:</b></p>
+                <input id="setD_male" type="radio" name="setD_gender" value="">
                 <label for="setD_male">Male</label>
-                <input id="setD_female" type="radio" name="setD_gender">
+                <input id="setD_female" type="radio" name="setD_gender" value="">
                 <label for="setD_female">Female</label>
-                <input name="submit" value="Save" type="submit" />
-            </p>
-        </fieldset>
 
-    </div>
+            </fieldset>
 
-    <div class="border">
-        <fieldset id="setD1">
-            <p style="font-size:larger"><b>Change Account Status:</b>
-                <input id="setD_online" type="radio" name="setD_status">
+        </div>
+
+        <div class="border">
+            <fieldset id="setD1">
+                <p style="font-size:larger"><b>Change Account Status:</b></p>
+                <input id="setD_online" type="radio" name="setD_status" value="">
                 <label for="setD_online">Online</label>
-                <input id="setD_offline" type="radio" name="setD_status">
+                <input id="setD_offline" type="radio" name="setD_status" value="">
                 <label for="setD_offline">Offline</label>
-                <input id="setD_doNotDisturb" type="radio" name="setD_status">
+                <input id="setD_doNotDisturb" type="radio" name="setD_status" value="">
                 <label for="setD_doNotDisturb">Do not Disturb</label>
-                <input name="submit" value="Save" type="submit" />
-            </p>
-        </fieldset>
 
-    </div>
+            </fieldset>
 
-    <div class="border">
-        <p><input name="submit" value="Reset to Default" type="submit" /></p>
-    </div>
+        </div>
+
+        <div class="button">
+            <button class="btn-lg btn-dark form-control" type="submit" id="submit1">Save Changes</button>
+        </div>
+
+    </form>
 
 
     <!-- our own footer goes here-->
@@ -152,7 +166,9 @@
     <script src="/scripts/firebaseAPI_TEAM22.js"></script>
     <script src="/scripts/skeleton.js"></script>
     <!-- <script src="/scripts/main.js"></script> -->
-    <script src="/scripts/EventListeners/navigationHeader.js" ></script>
+    <script src="/scripts/EventListeners/personal.js"></script>
+    <script src="/scripts/EventListeners/navigationHeader.js"></script>
+
 
 
     <!-- <script src="./scripts/script.js"></script> -->
