@@ -10,17 +10,17 @@ function multipleSelect() {
 
 multipleSelect();
 
-function closeSelect() {
-  const closebutton = document.getElementById("close");
+// function closeSelect() {
+//   const closebutton = document.getElementById("close");
 
-  function closeSelect() {
-    window.history.back();
-  }
+//   function closeSelect() {
+//     window.history.back();
+//   }
 
-  closebutton.addEventListener("click", closeSelect);
-}
+//   closebutton.addEventListener("click", closeSelect);
+// }
 
-closeSelect();
+// closeSelect();
 
 function populateCardsDynamically(collection) {
   let cardTemplate = document.getElementById("contactCardTemplate");
