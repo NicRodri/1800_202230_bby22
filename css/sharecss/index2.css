@@ -29,18 +29,18 @@ body {
   grid-row: 1 / span 1;
   /* background-color: rgb(227, 35, 35); */
   display: grid;
-  grid-template-columns: 30% 40% 30%;
+  grid-template-columns: 50% 50%;
 }
-#close {
+/* #close {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+} */
+#select {
   grid-column: 1 / span 1;
   grid-row: 1 / span 1;
 }
-#select {
-  grid-column: 2 / span 1;
-  grid-row: 1 / span 1;
-}
 #multiple {
-  grid-column: 3 / span 1;
+  grid-column: 2 / span 1;
   grid-row: 1 / span 1;
 }
 .follow {
