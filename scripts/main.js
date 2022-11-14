@@ -20,36 +20,20 @@ function insertName() {
 }
 insertName(); //run the function
 
-function readQuote() {
-  db.collection("quotes").doc("Tuesday")                                                      //name of the collection and documents should matach excatly with what you have in Firestore
-    .onSnapshot(somedoc => {                                                               //arrow notation
-      console.log("current document data: " + somedoc.data());                          //.data() returns data object
-      document.getElementById("quote-goes-here").innerHTML = somedoc.data().quote;      //using javascript to display the data on the right place
+// function readQuote() {
+//   db.collection("quotes").doc("Tuesday")                                                      //name of the collection and documents should matach excatly with what you have in Firestore
+//     .onSnapshot(somedoc => {                                                               //arrow notation
+//       console.log("current document data: " + somedoc.data());                          //.data() returns data object
+//       document.getElementById("quote-goes-here").innerHTML = somedoc.data().quote;      //using javascript to display the data on the right place
 
-      //Here are other ways to access key:value data fields
-      //$('#quote-goes-here').text(tuesdayDoc.data().quote);                                       //using jquery object dot notation
-      //$("#quote-goes-here").text(tuesdayDoc.data()["quote"]);                                    //using json object indexing
-    })
-}
-readQuote();        //calling the function
-
-// function getTime() {
-//   const myDate = new Date();
-//   var hour = myDate.getHours();
-//   var minute = myDate.getMinutes();
-//   let time = hour + ":" + minute;
-//   // Will remove the milliseconds at a later time
-//   return time;
+//       //Here are other ways to access key:value data fields
+//       //$('#quote-goes-here').text(tuesdayDoc.data().quote);                                       //using jquery object dot notation
+//       //$("#quote-goes-here").text(tuesdayDoc.data()["quote"]);                                    //using json object indexing
+//     })
 // }
+// readQuote();        //calling the function
 
 
-// function getDate() {
-//   const obj = new Date();
-//   date = obj.toDateString();
-//   // Still need to add comma after day
-//   date = date.replace(/(?<=\d) /, ", ");
-//   return date;
-// }
 function displayCardTasks(collection) {
   let cardTemplate = document.getElementById("taskCardTemplate");
 
@@ -145,53 +129,15 @@ function taskDetails() {
 
   const tasksNum = document.getElementsByClassName("tTitle");
   for (let i = 0; i < tasksNum.length; i++) {
-    var info;
     console.log(tasksNum[i].id);
     tasksNum[i].addEventListener("click", function (e) {
     localStorage.setItem("Task", tasksNum[i].innerText);
     window.location.href = "/html/Tasks_And_Activities/taskDetails.html?" + tasksNum[i].innerText;
-
-      // firebase.auth().onAuthStateChanged((user) => {
-      //   if (user) {
-      //     var tasks = db.collection("users").doc(user.uid).collection("tasks");
-
-
-      //     var query = tasks.where("name", "==", tasksNum[i].innerText);
-      //     query
-      //     .get()
-      //     .then((querySnapshot) => {
-      //         querySnapshot.forEach((doc) => {
-      //             // doc.data() is never undefined for query doc snapshots
-      //             // console.log(doc.id, " => ", doc.data());
-      //             info=doc.data();
-      //             console.log(info);
-      //             localStorage.setItem("Task", tasksNum[i].innerText);
-      //         });
-      //     })
-      //     .catch((error) => {
-      //         console.log("Error getting documents: ", error);
-      //     });
-      //     // ...
-      //   } else {
-      //     // User is signed out
-      //     // ...
-      //   }
-      // });
-
     });
   }
 }
 // Doesnt run function till after information loads
 setTimeout(taskDetails, 1000);
-
-function taskModal() {
-
-}
-const div = document.createElement("p");
-
-
-
-
 
 
 function activityDetails() {
@@ -208,45 +154,3 @@ function activityDetails() {
 
 // Doesnt run function till after information loads
 setTimeout(activityDetails, 1000);
-
-
-
-
-
-
-  // const tasksWithSameClass = document.getElementsByClassName("tTitle");
-  // let specificTasks = [];
-  // console.log(tasksWithSameClass);
-  // console.log("length" + tasksWithSameClass.length);
-  // let taskArr = [];
-  // let modalArr = [];
-  // for (let i = 0; i< tasksWithSameClass.length; i++){
-
-  //   taskArr.push(document.createElement("div"));
-  //   modalArr.push(document.getElementById("test123"));
-  //   specificTasks.push(document.getElementById("tTitle" + (i + 1)));
-  // }
-  // console.log(specificTasks[0].id);
-  // for (let j = 0; j < tasksWithSameClass.length; j++) {
-  //   tasksWithSameClass[j].addEventListener("click", function (e) {
-  //     modalArr[j].id = "test"+ j;
-  //   });
-  // }
-  // let count = 0;
-  // specificTasks.forEach((task) =>{
-  //   task.addEventListener("click", function(e){
-  //     modalArr.forEach((modal) => {
-  //       console.log(modal.id);
-  //       if(modal.id == "test" + count){
-  //         const newContent = document.createTextNode("Hi there");
-  //         modal.appendChild(newContent);
-  //         if (modal.childNodes.length <= 3) {
-  //           modal.appendChild(taskArr[1]);
-  //         }
-  //       } else {
-  //         const newContent = document.createTextNode("Hi there");
-  //         modal.appendChild(newContent);
-  //       }
-  //     });
-  //   });
-  // });
