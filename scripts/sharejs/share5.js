@@ -14,7 +14,7 @@ function closeSelect() {
   const closebutton = document.getElementById("close");
 
   function closeSelect() {
-    window.location.href = "/html/share/index0.html";
+    window.history.back();
   }
 
   closebutton.addEventListener("click", closeSelect);
