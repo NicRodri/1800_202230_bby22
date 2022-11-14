@@ -48,17 +48,20 @@ function displayCardTasks(collection) {
         .then(snap => {
           var i = 1;  //if you want to use commented out section
           snap.forEach(doc => { //iterate thru each doc
+            var date = doc.data().date;
             var title = doc.data().name;        // get value of the "name" key
             var timeStart = doc.data().timeFrom;
             var timeEnd = doc.data().timeTo;
             let newcard = cardTemplate.content.cloneNode(true);
 
             //update title and text and image
+            newcard.querySelector('.date').innerHTML = "Date: " + date;
             newcard.querySelector('.card-title').innerHTML = title;
-            newcard.querySelector('.timeStart').innerHTML = timeStart + " - ";
+            newcard.querySelector('.timeStart').innerHTML = "Time: " +timeStart + " - ";
             newcard.querySelector('.timeEnd').innerHTML = timeEnd;
 
             //give unique ids to all elements for future use
+            newcard.querySelector('.date').setAttribute("id", "tdate" + i);
             newcard.querySelector('.card-title').setAttribute("id", "tTitle" + i);
             newcard.querySelector('.card-title').setAttribute("class", "tTitle" + " btn btn-primary card-href card-title d-block");
             newcard.querySelector('.timeStart').setAttribute("id", "tStart" + i);
@@ -95,15 +98,18 @@ function displayCardActivities(collection) {
           var i = 1;  //if you want to use commented out section
           snap.forEach(doc => { //iterate thru each doc
             var title = doc.data().name;
+            var date = doc.data().dueDate;
             var timeEstimated = doc.data().timeEstimated;
             var timeEstimatedType = doc.data().timeType;
             let newcard = cardTemplate.content.cloneNode(true);
 
             //update title and text and image
+            newcard.querySelector(".date").innerHTML = "Due: " + date;
             newcard.querySelector(".card-title").innerHTML = title;
             newcard.querySelector(".estimatedTime").innerHTML = "Estimated: " + timeEstimated + " " + timeEstimatedType;
 
             //give unique ids to all elements for future use
+            newcard.querySelector('.date').setAttribute("id", "adate" + i);
             newcard.querySelector(".card-title").setAttribute("id", "aTitle" + i);
             newcard.querySelector('.card-title').setAttribute("class", "aTitle" + " btn btn-primary card-href card-title d-block");
             newcard.querySelector(".estimatedTime").setAttribute("id", "estimatedTime" + i);
