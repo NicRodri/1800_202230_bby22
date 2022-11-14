@@ -142,7 +142,7 @@ function taskDetails() {
   }
 }
 // Doesnt run function till after information loads
-setTimeout(taskDetails, 1000);
+setTimeout(taskDetails, 1500);
 
 
 function activityDetails() {
@@ -156,4 +156,4 @@ function activityDetails() {
 }
 
 // Doesnt run function till after information loads
-setTimeout(activityDetails, 1000);
+setTimeout(activityDetails, 1500);

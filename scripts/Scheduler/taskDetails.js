@@ -53,4 +53,4 @@ function share(){
   });
 }
 // function is delayed to make sure content loads first
-setTimeout(share, 1000);
+setTimeout(share, 1500);
