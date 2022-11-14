@@ -129,7 +129,6 @@ function taskDetails() {
 
   const tasksNum = document.getElementsByClassName("tTitle");
   for (let i = 0; i < tasksNum.length; i++) {
-    console.log(tasksNum[i].id);
     tasksNum[i].addEventListener("click", function (e) {
     localStorage.setItem("Task", tasksNum[i].innerText);
     window.location.href = "/html/Tasks_And_Activities/taskDetails.html?" + tasksNum[i].innerText;
@@ -141,13 +140,11 @@ setTimeout(taskDetails, 1000);
 
 
 function activityDetails() {
-  const activities = document.getElementsByClassName("aTitle");
-  console.log(activities);
-  console.log("length" + activities.length);
-  for (let j = 0; j < activities.length; j++) {
-    activities[j].addEventListener("click", function (e) {
-      console.log("clicked");
-
+  const activitiesNum = document.getElementsByClassName("aTitle");
+  for (let i = 0; i < activitiesNum.length; i++) {
+    activitiesNum[i].addEventListener("click", function (e) {
+    localStorage.setItem("Activity", activitiesNum[i].innerText);
+    window.location.href = "/html/Tasks_And_Activities/activityDetails.html?" + activitiesNum[i].innerText;
     });
   }
 }

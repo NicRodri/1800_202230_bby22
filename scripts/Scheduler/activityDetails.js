@@ -1,5 +1,5 @@
 function displayCardTasks(collection) {
-    let cardTemplate = document.getElementById("taskCardTemplate");
+    let cardTemplate = document.getElementById("activityDetails");
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         // User is signed in, see docs for a list of available properties
@@ -12,25 +12,30 @@ function displayCardTasks(collection) {
             snap.forEach(doc => { //iterate thru each doc
               var dataName = doc.data().name; 
               var dataDetails = doc.data().details; 
-              var dataDate = doc.data().date; 
-              var dataCommute = doc.data().tasksCommute; 
-              var timeStart = doc.data().timeFrom;
-              var timeEnd = doc.data().timeTo;
+              var dataDate = doc.data().dueDate; 
+              var timeDue = doc.data().timeDue;
+              var timeEstimated = doc.data().timeEstimated;
+              var timeType = doc.data().timeType;
+              var urgencyFactor = doc.data().urgencyFactor;
+              var dataCommute = doc.data().Commute; 
+
+    
+
               let newcard = cardTemplate.content.cloneNode(true);
   
               //update title and text and image
               newcard.querySelector('.name').innerHTML = dataName;
               newcard.querySelector('.details').innerHTML =  dataDetails;
-              newcard.querySelector('.date').innerHTML = "Task on: " + dataDate;
-              newcard.querySelector('.timeStart').innerHTML = timeStart + " - ";
-              newcard.querySelector('.timeEnd').innerHTML = timeEnd;
-              newcard.querySelector('.commute').innerHTML = "Commute Time: " + dataCommute + " mins";
+              newcard.querySelector('.date').innerHTML = "Due on: " + dataDate;
+              newcard.querySelector('.timeDue').innerHTML ="At: "+ timeDue;
+              newcard.querySelector('.timeEstimated').innerHTML = " Estimated Time: " + timeEstimated + " " + timeType;
+              newcard.querySelector('.commute').innerHTML = "Commute Time: " + dataCommute;
+              newcard.querySelector('.urgencyFactor').innerHTML = "Urgency: " + urgencyFactor;
   
               //attach to gallery
               if(dataName == localStorage.getItem("Activity")){
                 document.getElementById(collection + "-go-here").appendChild(newcard);
               }
-  
               i++;   //if you want to use commented out section
             })
           })
@@ -46,9 +51,10 @@ function displayCardTasks(collection) {
   displayCardTasks("activities");
   
   function share(){
+    const activity = document.querySelector(".name");
     const share = document.getElementById("share");
     share.addEventListener("click", function(e){
-      window.location.href = "/html/share/index1.html";
+      window.location.href = "/html/share/index1.html?" + activity.innerText + "$activities$";
     });
   }
   // function is delayed to make sure content loads first
