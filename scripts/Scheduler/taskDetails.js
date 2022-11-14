@@ -49,7 +49,7 @@ function share(){
   const task = document.querySelector(".name");
   const share = document.getElementById("share");
   share.addEventListener("click", function(e){
-    window.location.href = "/html/share/index1.html?" + task.innerText + "$tasks$";
+    window.location.href = "/html/share/index5.html?" + task.innerText + "$tasks$";
   });
 }
 // function is delayed to make sure content loads first

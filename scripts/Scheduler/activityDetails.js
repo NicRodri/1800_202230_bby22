@@ -18,9 +18,6 @@ function displayCardTasks(collection) {
               var timeType = doc.data().timeType;
               var urgencyFactor = doc.data().urgencyFactor;
               var dataCommute = doc.data().Commute; 
-
-    
-
               let newcard = cardTemplate.content.cloneNode(true);
   
               //update title and text and image
@@ -54,7 +51,7 @@ function displayCardTasks(collection) {
     const activity = document.querySelector(".name");
     const share = document.getElementById("share");
     share.addEventListener("click", function(e){
-      window.location.href = "/html/share/index1.html?" + activity.innerText + "$activities$";
+      window.location.href = "/html/share/index5.html?" + activity.innerText + "$activities$";
     });
   }
   // function is delayed to make sure content loads first
