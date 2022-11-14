@@ -1,3 +1,4 @@
+
 function insertName() {
   firebase.auth().onAuthStateChanged(user => {
     // Check if a user is signed in:
@@ -32,62 +33,23 @@ function readQuote() {
 }
 readQuote();        //calling the function
 
-function getTime() {
-  const myDate = new Date();
-  var hour = myDate.getHours();
-  var minute = myDate.getMinutes();
-  let time = hour + ":" + minute;
-  // Will remove the milliseconds at a later time
-  return time;
-}
-
-
-function getDate() {
-  const obj = new Date();
-  date = obj.toDateString();
-  // Still need to add comma after day
-  date = date.replace(/(?<=\d) /, ", ");
-  return date;
-}
-
-
-// function addTask() {
-//   //define a variable for the collection you want to create in Firestore to populate data
-//   var tasksRef = db.collection("tasks");
-
-//   tasksRef.add({
-//     code: "Task1",
-//     taskName: "Comp1800 lecture",    //replace with your own city?
-//     taskDetails: "projects lectures with carly",
-//     date: getDate(),
-//     timeStart: getTime(),
-//     timeEnd: getTime(),
-//     repeats: "Weekly",
-//     commutingTime: "0",
-//     last_updated: firebase.firestore.FieldValue.serverTimestamp()
-//   });
+// function getTime() {
+//   const myDate = new Date();
+//   var hour = myDate.getHours();
+//   var minute = myDate.getMinutes();
+//   let time = hour + ":" + minute;
+//   // Will remove the milliseconds at a later time
+//   return time;
 // }
 
-// //addTask(); // only use once to setup.
 
-// function addActivity() {
-//   //define a variable for the collection you want to create in Firestore to populate data
-//   var activitiesRef = db.collection("activities");
-
-//   activitiesRef.add({
-//     code: "Activity1",
-//     activityName: "1510 assignment2",    //replace with your own city?
-//     activityDetails: "Assignment 2 consisting of 4 questions",
-//     estimatedTime: 10,
-//     dueDate: getDate(),
-//     commutingTime: 0,
-//     urgencyFactor: "Weekly",
-//     last_updated: firebase.firestore.FieldValue.serverTimestamp()
-//   });
+// function getDate() {
+//   const obj = new Date();
+//   date = obj.toDateString();
+//   // Still need to add comma after day
+//   date = date.replace(/(?<=\d) /, ", ");
+//   return date;
 // }
-
-// //addActivity(); // only use once to setup.
-
 function displayCardTasks(collection) {
   let cardTemplate = document.getElementById("taskCardTemplate");
 
@@ -113,13 +75,15 @@ function displayCardTasks(collection) {
             newcard.querySelector('.timeEnd').innerHTML = timeEnd;
 
             //give unique ids to all elements for future use
-            newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
+            newcard.querySelector('.card-title').setAttribute("id", "tTitle" + i);
+            newcard.querySelector('.card-title').setAttribute("class", "tTitle" + " btn btn-primary card-href card-title d-block");
             newcard.querySelector('.timeStart').setAttribute("id", "tStart" + i);
             newcard.querySelector('.timeEnd').setAttribute("id", "tEnd" + i);
 
             //attach to gallery
             document.getElementById(collection + "-go-here").appendChild(newcard);
             i++;   //if you want to use commented out section
+
           })
         })
       // ...
@@ -156,7 +120,8 @@ function displayCardActivities(collection) {
             newcard.querySelector(".estimatedTime").innerHTML = "Estimated: " + timeEstimated + " " + timeEstimatedType;
 
             //give unique ids to all elements for future use
-            newcard.querySelector(".card-title").setAttribute("id", "ctitle" + i);
+            newcard.querySelector(".card-title").setAttribute("id", "aTitle" + i);
+            newcard.querySelector('.card-title').setAttribute("class", "aTitle" + " btn btn-primary card-href card-title d-block");
             newcard.querySelector(".estimatedTime").setAttribute("id", "estimatedTime" + i);
 
             //attach to gallery
@@ -164,6 +129,7 @@ function displayCardActivities(collection) {
             i++;   //if you want to use commented out section
           })
         })
+
       // ...
     } else {
       // User is signed out
@@ -175,4 +141,112 @@ function displayCardActivities(collection) {
 displayCardActivities("activities");
 
 
+function taskDetails() {
 
+  const tasksNum = document.getElementsByClassName("tTitle");
+  for (let i = 0; i < tasksNum.length; i++) {
+    var info;
+    console.log(tasksNum[i].id);
+    tasksNum[i].addEventListener("click", function (e) {
+    localStorage.setItem("Task", tasksNum[i].innerText);
+    window.location.href = "/html/Tasks_And_Activities/taskDetails.html?" + tasksNum[i].innerText;
+
+      // firebase.auth().onAuthStateChanged((user) => {
+      //   if (user) {
+      //     var tasks = db.collection("users").doc(user.uid).collection("tasks");
+
+
+      //     var query = tasks.where("name", "==", tasksNum[i].innerText);
+      //     query
+      //     .get()
+      //     .then((querySnapshot) => {
+      //         querySnapshot.forEach((doc) => {
+      //             // doc.data() is never undefined for query doc snapshots
+      //             // console.log(doc.id, " => ", doc.data());
+      //             info=doc.data();
+      //             console.log(info);
+      //             localStorage.setItem("Task", tasksNum[i].innerText);
+      //         });
+      //     })
+      //     .catch((error) => {
+      //         console.log("Error getting documents: ", error);
+      //     });
+      //     // ...
+      //   } else {
+      //     // User is signed out
+      //     // ...
+      //   }
+      // });
+
+    });
+  }
+}
+// Doesnt run function till after information loads
+setTimeout(taskDetails, 1000);
+
+function taskModal() {
+
+}
+const div = document.createElement("p");
+
+
+
+
+
+
+function activityDetails() {
+  const activities = document.getElementsByClassName("aTitle");
+  console.log(activities);
+  console.log("length" + activities.length);
+  for (let j = 0; j < activities.length; j++) {
+    activities[j].addEventListener("click", function (e) {
+      console.log("clicked");
+
+    });
+  }
+}
+
+// Doesnt run function till after information loads
+setTimeout(activityDetails, 1000);
+
+
+
+
+
+
+  // const tasksWithSameClass = document.getElementsByClassName("tTitle");
+  // let specificTasks = [];
+  // console.log(tasksWithSameClass);
+  // console.log("length" + tasksWithSameClass.length);
+  // let taskArr = [];
+  // let modalArr = [];
+  // for (let i = 0; i< tasksWithSameClass.length; i++){
+
+  //   taskArr.push(document.createElement("div"));
+  //   modalArr.push(document.getElementById("test123"));
+  //   specificTasks.push(document.getElementById("tTitle" + (i + 1)));
+  // }
+  // console.log(specificTasks[0].id);
+  // for (let j = 0; j < tasksWithSameClass.length; j++) {
+  //   tasksWithSameClass[j].addEventListener("click", function (e) {
+  //     modalArr[j].id = "test"+ j;
+  //   });
+  // }
+  // let count = 0;
+  // specificTasks.forEach((task) =>{
+  //   task.addEventListener("click", function(e){
+  //     modalArr.forEach((modal) => {
+  //       console.log(modal.id);
+  //       if(modal.id == "test" + count){
+  //         const newContent = document.createTextNode("Hi there");
+  //         modal.appendChild(newContent);
+  //         if (modal.childNodes.length <= 3) {
+  //           modal.appendChild(taskArr[1]);
+  //         }
+  //       } else {
+  //         const newContent = document.createTextNode("Hi there");
+  //         modal.appendChild(newContent);
+  //       }
+  //     });
+  //   });
+  // });
