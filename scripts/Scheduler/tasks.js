@@ -20,8 +20,8 @@ tasksSubmit.addEventListener('click', (e) => {
       var uid = user.uid;
 
       console.log(uid);
-
-      db.collection("users").doc(uid).collection("tasks").doc().set({
+      let docID = db.collection("users").doc(uid).collection("tasks").doc();
+        docID.set({
         // Can be changed for different forms
         name: tasksName.value,
         details: tasksDetails.value,
@@ -30,6 +30,7 @@ tasksSubmit.addEventListener('click', (e) => {
         timeTo: tasksTimeTo.value,
         tasksDoesNotRepeat: tasksDoesNotRepeat.value,
         tasksCommute: tasksCommute.value,
+        ID_Name: docID,
       })
         .then(() => {
           tasksInfo.reset();
