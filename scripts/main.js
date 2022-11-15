@@ -100,12 +100,18 @@ function displayCardActivities(collection) {
             //update title and text and image
             newcard.querySelector(".date").innerHTML = "Due: " + date;
             newcard.querySelector(".card-title").innerHTML = title;
-            newcard.querySelector(".estimatedTime").innerHTML = "Estimated: " + timeEstimated + " " + timeEstimatedType;
+            // newcard.querySelector('.estimatedTime').innerHTML = " Estimated Time: ";
+            if (Number(timeEstimated) >0){
+              newcard.querySelector('.estimatedTime').innerHTML = " Estimated Time: " + timeEstimated + " " + timeEstimatedType;
+            } else {
+              newcard.querySelector('.estimatedTime').innerHTML = " Estimated Time: " + "0" + " " + timeEstimatedType;
+            }
 
             //give unique ids to all elements for future use
             newcard.querySelector('.date').setAttribute("id", "adate" + i);
             newcard.querySelector(".card-title").setAttribute("id", "aTitle" + i);
             newcard.querySelector('.card-title').setAttribute("class", "aTitle" + " btn btn-primary card-href card-title d-block");
+
             newcard.querySelector(".estimatedTime").setAttribute("id", "estimatedTime" + i);
 
             //attach to gallery

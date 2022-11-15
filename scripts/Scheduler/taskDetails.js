@@ -10,29 +10,38 @@ function displayCardTasks(collection) {
         .then(snap => {
           var i = 1;  //if you want to use commented out section
           snap.forEach(doc => { //iterate thru each doc
-            var dataName = doc.data().name; 
-            var dataDetails = doc.data().details; 
-            var dataDate = doc.data().date; 
-            var dataCommute = doc.data().tasksCommute; 
-            var timeStart = doc.data().timeFrom;
-            var timeEnd = doc.data().timeTo;
-            let newcard = cardTemplate.content.cloneNode(true);
+            if (doc.data().ID_Name == localStorage.getItem("Task")) {
+              var dataName = doc.data().name;
+              var dataDetails = doc.data().details;
+              var dataDate = doc.data().date;
+              var dataCommute = doc.data().tasksCommute;
+              var timeStart = doc.data().timeFrom;
+              var timeEnd = doc.data().timeTo;
+              let newcard = cardTemplate.content.cloneNode(true);
 
-            //update title and text and image
-            newcard.querySelector('.name').innerHTML = dataName;
-            newcard.querySelector('.details').innerHTML =  dataDetails;
-            newcard.querySelector('.date').innerHTML = "Task on: " + dataDate;
-            newcard.querySelector('.timeStart').innerHTML = timeStart + " - ";
-            newcard.querySelector('.timeEnd').innerHTML = timeEnd;
-            newcard.querySelector('.commute').innerHTML = "Commute Time: " + dataCommute + " mins";
+              //update title and text and image
+              newcard.querySelector('.name').innerHTML = dataName;
+              newcard.querySelector('.details').innerHTML = dataDetails;
+              newcard.querySelector('.date').innerHTML = "Task on: " + dataDate;
+              newcard.querySelector('.timeStart').innerHTML = timeStart + " - ";
+              newcard.querySelector('.timeEnd').innerHTML = timeEnd;
 
-            //attach to gallery
-            if(doc.data().ID_Name == localStorage.getItem("Task")){
+
+
+              //attach to gallery
+
+              if (Number(dataCommute) > 0) {
+                console.log(Number(dataCommute));
+                newcard.querySelector('.commute').innerHTML = "Commute Time: " + dataCommute + " mins";
+              } else {
+                newcard.querySelector('.commute').innerHTML = "Commute Time: " + "0" + " mins";
+              }
               document.getElementById(collection + "-go-here").appendChild(newcard);
             }
 
             i++;   //if you want to use commented out section
           })
+          share();
         })
       // ...
     } else {
@@ -45,12 +54,12 @@ function displayCardTasks(collection) {
 
 displayCardTasks("tasks");
 
-function share(){
+function share() {
   const task = document.querySelector(".name");
   const share = document.getElementById("share");
-  share.addEventListener("click", function(e){
+  share.addEventListener("click", function (e) {
     window.location.href = "/html/share/index5.html?" + task.innerText + "$tasks$";
   });
 }
 // function is delayed to make sure content loads first
-setTimeout(share, 1500);
+// setTimeout(share, 1500);
