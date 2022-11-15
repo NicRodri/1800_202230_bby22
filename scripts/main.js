@@ -33,7 +33,9 @@ function displayCardTasks(collection) {
       var uid = user.uid;
       console.log(uid);
       var ID = [];
-      db.collection("users").doc(uid).collection(collection).get()
+      db.collection("users").doc(uid).collection(collection)
+      .orderBy("date")
+      .get()
         .then(snap => {
           var i = 1;  //if you want to use commented out section
           snap.forEach(doc => { //iterate thru each doc
@@ -86,10 +88,12 @@ function displayCardActivities(collection) {
       var uid = user.uid;
       console.log(uid);
       var ID = [];
-      db.collection("users").doc(uid).collection(collection).get()
-        .then(snap => {
+      db.collection("users").doc(uid).collection(collection)
+      .orderBy("dueDate")
+      .get()
+        .then(allActivities => {
           var i = 1;  //if you want to use commented out section
-          snap.forEach(doc => { //iterate thru each doc
+          allActivities.forEach(doc => { //iterate thru each doc
             ID.push(doc.data().ID_Name);
             var title = doc.data().name;
             var date = doc.data().dueDate;
