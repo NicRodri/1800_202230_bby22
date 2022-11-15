@@ -27,7 +27,7 @@ function displayCardTasks(collection) {
             newcard.querySelector('.commute').innerHTML = "Commute Time: " + dataCommute + " mins";
 
             //attach to gallery
-            if(dataName == localStorage.getItem("Task")){
+            if(doc.data().ID_Name == localStorage.getItem("Task")){
               document.getElementById(collection + "-go-here").appendChild(newcard);
             }
 

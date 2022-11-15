@@ -22,8 +22,8 @@ activitySubmit.addEventListener('click', (e) => {
       var uid = user.uid;
 
       console.log(uid);
-
-      db.collection("users").doc(uid).collection("activities").doc().set({
+      let docID = db.collection("users").doc(uid).collection("activities").doc();
+      docID.set({
         name: activityName.value,
         details: activityDetails.value,
         timeEstimated: estimatedTime.value,
@@ -32,6 +32,7 @@ activitySubmit.addEventListener('click', (e) => {
         timeDue: activityTime.value,
         commute: activityCommute.value,
         urgencyFactor: urgencyFactor.value,
+        ID_Name: docID.path,
       })
         .then(() => {
           activityInfo.reset();

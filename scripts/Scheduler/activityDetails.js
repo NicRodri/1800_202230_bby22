@@ -30,7 +30,7 @@ function displayCardTasks(collection) {
               newcard.querySelector('.urgencyFactor').innerHTML = "Urgency: " + urgencyFactor;
   
               //attach to gallery
-              if(dataName == localStorage.getItem("Activity")){
+              if(doc.data().ID_Name  == localStorage.getItem("Activity")){
                 document.getElementById(collection + "-go-here").appendChild(newcard);
               }
               i++;   //if you want to use commented out section

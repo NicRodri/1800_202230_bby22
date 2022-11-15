@@ -32,10 +32,12 @@ function displayCardTasks(collection) {
       // https://firebase.google.com/docs/reference/js/firebase.User
       var uid = user.uid;
       console.log(uid);
+      var ID = [];
       db.collection("users").doc(uid).collection(collection).get()
         .then(snap => {
           var i = 1;  //if you want to use commented out section
           snap.forEach(doc => { //iterate thru each doc
+            ID.push(doc.data().ID_Name);
             var date = doc.data().date;
             var title = doc.data().name;        // get value of the "name" key
             var timeStart = doc.data().timeFrom;
@@ -60,7 +62,7 @@ function displayCardTasks(collection) {
             i++;   //if you want to use commented out section
 
           })
-          taskDetails();
+          taskDetails(ID);
 
         })
       // ...
@@ -83,10 +85,12 @@ function displayCardActivities(collection) {
       // https://firebase.google.com/docs/reference/js/firebase.User
       var uid = user.uid;
       console.log(uid);
+      var ID = [];
       db.collection("users").doc(uid).collection(collection).get()
         .then(snap => {
           var i = 1;  //if you want to use commented out section
           snap.forEach(doc => { //iterate thru each doc
+            ID.push(doc.data().ID_Name);
             var title = doc.data().name;
             var date = doc.data().dueDate;
             var timeEstimated = doc.data().timeEstimated;
@@ -108,7 +112,7 @@ function displayCardActivities(collection) {
             document.getElementById(collection + "-go-here").appendChild(newcard);
             i++;   //if you want to use commented out section
           })
-          activityDetails();
+          activityDetails(ID);
 
         })
       // ...
@@ -122,12 +126,12 @@ function displayCardActivities(collection) {
 displayCardActivities("activities");
 
 
-function taskDetails() {
-
+function taskDetails(ID) {
+  console.log(ID);
   const tasksNum = document.getElementsByClassName("tTitle");
   for (let i = 0; i < tasksNum.length; i++) {
     tasksNum[i].addEventListener("click", function (e) {
-    localStorage.setItem("Task", tasksNum[i].innerText);
+    localStorage.setItem("Task", ID[i]);
     window.location.href = "/html/Tasks_And_Activities/taskDetails.html?" + tasksNum[i].innerText;
     });
   }
@@ -136,11 +140,11 @@ function taskDetails() {
 // setTimeout(taskDetails, 1500);
 
 
-function activityDetails() {
+function activityDetails(ID) {
   const activitiesNum = document.getElementsByClassName("aTitle");
   for (let i = 0; i < activitiesNum.length; i++) {
     activitiesNum[i].addEventListener("click", function (e) {
-    localStorage.setItem("Activity", activitiesNum[i].innerText);
+    localStorage.setItem("Activity", ID[i]);
     window.location.href = "/html/Tasks_And_Activities/activityDetails.html?" + activitiesNum[i].innerText;
     });
   }
