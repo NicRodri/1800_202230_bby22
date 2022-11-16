@@ -103,10 +103,10 @@ function displayContactProfilePic() {
   console.log("hi");
   firebase.auth().onAuthStateChanged(function (user) {      //get user object
     var uid = user.uid;
-
-    db.collection("users").doc(uid).collection("contacts").doc() //use user's uid
+    db.collection("users").doc(uid).collection("contacts").doc()
+    //use user's uid
                                                             
-          .get()                                            //READ the doc
+          .set()                                            //READ the doc
           .then(function (doc) {
               var picUrl = doc.data().profilePic;           //extract pic url
 
