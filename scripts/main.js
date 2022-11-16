@@ -34,7 +34,7 @@ function displayCardTasks(collection) {
       console.log(uid);
       var ID = [];
       db.collection("users").doc(uid).collection(collection)
-      .orderBy("date")
+      .orderBy("date").orderBy("timeFrom")
       .get()
         .then(snap => {
           var i = 1;  //if you want to use commented out section
