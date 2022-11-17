@@ -36,15 +36,15 @@ function populateCardsDynamically(collection) {
             var lastName = doc.data().lastName;
             var emailAddress = doc.data().emailAddress;
             var phoneNumber = doc.data().phoneNumber;
-            let picUrl = userDoc.data().profilePic; 
+            // let picUrl = userDoc.data().profilePic; 
             let testContactCard = contactCardTemplate.content.cloneNode(true);
-
+            contactID = doc.id;
             testContactCard.querySelector('.card-title1').innerHTML = firstName;     //equiv getElementByClassName
             testContactCard.querySelector('.card-title2').innerHTML = lastName;
             testContactCard.querySelector('.card-title3').innerHTML = emailAddress;
             testContactCard.querySelector('.card-title4').innerHTML = phoneNumber;  //equiv getElementByClassName
             // $("#mypic-goes-here").attr("src", picUrl);
-            testContactCard.querySelector('.card-title0').src = `./images/${contactID}.jpg`;   //equiv getElementByTagName
+            testContactCard.querySelector('.card-title0').innerHTML = `./images/${contactID}.jpg`;   //equiv getElementByTagName
 
             //attach to gallery
             document.getElementById(collection + "-go-here").appendChild(testContactCard);
