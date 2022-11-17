@@ -32,7 +32,7 @@ activitySubmit.addEventListener('click', (e) => {
         timeDue: activityTime.value,
         commute: activityCommute.value,
         urgencyFactor: urgencyFactor.value,
-        ID_Name: docID.path,
+        ID_Name: docID.id,
       })
         .then(() => {
           activityInfo.reset();

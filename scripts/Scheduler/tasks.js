@@ -30,7 +30,7 @@ tasksSubmit.addEventListener('click', (e) => {
         timeTo: tasksTimeTo.value,
         tasksDoesNotRepeat: tasksDoesNotRepeat.value,
         tasksCommute: tasksCommute.value,
-        ID_Name: docID.path,
+        ID_Name: docID.id,
       })
         .then(() => {
           tasksInfo.reset();

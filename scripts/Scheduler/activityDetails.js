@@ -53,6 +53,7 @@ function displayCardTasks(collection) {
             i++;   //if you want to use commented out section
           })
           share();
+          deleteActivity(uid);
         })
       // ...
     } else {
@@ -70,6 +71,19 @@ function share() {
   const share = document.getElementById("share");
   share.addEventListener("click", function (e) {
     window.location.href = "/html/share/index5.html?" + activity.innerText + "$activities$";
+  });
+}
+
+function deleteActivity(uid){
+  const deleteActivity = document.getElementById("delete");
+  deleteActivity.addEventListener("click", function (e){
+    db.collection("users").doc(uid).collection("activities").doc(localStorage.getItem("Activity")).delete().then(() => {
+      console.log("Document successfully deleted!");
+      window.location.href = "/html/main.html";
+
+  }).catch((error) => {
+      console.error("Error removing document: ", error);
+  });
   });
 }
 // function is delayed to make sure content loads first
