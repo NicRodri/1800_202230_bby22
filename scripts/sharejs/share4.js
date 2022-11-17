@@ -95,6 +95,7 @@ function saveNewContact() {
         console.log("Added new contact profile info to Firestore.");
         contactID = doc.id;
         saveContactPicture(contactID);
+        window.location.href = "/html/share/index5.html";
       });
   });
 }
@@ -123,7 +124,7 @@ function saveContactPicture(cid) {
           })
           .then(function () {
             console.log("Updated profile picture to Firestore.");
-            document.getElementById("personalInfoFields").disabled = true;
+            // document.getElementById("personalInfoFields").disabled = true;
           });
       });
     });
