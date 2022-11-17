@@ -138,7 +138,6 @@ function displayContactProfilePic() {
     db.collection("users")
       .doc(uid)
       .collection("contacts")
-      .doc()
       //use user's uid
 
       .set() //READ the doc
