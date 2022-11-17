@@ -90,6 +90,7 @@ function displayCardActivities(collection) {
       var ID = [];
       db.collection("users").doc(uid).collection(collection)
       .orderBy("dueDate").orderBy("urgencyFactor")
+      .limit(7)
       .get()
         .then(allActivities => {
           var i = 1;  //if you want to use commented out section

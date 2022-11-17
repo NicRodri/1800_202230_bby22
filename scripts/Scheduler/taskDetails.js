@@ -65,7 +65,17 @@ function share() {
 
 function deleteTask(uid){
   const deleteTask = document.getElementById("delete");
+  const completedTask = document.getElementById("completed");
   deleteTask.addEventListener("click", function (e){
+    db.collection("users").doc(uid).collection("tasks").doc(localStorage.getItem("Task")).delete().then(() => {
+      console.log("Document successfully deleted!");
+      window.location.href = "/html/main.html";
+
+  }).catch((error) => {
+      console.error("Error removing document: ", error);
+  });
+  });
+  completedTask.addEventListener("click", function (e){
     db.collection("users").doc(uid).collection("tasks").doc(localStorage.getItem("Task")).delete().then(() => {
       console.log("Document successfully deleted!");
       window.location.href = "/html/main.html";
