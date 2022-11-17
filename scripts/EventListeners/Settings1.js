@@ -25,3 +25,31 @@ function profileSelect() {
 }
 
 profileSelect();
+
+function privacySelect() {
+
+  const privacy = document.getElementById("privacy");
+
+  function getPrivacy() {
+      window.location.href = "/html/notifications/privacy.html";
+  }
+
+  privacy.addEventListener("click", getPrivacy);
+
+}
+
+privacySelect();
+
+function contactUsSelect() {
+
+  const contactUs = document.getElementById("contactUs");
+
+  function getContact() {
+      window.location.href = "/html/notifications/contact.html";
+  }
+
+  contactUs.addEventListener("click", getContact);
+
+}
+
+contactUsSelect();
