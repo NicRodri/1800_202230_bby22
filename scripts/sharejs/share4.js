@@ -4,6 +4,34 @@ const lastName = document.getElementById("lastName");
 const emailAddress = document.getElementById("emailAddress");
 const phoneNumber = document.getElementById("phoneNumber");
 const infoSubmit = document.getElementById("submit");
+const image = document.getElementById("mypic-goes-here");
+const fileInput = document.getElementById("mypic-input");
+
+var ImageFile;      //global variable to store the File Object reference
+
+function chooseFileListener(){
+    const fileInput = document.getElementById("mypic-input");   // pointer #1
+    const image = document.getElementById("mypic-goes-here");   // pointer #2
+
+    //attach listener to input file
+    //when this file changes, do something
+    fileInput.addEventListener('change', function(e){
+
+        //the change event returns a file "e.target.files[0]"
+	      ImageFile = e.target.files[0];
+        var blob = URL.createObjectURL(ImageFile);
+
+        //change the DOM img element source to point to this file
+        image.src = blob;    //assign the "src" property of the "img" tag
+    })
+}
+chooseFileListener();
+
+
+
+
+
+
 
 infoSubmit.addEventListener('click', (e) => {
   e.preventDefault();
@@ -57,39 +85,29 @@ function showUploadedPicture(){
 showUploadedPicture();
 
 function uploadContactProfilePic() {
-  // Let's assume my storage is only enabled for authenticated users 
-  // This is set in your firebase console storage "rules" tab
-
   firebase.auth().onAuthStateChanged(function (user) {
-    
-      var fileInput = document.getElementById("mypic-input");   // pointer #1
-      const image = document.getElementById("mypic-goes-here"); // pointer #2
-      // listen for file selection
-      fileInput.addEventListener('change', function (e) {
-          var file = e.target.files[0];
-          var blob = URL.createObjectURL(file);
-          image.src = blob;            // display this image
-         
+    var uid = user.uid;
+    var cid = contacts.cid
+    console.log(uid);
+    var storageRef = storage.ref("images/" + cid + ".jpg");
 
-          //store using this name
-          var storageRef = storage.ref("images/" + user.uid + ".jpg"); 
-          
-          //upload the picked file
-          storageRef.put(file) 
-              .then(function(){
-                  console.log('Uploaded to Cloud Storage.');
-              })
+    //Asynch call to put File Object (global variable ImageFile) onto Cloud
+    storageRef.put(ImageFile)
+        .then(function () {
+            console.log('Uploaded to Cloud Storage.');
 
-          //get the URL of stored file
-          storageRef.getDownloadURL()
-              .then(function (url) {   // Get URL of the uploaded file
-                  console.log(url);    // Save the URL into users collection
-                  db.collection("users").doc(user.uid).update({
-
-                      "profilePic": url
-                  })
-                  .then(function(){
-                      console.log('Added Profile Pic URL to Firestore.');
+            //Asynch call to get URL from Cloud
+            storageRef.getDownloadURL()
+                .then(function (url) { // Get "url" of the uploaded file
+                    console.log("Got the download URL.");
+                    //Asynch call to save the form fields into Firestore.
+                    db.collection("users").doc(uid).collection("contacts").doc().update({
+                           
+                            profilePic: url // Save the URL into users collection
+                        })
+                        .then(function () {
+                            console.log('Added Profile Pic URL to Firestore.');
+                            document.getElementById('personalInfoFields').disabled = true;
                   })
               })
       })
