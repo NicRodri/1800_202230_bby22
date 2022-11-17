@@ -67,11 +67,59 @@
     <hr>
 
     <br>
-    <div class="title">
-        <h1>Favorites</h1>
-    </div>
-    <br>
+    <h1>Favorites: </h1>
     <hr>
+    <div class="container spacing-footer spacing-header pt-2 spacing-center">
+        <h1 class="text-start">Tasks:</h1>
+        <!-- Here is Task container for cards  -->
+        <div class="container">
+          <div id="tasks-go-here" class="row row-cols-auto">
+          </div>
+        </div>
+        <h1 class="text-start pt-3">Activities:</h1>
+        <!-- Here is Activity container for cards  -->
+        <div class="container">
+          <div id="activities-go-here" class="row row-cols-auto">
+          </div>
+        </div>
+  
+        <!-- Pop up for add button -->
+        <div id="addPlaceholder"></div>
+  
+        <!-- our own footer goes here-->
+        <nav id="footerPlaceholder"></nav>
+  
+        <!-- Templates for general use, not displayed  TASKS-->
+        <template id="taskCardTemplate">
+          <div class="card py-2 mx-2" style="width: 18rem;">
+            <div class="card-body text-center">
+  
+              <a class="btn btn-primary card-href card-title d-block">Get
+                Details</a>
+              <div class="text-center">
+                <p class="date d-block my-1">Date goes here</p>
+                <p class="timeStart d-inline">Start Time goes here</p>
+                <p class="timeEnd d-inline">End Time goes here</p>
+              </div>
+  
+            </div>
+          </div>
+        </template>
+      </div>
+  
+      <!-- Templates for general use, not displayed  ACTIVITIES-->
+      <template id="activityCardTemplate">
+        <div class="card py-2 mx-2" style="width: 18rem;">
+          <div class="card-body">
+  
+            <a class="btn btn-primary card-href card-title d-block">Get Details</a>
+            <div class="text-center">
+              <p class="date d-block my-1">Date goes here</p>
+              <p class="estimatedTime d-inline">Start Time goes here test</p>
+            </div>
+          </div>
+        </div>
+      </template>
 
 
 
@@ -86,6 +134,7 @@
     <script src="/scripts/skeleton.js"></script>
     <!-- <script src="/scripts/main.js"></script> -->
     <script src="/scripts/EventListeners/navigationHeader.js"></script>
+    <script src="/scripts/EventListeners/favorites.js"></script>
 
     <!-- <script src="./scripts/script.js"></script> -->
 
