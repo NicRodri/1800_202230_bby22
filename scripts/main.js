@@ -89,7 +89,7 @@ function displayCardActivities(collection) {
       console.log(uid);
       var ID = [];
       db.collection("users").doc(uid).collection(collection)
-      .orderBy("dueDate")
+      .orderBy("dueDate").orderBy("urgencyFactor")
       .get()
         .then(allActivities => {
           var i = 1;  //if you want to use commented out section

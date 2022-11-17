@@ -26,13 +26,19 @@ function displayCardTasks(collection) {
               newcard.querySelector('.details').innerHTML = dataDetails;
               newcard.querySelector('.date').innerHTML = "Due on: " + dataDate;
               newcard.querySelector('.timeDue').innerHTML = "At: " + timeDue;
-              if (Number(timeEstimated) >0){
+              if (Number(timeEstimated) > 0) {
                 newcard.querySelector('.timeEstimated').innerHTML = " Estimated Time: " + timeEstimated + " " + timeType;
               } else {
                 newcard.querySelector('.timeEstimated').innerHTML = " Estimated Time: " + "0" + " " + timeType;
               }
-             
-              newcard.querySelector('.urgencyFactor').innerHTML = "Urgency: " + urgencyFactor;
+              if (urgencyFactor == '1') {
+                newcard.querySelector('.urgencyFactor').innerHTML = "Urgency: " + "Important";
+              } else if (urgencyFactor == "2") {
+                newcard.querySelector('.urgencyFactor').innerHTML = "Urgency: " + "Neutral_Importance";
+              } else {
+                newcard.querySelector('.urgencyFactor').innerHTML = "Urgency: " + "Less_Important";
+              }
+
 
               //attach to gallery
 
