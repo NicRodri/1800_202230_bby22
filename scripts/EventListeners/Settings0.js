@@ -9,3 +9,16 @@ function notificationSelect() {
 }
 
 notificationSelect();
+
+
+function favoriteSelect() {
+    const favorites = document.getElementById("favorites");
+
+    function getFavorites() {
+        window.location.href = "/html/notifications/favorites.html";
+    }
+
+    favorites.addEventListener("click", getFavorites);
+}
+
+favoriteSelect();
