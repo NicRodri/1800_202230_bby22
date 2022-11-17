@@ -28,3 +28,7 @@ body {
 .light-grey {
     background-color: rgb(223, 223, 223);
 }
+
+.material-icons{
+    cursor: pointer;
+}

@@ -162,3 +162,5 @@ function activityDetails(ID) {
 
 // Doesnt run function till after information loads
 // setTimeout(activityDetails, 1500);
+
+
