@@ -52,60 +52,160 @@
           <p class="m-0"><span id="nav2" class="h3"> Task Details</span></p>
         </div>
       </div>
+      <i id="more" class="material-icons md-36 justify-self-end" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">more_vert</i>
     </div>
 
 
-    <div class="container spacing-header spacing-footer">
-      <div id="tasks-go-here" class="row row-cols-auto">
-      </div>
-    </div>
 
     <!-- Templates for general use, not displayed  TASKS-->
-    <template id="taskCardTemplate">
-      <div class="card py-2" style="width: 100%;">
-        <div class="card-body">
+    <!-- <template id="taskCardTemplate"> -->
+    <div class="card py-0 spacing-footer spacing-header" style="width: 100%;">
+      <div class="card-body">
 
-          <div class="text-center pt-2">
-            <div class="">
-              <p class="name d-block h1">Name goes here</p>
-              <p class="details  d-block h4">Details go here</p>
-            </div>
+        <div class="text-center pt-0">
+          <div class="container-fluid text-dark pt-0">
+            <form id="task-information" action="">
+              <fieldset class="taskFieldSet" disabled>
+                <!-- add task name and details-->
+                <div class="container">
+                  <div class="container d-flex align-items-center">
+                    <i class="material-icons md-24 me-2">task_alt</i>
+                    <input class="form-control" type="text" id="taskName" name="taskName" placeholder="Add task Name" />
+                  </div>
+                  <div class="container d-flex align-items-center mt-2">
+                    <i class="material-icons md-24 me-2">edit_note</i>
+                    <textarea id="taskDetails" name="taskDetails" class="form-control"
+                      placeholder="Add task details"></textarea>
+                  </div>
+                </div>
+                <!-- Date/Time-->
+                <div class="container mt-4 ">
+                  <div class="container d-flex align-items-center gap-1 p-0">
+                    <p class="m-0"><span class="h2">Date/Time</span></p>
+                    <i class="material-icons md-18">help</i>
+                  </div>
 
-            <div class="h6 py-3">
-              <p class="date d-block">Date Goes here</p>
-              <p class="date d-block">Between: </p>
-              <p class="timeStart d-inline">Start Time goes here</p>
-              <p class="timeEnd d-inline">End Time goes here</p>
-              <p class="commute d-block my-1 pt-2">Commute Time goes here</p>
-              <div class="container py-5 justify-content-evenly gap-4">
-                <i id="share" class="material-icons md-36 px-2">share</i>
-                <i class="material-icons md-36 px-2">download</i>
-                <i class="material-icons md-36 px-2">content_copy</i>
-                <i id="delete" class="material-icons md-36 px-2">delete</i>
-                <i class="material-icons md-36 px-2">bookmark_border</i>
-              </div>
-              <!-- Buttons at the end-->
-              <div class="container gap-3 mt-5">
-                <button class="btn-lg btn-light form-control mb-2" id="edit" >Edit Info</button>
-                <button class="btn-lg btn-dark form-control" id="completed">Mark as Completed</button>
-              </div>
+                  <div class="container d-flex align-items-center mt-2">
+                    <input id="date" name="taskDate" type="date" class="form-control" />
+                  </div>
+
+                  <div class="container d-flex align-items-center mt-1">
+                    <p class="m-0"><span class="h6">From:</span></p>
+                  </div>
+                  <div class="container d-flex align-items-center mt-1">
+                    <input type="time" class="form-control" name="timeFrom" id="timeFrom" />
+                  </div>
+                  <div class="container d-flex align-items-center mt-0">
+                    <p class="m-0"><span class="h6">To:</span></p>
+                  </div>
+
+                  <div class="container d-flex align-items-center mt-1">
+                    <input type="time" class="form-control" name="timeTo" id="timeTo" />
+                  </div>
+
+                  <div class="container d-flex align-items-center mt-4">
+                    <i class="material-icons md-24 me-2">event_repeat</i>
+                    <select class="form-select" name="does-not-repeat" id="does-not-repeat">
+                      <option value="1">Does not repeat</option>
+                      <option value="2">Every day</option>
+                      <option value="3">Every week</option>
+                      <option value="4">Every month</option>
+                      <option value="5">Every year</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- Commuting Time-->
+                <div class="container mt-4">
+                  <div class="container d-flex align-items-center gap-1 p-0">
+                    <p class="m-0"><span class="h2">Commuting Time</span></p>
+                    <i class="material-icons md-18">help</i>
+                  </div>
+                  <div class="container d-flex align-items-center mt-3 mb-0">
+                    <i class="material-icons md-24 me-2">commute</i>
+                    <input id="commute" type="number" class="form-control" placeholder="Minutes" min="0" />
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+            <!-- Buttons at the end-->
+            <div class="container gap-3 mt-5">
+              <button class="btn-lg btn-light form-control mb-2" id="edit">Edit Info</button>
+              <button class="btn-lg btn-dark form-control mb-2" id="save">Save Info</button>
             </div>
+          </div>
+<!-- 
+          <div class="h6 py-3">
+
+
+            <div class="container py-5 justify-content-evenly gap-4">
+              <i id="share" class="material-icons md-36 px-2">share</i>
+              <i class="material-icons md-36 px-2">download</i>
+              <i class="material-icons md-36 px-2">content_copy</i>
+              <i id="delete" class="material-icons md-36 px-2">delete</i>
+              <i class="material-icons md-36 px-2">bookmark_border</i>
+            </div> -->
+
+
+
+
 
           </div>
         </div>
       </div>
-    </template>
+      <!-- <MODAL> -->
 
-    <!-- our own footer goes here-->
-    <nav id="footerPlaceholder"></nav>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addModalLabel">More</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="container modal-body d-grid col-7 gap-2 ms-auto ">
+              <button id="share">
+                <div class="d-flex align-content-center justify-content-start">
+                  <i class="material-icons md-36 px-2">share</i>
+                  <span class="align-self-center"> Share Task</span>
+                </div>
+              </button>
+              <button id="delete">
+                <div class="d-flex align-content-center justify-content-start">
+                  <i class="material-icons md-36 px-2">delete</i>
+                  <span class="align-self-center">Delete Task</span>
+                </div>
+              </button>
+              <button id="favourite">
+                <div class="d-flex align-content-center justify-content-start">
+                  <i class="material-icons md-36 px-2">bookmark_border</i>
+                  <span class="align-self-center justify-self-start">Favourite</span>
+                </div>
+              </button>
+              <button id="completed">
+                <div class="d-flex align-content-center justify-content-start">
+                  <i class="material-icons md-36 px-2">done</i>
+                  <span class="align-self-center justify-self-start">Mark as Done</span>
+                </div>
+              </button>
 
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-    <script src="/scripts/firebaseAPI_TEAM22.js"></script>
-    <script src="/scripts/skeleton.js"></script>
-    <script src="/scripts/EventListeners/navigationHeader.js"></script>
-    <script src="/scripts/Scheduler/taskDetails.js"></script>
+              <!--<div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- our own footer goes here-->
+      <nav id="footerPlaceholder"></nav>
+
+      <!---------------------------------------------->
+      <!-- Your own JavaScript functions go here    -->
+      <!---------------------------------------------->
+      <script src="/scripts/firebaseAPI_TEAM22.js"></script>
+      <script src="/scripts/skeleton.js"></script>
+      <script src="/scripts/EventListeners/navigationHeader.js"></script>
+      <script src="/scripts/Scheduler/taskDetails.js"></script>
 
   </body>
 
