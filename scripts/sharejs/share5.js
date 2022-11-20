@@ -33,22 +33,24 @@ function populateCardsDynamically(collection) {
           var i = 1;  //if you want to use commented out section
           snap.forEach(doc => { //iterate thru each doc
             var firstName = doc.data().firstName; //gets the name field
+            console.log("This is" + firstName);
             var lastName = doc.data().lastName;
             var emailAddress = doc.data().emailAddress;
             var phoneNumber = doc.data().phoneNumber;
             var picUrl = doc.data().profilePic;
-      
+            console.log("This is" + picUrl);
+            
             let testContactCard = contactCardTemplate.content.cloneNode(true);
             contactID = doc.id;
             testContactCard.querySelector('.card-title1').innerHTML = firstName;     //equiv getElementByClassName
+       
             testContactCard.querySelector('.card-title2').innerHTML = lastName;
             testContactCard.querySelector('.card-title3').innerHTML = emailAddress;
             testContactCard.querySelector('.card-title4').innerHTML = phoneNumber;  //equiv getElementByClassName
-            // testContactCard.querySelector('.card-title0').setAttribute("id", "portrait" + i);
-            
+            testContactCard.querySelector('.card-title0').appendChild (document.createElement('img')).src = picUrl;
             // $("#mypic-goes-here").attr("src", picUrl);
-            $(".card-title0").append("<img src='" + picUrl + "'>");
-            i++;
+            // $(".card-title0").append("<img src='" + picUrl + "'>");
+            // i++;
             // testContactCard.querySelector('.card-title0').innerHTML = `./images/${contactID}.jpg`;   //equiv getElementByTagName
 
             //attach to gallery
