@@ -58,11 +58,9 @@
 
 
 
-    <!-- Templates for general use, not displayed  TASKS-->
-    <!-- <template id="taskCardTemplate"> -->
-    <div class="card py-0 spacing-footer spacing-header" style="width: 100%;">
+<!--BODY GOES HERE -->
+    <div class="card bg-light py-0 spacing-footer spacing-header" style="width: 100%;">
       <div class="card-body">
-
         <div class="text-center pt-0">
           <div class="container-fluid text-dark pt-0">
             <form id="task-information" action="">
@@ -129,83 +127,62 @@
               </fieldset>
             </form>
             <!-- Buttons at the end-->
-            <div class="container gap-3 mt-5">
+            <div class="container gap-3 mt-3">
               <button class="btn-lg btn-light form-control mb-2" id="edit">Edit Info</button>
               <button class="btn-lg btn-dark form-control mb-2" id="save">Save Info</button>
             </div>
           </div>
-<!-- 
-          <div class="h6 py-3">
+        </div>
+      </div>
+    </div>
+    <!-- <MODAL> -->
 
-
-            <div class="container py-5 justify-content-evenly gap-4">
-              <i id="share" class="material-icons md-36 px-2">share</i>
-              <i class="material-icons md-36 px-2">download</i>
-              <i class="material-icons md-36 px-2">content_copy</i>
-              <i id="delete" class="material-icons md-36 px-2">delete</i>
-              <i class="material-icons md-36 px-2">bookmark_border</i>
-            </div> -->
-
-
-
-
-
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addModalLabel">More</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="container modal-body d-grid col-7 gap-2 ms-auto ">
+            <button id="share">
+              <div class="d-flex align-content-center justify-content-start">
+                <i class="material-icons md-36 px-2">share</i>
+                <span class="align-self-center"> Share Task</span>
+              </div>
+            </button>
+            <button id="delete">
+              <div class="d-flex align-content-center justify-content-start">
+                <i class="material-icons md-36 px-2">delete</i>
+                <span class="align-self-center">Delete Task</span>
+              </div>
+            </button>
+            <button id="favourite">
+              <div class="d-flex align-content-center justify-content-start">
+                <i class="material-icons md-36 px-2">bookmark_border</i>
+                <span class="align-self-center justify-self-start">Favourite</span>
+              </div>
+            </button>
+            <button id="completed">
+              <div class="d-flex align-content-center justify-content-start">
+                <i class="material-icons md-36 px-2">done</i>
+                <span class="align-self-center justify-self-start">Mark as Done</span>
+              </div>
+            </button>
           </div>
         </div>
       </div>
-      <!-- <MODAL> -->
+    </div>
+    <!-- our own footer goes here-->
+    <nav id="footerPlaceholder"></nav>
 
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-sm">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="addModalLabel">More</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="container modal-body d-grid col-7 gap-2 ms-auto ">
-              <button id="share">
-                <div class="d-flex align-content-center justify-content-start">
-                  <i class="material-icons md-36 px-2">share</i>
-                  <span class="align-self-center"> Share Task</span>
-                </div>
-              </button>
-              <button id="delete">
-                <div class="d-flex align-content-center justify-content-start">
-                  <i class="material-icons md-36 px-2">delete</i>
-                  <span class="align-self-center">Delete Task</span>
-                </div>
-              </button>
-              <button id="favourite">
-                <div class="d-flex align-content-center justify-content-start">
-                  <i class="material-icons md-36 px-2">bookmark_border</i>
-                  <span class="align-self-center justify-self-start">Favourite</span>
-                </div>
-              </button>
-              <button id="completed">
-                <div class="d-flex align-content-center justify-content-start">
-                  <i class="material-icons md-36 px-2">done</i>
-                  <span class="align-self-center justify-self-start">Mark as Done</span>
-                </div>
-              </button>
-
-              <!--<div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>-->
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- our own footer goes here-->
-      <nav id="footerPlaceholder"></nav>
-
-      <!---------------------------------------------->
-      <!-- Your own JavaScript functions go here    -->
-      <!---------------------------------------------->
-      <script src="/scripts/firebaseAPI_TEAM22.js"></script>
-      <script src="/scripts/skeleton.js"></script>
-      <script src="/scripts/EventListeners/navigationHeader.js"></script>
-      <script src="/scripts/Scheduler/taskDetails.js"></script>
+    <!---------------------------------------------->
+    <!-- Your own JavaScript functions go here    -->
+    <!---------------------------------------------->
+    <script src="/scripts/firebaseAPI_TEAM22.js"></script>
+    <script src="/scripts/skeleton.js"></script>
+    <script src="/scripts/EventListeners/navigationHeader.js"></script>
+    <script src="/scripts/Scheduler/taskDetails.js"></script>
 
   </body>
 

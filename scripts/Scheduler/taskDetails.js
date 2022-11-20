@@ -1,10 +1,6 @@
-
 function displayCardTasks(collection) {
-  let cardTemplate = document.getElementById("taskCardTemplate");
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
       var uid = user.uid;
       console.log(uid);
       db.collection("users").doc(uid).collection(collection).get()
@@ -19,14 +15,6 @@ function displayCardTasks(collection) {
               var timeStart = doc.data().timeFrom;
               var timeEnd = doc.data().timeTo;
               var doesNotRepeat = doc.data().tasksDoesNotRepeat;
-              // let newcard = cardTemplate.content.cloneNode(true);
-
-              //update title and text and image
-              // newcard.querySelector('.name').innerHTML = dataName;
-              // newcard.querySelector('.details').innerHTML = dataDetails;
-              // newcard.querySelector('.date').innerHTML = "Task on: " + dataDate;
-              // newcard.querySelector('.timeStart').innerHTML = timeStart + " - ";
-              // newcard.querySelector('.timeEnd').innerHTML = timeEnd;
 
               document.getElementById("taskName").value = dataName;
               document.getElementById("taskDetails").value = dataDetails;
@@ -35,31 +23,11 @@ function displayCardTasks(collection) {
               document.getElementById("timeTo").value = timeEnd
               document.getElementById("does-not-repeat").value = doesNotRepeat
               document.getElementById("commute").value = dataCommute
-
-              //attach to gallery
-
-              // if (Number(dataCommute) > 0) {
-              //   console.log(Number(dataCommute));
-              //   newcard.querySelector('.commute').innerHTML = "Commute Time: " + dataCommute + " mins";
-              // } else {
-              //   newcard.querySelector('.commute').innerHTML = "Commute Time: " + "0" + " mins";
-              // }
-              // document.getElementById(collection + "-go-here").appendChild(newcard);
             }
-
             i++;   //if you want to use commented out section
           })
           share();
           deleteTask(uid);
-
-
-
-          // if (document.getElementById("edit") != null){
-          //   editUserInfo();
-          // } else {
-          //   saveUserInfo();
-          // }
-
         })
       // ...
     } else {
@@ -68,7 +36,6 @@ function displayCardTasks(collection) {
     }
   });
 }
-
 
 displayCardTasks("tasks");
 
@@ -106,14 +73,10 @@ function editUserInfo() {
   //Enable the form fields
   document.getElementById("edit").addEventListener("click", function (e) {
     document.querySelector('.taskFieldSet').disabled = false;
-    saveUserInfo();
+
   });
 }
-// if (document.getElementById("edit") != null){
 editUserInfo();
-// }
-
-
 
 function saveUserInfo() {
   const tasksName = document.getElementById("taskName");
@@ -153,8 +116,4 @@ function saveUserInfo() {
   });
 
 }
-
-
-
-// function is delayed to make sure content loads first
-// setTimeout(share, 1500);
+saveUserInfo();
