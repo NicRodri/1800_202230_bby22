@@ -35,6 +35,7 @@ function displayCardTasks(collection) {
       var ID = [];
       db.collection("users").doc(uid).collection(collection)
       .orderBy("date").orderBy("timeFrom")
+      .limit(5)
       .get()
         .then(snap => {
           var i = 1;  //if you want to use commented out section
@@ -90,7 +91,7 @@ function displayCardActivities(collection) {
       var ID = [];
       db.collection("users").doc(uid).collection(collection)
       .orderBy("dueDate").orderBy("urgencyFactor")
-      .limit(7)
+      .limit(5)
       .get()
         .then(allActivities => {
           var i = 1;  //if you want to use commented out section

@@ -54,7 +54,7 @@ function share() {
 
 function deleteActivity(uid){
   const deleteActivity = document.getElementById("delete");
-  const completedActivity = document.getElementById("completed");
+  const completedActivity = document.getElementById("completedActivity");
   deleteActivity.addEventListener("click", function (e){
     db.collection("users").doc(uid).collection("activities").doc(localStorage.getItem("Activity")).delete().then(() => {
       console.log("Document successfully deleted!");
@@ -64,15 +64,15 @@ function deleteActivity(uid){
       console.error("Error removing document: ", error);
   });
   });
-  completedActivity.addEventListener("click", function (e){
-    db.collection("users").doc(uid).collection("activities").doc(localStorage.getItem("Activity")).delete().then(() => {
-      console.log("Document successfully deleted!");
-      window.location.href = "/html/main.html";
+  // completedActivity.addEventListener("click", function (e){
+  //   db.collection("users").doc(uid).collection("activities").doc(localStorage.getItem("Activity")).delete().then(() => {
+  //     console.log("Document successfully deleted!");
+  //     window.location.href = "/html/main.html";
 
-  }).catch((error) => {
-      console.error("Error removing document: ", error);
-  });
-  });
+  // }).catch((error) => {
+  //     console.error("Error removing document: ", error);
+  // });
+  // });
 }
 
 function editUserInfo() {
