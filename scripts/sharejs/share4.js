@@ -29,6 +29,7 @@ chooseFileListener();
 infoSubmit.addEventListener("click", (e) => {
   e.preventDefault();
   saveNewContact();
+ setTimeout(changePage, 3000);
 });
 //   firebase.auth().onAuthStateChanged((user) => {
 //     if (user) {
@@ -62,6 +63,9 @@ infoSubmit.addEventListener("click", (e) => {
 //     }
 //   });
 // });
+function changePage(){
+  window.location.href = "/html/share/index5.html";
+}
 
 function showUploadedPicture() {
   const fileInput = document.getElementById("mypic-input"); // pointer #1
@@ -95,8 +99,8 @@ function saveNewContact() {
         console.log("Added new contact profile info to Firestore.");
         contactID = doc.id;
         saveContactPicture(contactID);
-        window.location.href = "/html/share/index5.html";
-      });
+        // setTimeout(window.location.href = "/html/share/index5.html", 1500);
+      })
   });
 }
 

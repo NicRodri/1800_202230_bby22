@@ -19,36 +19,15 @@ function displayCardTasks(collection) {
               var timeType = doc.data().timeType;
               var urgencyFactor = doc.data().urgencyFactor;
               var dataCommute = doc.data().commute;
-              let newcard = cardTemplate.content.cloneNode(true);
 
-              //update title and text and image
-              newcard.querySelector('.name').innerHTML = dataName;
-              newcard.querySelector('.details').innerHTML = dataDetails;
-              newcard.querySelector('.date').innerHTML = "Due on: " + dataDate;
-              newcard.querySelector('.timeDue').innerHTML = "At: " + timeDue;
-              if (Number(timeEstimated) > 0) {
-                newcard.querySelector('.timeEstimated').innerHTML = " Estimated Time: " + timeEstimated + " " + timeType;
-              } else {
-                newcard.querySelector('.timeEstimated').innerHTML = " Estimated Time: " + "0" + " " + timeType;
-              }
-              if (urgencyFactor == '1') {
-                newcard.querySelector('.urgencyFactor').innerHTML = "Urgency: " + "Important";
-              } else if (urgencyFactor == "2") {
-                newcard.querySelector('.urgencyFactor').innerHTML = "Urgency: " + "Neutral_Importance";
-              } else {
-                newcard.querySelector('.urgencyFactor').innerHTML = "Urgency: " + "Less_Important";
-              }
-
-
-              //attach to gallery
-
-              if (Number(dataCommute) > 0) {
-                console.log(Number(dataCommute));
-                newcard.querySelector('.commute').innerHTML = "Commute Time: " + dataCommute + " mins";
-              } else {
-                newcard.querySelector('.commute').innerHTML = "Commute Time: " + "0" + " mins";
-              }
-              document.getElementById(collection + "-go-here").appendChild(newcard);
+              document.getElementById("activityName").value = dataName;
+              document.getElementById("activityDetails").value = dataDetails;
+              document.getElementById("estimatedTime").value = timeEstimated;
+              document.getElementById("estimatedTimeType").value = timeType;
+              document.getElementById("activityDate").value = dataDate;
+              document.getElementById("activityTime").value = timeDue;
+              document.getElementById("activityCommute").value = dataCommute;
+              document.getElementById("urgencyFactor").value = urgencyFactor;
             }
             i++;   //if you want to use commented out section
           })
@@ -67,16 +46,15 @@ function displayCardTasks(collection) {
 displayCardTasks("activities");
 
 function share() {
-  const activity = document.querySelector(".name");
   const share = document.getElementById("share");
   share.addEventListener("click", function (e) {
-    window.location.href = "/html/share/index5.html?" + activity.innerText + "$activities$";
+    window.location.href = "/html/share/index5.html?" + "$activities$";
   });
 }
 
 function deleteActivity(uid){
   const deleteActivity = document.getElementById("delete");
-  const completedActivity = document.getElementById("completed");
+  const completedActivity = document.getElementById("completedActivity");
   deleteActivity.addEventListener("click", function (e){
     db.collection("users").doc(uid).collection("activities").doc(localStorage.getItem("Activity")).delete().then(() => {
       console.log("Document successfully deleted!");
@@ -86,15 +64,63 @@ function deleteActivity(uid){
       console.error("Error removing document: ", error);
   });
   });
-  completedActivity.addEventListener("click", function (e){
-    db.collection("users").doc(uid).collection("activities").doc(localStorage.getItem("Activity")).delete().then(() => {
-      console.log("Document successfully deleted!");
-      window.location.href = "/html/main.html";
+  // completedActivity.addEventListener("click", function (e){
+  //   db.collection("users").doc(uid).collection("activities").doc(localStorage.getItem("Activity")).delete().then(() => {
+  //     console.log("Document successfully deleted!");
+  //     window.location.href = "/html/main.html";
 
-  }).catch((error) => {
-      console.error("Error removing document: ", error);
-  });
+  // }).catch((error) => {
+  //     console.error("Error removing document: ", error);
+  // });
+  // });
+}
+
+function editUserInfo() {
+  //Enable the form fields
+  document.getElementById("edit").addEventListener("click", function (e) {
+    document.querySelector('.activityFieldSet').disabled = false;
   });
 }
-// function is delayed to make sure content loads first
-// setTimeout(share, 1500);
+editUserInfo();
+
+function saveUserInfo() {
+  const activityName = document.getElementById("activityName");
+  const activityDetails = document.getElementById("activityDetails");
+  const estimatedTime = document.getElementById("estimatedTime");
+  const estimatedTimeType = document.getElementById("estimatedTimeType");
+  const activityDate = document.getElementById("activityDate");
+  const activityTime = document.getElementById("activityTime");
+  const activityCommute = document.getElementById("activityCommute");
+  const urgencyFactor = document.getElementById("urgencyFactor");
+  const activitySubmit = document.getElementById("save");
+
+  activitySubmit.addEventListener('click', (e) => {
+    // e.preventDefault();
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        var uid = user.uid;
+        db.collection("users").doc(uid).collection("activities").doc(localStorage.getItem("Activity")).update({
+          // Can be changed for different forms
+          name: activityName.value,
+          details: activityDetails.value,
+          timeEstimated: estimatedTime.value,
+          timeType: estimatedTimeType.value,
+          dueDate: activityDate.value,
+          timeDue: activityTime.value,
+          commute: activityCommute.value,
+          urgencyFactor: urgencyFactor.value,
+        })
+          .then(() => {
+              document.querySelector('.activityFieldSet').disabled = true;
+              console.log("Document successfully updated!");
+          });
+        // ...
+      } else {
+        // User is signed out
+        // ...
+      }
+    });
+  });
+
+}
+saveUserInfo();

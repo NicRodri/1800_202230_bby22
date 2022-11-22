@@ -52,53 +52,139 @@
           <p class="m-0"><span id="nav2" class="h3"> Activity Details</span></p>
         </div>
       </div>
+      <i id="more" class="material-icons md-36 justify-self-end" data-bs-toggle="modal"
+      data-bs-target="#exampleModal">more_vert</i>
     </div>
 
+    <div class="card bg-light py-0 spacing-footer spacing-header" style="width: 100%;">
+      <div class="card-body">
+        <div class="text-center pt-0">
+          <div class="container-fluid text-dark pt-0">
+            <!-- <div id="activities-go-here" class="row row-cols-auto"> -->
+            <form id="activityInfo" name="activityInfo">
+              <fieldset class="activityFieldSet" disabled>
+                <!-- add activity name and details -->
+                <div class="container">
+                  <div class="container d-flex align-items-center">
+                    <i class="material-icons md-24 me-2">task_alt</i>
+                    <input class="form-control" type="text" id="activityName" name="activityName"
+                      placeholder="Add activity name" required>
+                  </div>
+                  <div class="container d-flex align-items-center mt-2">
+                    <i class="material-icons md-24 me-2">edit_note</i>
+                    <textarea id="activityDetails" class="form-control" placeholder="Add activity details"></textarea>
+                    </textarea>
+                  </div>
+                </div>
+                <!-- Estimated time -->
+                <div class="container mt-4 ">
+                  <div class="container d-flex align-items-center gap-1 p-0">
+                    <p class="m-0"><span class="h3">Estimated Time</span></p>
+                    <i class="material-icons md-18">help</i>
+                  </div>
+                  <div class="container d-flex align-items-center mt-2">
+                    <i class="material-icons md-24 me-2">watch</i>
+                    <input type="number" id="estimatedTime" class="form-control" min="0" placeholder="Time" required>
+                    <select class="form-select" name="estimatedTimeType" id="estimatedTimeType">
+                      <option value="Minutes">Minutes</option>
+                      <option value="Hours">Hours</option>
+                    </select>
 
-    <div class="container spacing-header spacing-footer">
-      <div id="activities-go-here" class="row row-cols-auto">
-      </div>
-    </div>
+                  </div>
+                </div>
+                <!-- Due by -->
+                <div class="container mt-4 ">
+                  <div class="container d-flex align-items-center gap-1 p-0">
+                    <p class="m-0"><span class="h3">Due by</span></p>
+                    <i class="material-icons md-18">help</i>
+                  </div>
+                  <div class="container d-flex align-items-center mt-2">
+                    <i class="material-icons md-24 me-2">schedule</i>
+                    <input id="activityDate" type="date" class="form-control" required>
+                    <input type="time" class="form-control" name="time" id="activityTime" required>
+                  </div>
+                </div>
+                <!-- Commuting Time -->
+                <div class="container mt-4">
+                  <div class="container d-flex align-items-center gap-1 p-0">
+                    <p class="m-0"><span class="h3">Commuting Time</span></p>
+                    <i class="material-icons md-18">help</i>
+                  </div>
+                  <div class="container d-flex align-items-center mt-2 mb-0">
+                    <i class="material-icons md-24 me-2">commute</i>
+                    <input id="activityCommute" type="number" class="form-control" placeholder="Minutes" min="0">
+                  </div>
+                </div>
+                <!-- Urgency Factors -->
+                <div class="container mt-4">
+                  <div class="container d-flex align-items-center gap-1 p-0">
+                    <p class="m-0"><span class="h3">Urgency Factor</span></p>
+                    <i class="material-icons md-18">help</i>
+                  </div>
+                  <div class="container d-flex align-items-center mt-2">
+                    <i class="material-icons md-24 me-2">priority_high</i>
+                    <select class="form-select" name="urgencyFactor" id="urgencyFactor">
+                      <option value="1">Must be done ASAP</option>
+                      <option value="2">Can wait a little</option>
+                      <option value="3">Can be done whenever</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
 
-    <!-- Templates for general use, not displayed  TASKS-->
-    <template id="activityDetails">
-      <div class="card py-2" style="width: 100%;">
-        <div class="card-body">
-
-          <div class="text-center pt-2">
-            <div class="">
-              <p class="name  d-block h1">Name goes here</p>
-              <p class="details  d-block h4">Details go here</p>
-            </div>
-
-            <div class="h6 py-3">
-              <p class="date d-block my-1">Date Goes Here</p>
-              <!-- <p class="d-inline my-1">at: </p> -->
-              <p class="timeDue d-block my-1 pt-2">Time Due goes here</p>
-              <p class="timeEstimated d-block my-1 pt-2">Estimated time goes here</p>
-              <p class="commute d-block my-1 pt-2">Commute Time goes here</p>
-              <p class="urgencyFactor d-block my-1 pt-2">Urgency Factor goes here</p>
-              <div class="container py-5 justify-content-evenly gap-4">
-                <i id="share" class="material-icons md-36 px-2">share</i>
-                <i class="material-icons md-36 px-2">download</i>
-                <i class="material-icons md-36 px-2">content_copy</i>
-                <i id="delete" class="material-icons md-36 px-2">delete</i>
-                <i class="material-icons md-36 px-2">bookmark_border</i>
-              </div>
-              <!-- Buttons at the end-->
-              <div class="container gap-3 mt-5">
-                <button class="btn-lg btn-light form-control mb-2" id="edit" >Edit Info</button>
-                <button class="btn-lg btn-dark form-control" id="completed">Mark as Completed</button>
-              </div>
+              <!-- Buttons at the end -->
+            </form>
+            <div class="container d-grid mt-3">
+              <button class="btn-lg btn-light form-control mb-2" id="edit">Edit Info</button>
+              <button class="btn-lg btn-dark form-control mb-2" id="save">Save Info</button>
             </div>
           </div>
         </div>
       </div>
-    </template>
+    </div>
+
 
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
 
+          <!-- <MODAL> -->
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="addModalLabel">More</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="container modal-body d-grid col-7 gap-2 ms-auto ">
+                    <button id="share">
+                      <div class="d-flex align-content-center justify-content-start">
+                        <i class="material-icons md-36 px-2">share</i>
+                        <span class="align-self-center"> Share Task</span>
+                      </div>
+                    </button>
+                    <button id="delete">
+                      <div class="d-flex align-content-center justify-content-start">
+                        <i class="material-icons md-36 px-2">delete</i>
+                        <span class="align-self-center">Delete Task</span>
+                      </div>
+                    </button>
+                    <button id="favourite">
+                      <div class="d-flex align-content-center justify-content-start">
+                        <i class="material-icons md-36 px-2">bookmark_border</i>
+                        <span class="align-self-center justify-self-start">Favourite</span>
+                      </div>
+                    </button>
+                    <button id="completedActivity">
+                      <div class="d-flex align-content-center justify-content-start">
+                        <i class="material-icons md-36 px-2">done</i>
+                        <span class="align-self-center justify-self-start">Mark as Done</span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->

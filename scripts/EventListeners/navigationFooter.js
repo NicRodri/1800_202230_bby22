@@ -15,12 +15,12 @@ function navigationFooter(){
   person.addEventListener("click", goPerson);
 
 
-  history.addEventListener("click" , function (e){
-    window.location.href = "/html/All_Tasks_and_Activities/history.html";
-  });
-  completed.addEventListener("click", function (e){
-    window.location.href = "/html/Completed_Tasks_and_Activities/completed.html";
-  });
+  // history.addEventListener("click" , function (e){
+  //   window.location.href = "/html/All_Tasks_and_Activities/history.html";
+  // });
+  // completed.addEventListener("click", function (e){
+  //   window.location.href = "/html/Completed_Tasks_and_Activities/completed.html";
+  // });
 
 }
 
