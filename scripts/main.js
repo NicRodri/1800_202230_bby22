@@ -164,4 +164,6 @@ function activityDetails(ID) {
 // Doesnt run function till after information loads
 // setTimeout(activityDetails, 1500);
 
+var ImageFile;      //global variable to store the File Object reference
+
 
