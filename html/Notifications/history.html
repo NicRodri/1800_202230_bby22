@@ -38,13 +38,12 @@
     <link rel="stylesheet" href="/styles/style.css">
 
     <style>
-        p {
-            text-align: right;
+        .title {
+            text-align: left;
+            
         }
 
-        .border {
-            padding: 20px;
-        }
+
     </style>
 
 </head>
@@ -66,43 +65,61 @@
     <!------------------------------>
     <br>
     <hr>
-    <br>
-    <br>
-    <br>
 
     <br>
-
-    <div class="container">
-        <h1>Personal Privacy </h1>
-        <form>
-            <fieldset class="mb-3" id="personalInfoFields" disabled>
-                
-                <div class="form-group py-5">             
-                    <div id="profile-container">           
-                        <img id="mypic-goes-here" src=" " /> 
-                    </div>                                
-                    <input id="mypic-input" type="file">     
-                </div>
-                <div class="form-group">
-                    <label>Description</label>
-                    <input type="text" id="nameInput" class="form-control" placeholder="Enter here">
-                </div>
-                <div class="form-group">
-                    <label>Tag</label>
-                    <input type="text" id="schoolInput" class="form-control" placeholder="Enter here">
-                </div>
-                <div class="form-group">
-                    <label>TBD</label>
-                    <input type="text" id="cityInput" class="form-control" placeholder="Enter here">
-                </div>
-            </fieldset>
-            <div class="d-flex justify-content-end mt-5">
-                <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
-                <span style="width: 10px"></span>
-                <button type="button" class="btn btn-info" onclick="saveUserInfo()">Save</button>
+    <h1>History: </h1>
+    <hr>
+    <div class="container spacing-footer spacing-header pt-2 spacing-center">
+        <h1 class="text-start">Tasks:</h1>
+        <!-- Here is Task container for cards  -->
+        <div class="container">
+          <div id="tasks-go-here" class="row row-cols-auto">
+          </div>
+        </div>
+        <h1 class="text-start pt-3">Activities:</h1>
+        <!-- Here is Activity container for cards  -->
+        <div class="container">
+          <div id="activities-go-here" class="row row-cols-auto">
+          </div>
+        </div>
+  
+        <!-- Pop up for add button -->
+        <div id="addPlaceholder"></div>
+  
+        <!-- our own footer goes here-->
+        <nav id="footerPlaceholder"></nav>
+  
+        <!-- Templates for general use, not displayed  TASKS-->
+        <template id="taskCardTemplate">
+          <div class="card py-2 mx-2" style="width: 18rem;">
+            <div class="card-body text-center">
+  
+              <a class="btn btn-primary card-href card-title d-block">Get
+                Details</a>
+              <div class="text-center">
+                <p class="date d-block my-1">Date goes here</p>
+                <p class="timeStart d-inline">Start Time goes here</p>
+                <p class="timeEnd d-inline">End Time goes here</p>
+              </div>
+  
             </div>
-        </form>
-    </div>
+          </div>
+        </template>
+      </div>
+  
+      <!-- Templates for general use, not displayed  ACTIVITIES-->
+      <template id="activityCardTemplate">
+        <div class="card py-2 mx-2" style="width: 18rem;">
+          <div class="card-body">
+  
+            <a class="btn btn-primary card-href card-title d-block">Get Details</a>
+            <div class="text-center">
+              <p class="date d-block my-1">Date goes here</p>
+              <p class="estimatedTime d-inline">Start Time goes here test</p>
+            </div>
+          </div>
+        </div>
+      </template>
 
 
 
@@ -117,9 +134,7 @@
     <script src="/scripts/skeleton.js"></script>
     <!-- <script src="/scripts/main.js"></script> -->
     <script src="/scripts/EventListeners/navigationHeader.js"></script>
-    <script src="/scripts/EventListeners/privacy.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-
+    <script src="/scripts/EventListeners/history.js"></script>
 
     <!-- <script src="./scripts/script.js"></script> -->
 

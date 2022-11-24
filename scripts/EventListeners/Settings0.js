@@ -23,6 +23,31 @@ function favoriteSelect() {
 
 favoriteSelect();
 
+function logoutSelect() {
+    const rcorners1 = document.getElementById("rcorners1");
+
+    function getLogout() {
+        window.location.href = "/html/login.html";
+    }
+
+    rcorners1.addEventListener("click", getLogout);
+}
+
+logoutSelect();
+
+function historySelect() {
+    const history = document.getElementById("history");
+
+    function getHistory() {
+        window.location.href = "/html/notifications/history.html";
+    }
+
+    history.addEventListener("click", getHistory);
+}
+
+historySelect();
+
+
 
 
 function chooseFileListener(){
@@ -104,3 +129,15 @@ function populateInfo() {
 }
 populateInfo();
 
+//------------------------------------------------
+// Call this function when the "logout" button is clicked
+//-------------------------------------------------
+function logout() {
+    console.log("logging out user");
+    firebase.auth().signOut().then(() => {
+        // Sign-out successful.
+        window.location.href = "login.html";
+      }).catch((error) => {
+        // An error happened.
+      });
+}
