@@ -76,12 +76,7 @@ function editUserInfo() {
 
   });
 }
-<<<<<<< HEAD
-// function is delayed to make sure content loads first
-// setTimeout(share, 1500);
 
-
-=======
 editUserInfo();
 
 function saveUserInfo() {
@@ -123,4 +118,3 @@ function saveUserInfo() {
 
 }
 saveUserInfo();
->>>>>>> 748f0ac4e9211e0a6721f8084ddc493a9a643fe5
