@@ -22,7 +22,7 @@
 
 body {
     height: 100%;
-    background-color: rgb(248, 249, 250);
+    background-color: rgb(255, 243, 243);
 }
 
 .light-grey {
@@ -32,3 +32,15 @@ body {
 .material-icons{
     cursor: pointer;
 }
+
+.grey {
+    background-color: #DCDCD4;
+}
+
+.blue {
+    background-color: #92DCE5;
+
+    ;
+}
+
+/* (248, 249, 250) */
