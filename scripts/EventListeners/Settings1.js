@@ -39,3 +39,15 @@ function contactUsSelect() {
 }
 
 contactUsSelect();
+
+function logoutSelect1() {
+  const logout = document.getElementById("logout");
+
+  function getlogout() {
+      window.location.href = "/html/login.html";
+  }
+
+  logout.addEventListener("click", getlogout);
+}
+
+logoutSelect1();
