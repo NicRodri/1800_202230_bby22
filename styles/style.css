@@ -1,18 +1,31 @@
 /* Icon sizes */
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
 
 /* Spacing to make up for fixed footer 
    This allows you to properly scroll */
-.spacing-footer{
+.spacing-footer {
     margin-bottom: 75px;
 }
-.spacing-header{
+
+.spacing-header {
     margin-top: 92px;
 }
-.spacing-center{
+
+.spacing-center {
     padding-left: 40px;
 }
 
@@ -29,7 +42,7 @@ body {
     background-color: rgb(223, 223, 223);
 }
 
-.material-icons{
+.material-icons {
     cursor: pointer;
 }
 
@@ -39,8 +52,20 @@ body {
 
 .blue {
     background-color: #92DCE5;
+}
 
-    ;
+/* To prevent touch to search*/
+.unselectable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+i{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 /* (248, 249, 250) */
