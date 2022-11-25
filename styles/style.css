@@ -49,6 +49,10 @@ body {
     color: #909090;
 }
 
+.greyText{
+    color: #cacaca;
+}
+
 .blue {
     background-color: #92DCE5;
 }
@@ -67,4 +71,8 @@ i{
     user-select: none;
 }
 
+#CreateTasks,
+#CreateActivities{
+    cursor: pointer;
+}
 /* (248, 249, 250) */
