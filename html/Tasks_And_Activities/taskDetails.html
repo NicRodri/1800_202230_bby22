@@ -129,14 +129,29 @@
             <!-- Buttons at the end-->
             <div class="container gap-3 mt-3">
               <button class="btn-lg btn-light form-control mb-2" id="edit">Edit Info</button>
-              <button class="btn-lg btn-dark form-control mb-2" id="save">Save Info</button>
+              <button class="btn-lg btn-dark form-control mb-2" id="save" data-bs-toggle="modal" data-bs-target="#taskUpdated">Save Info</button>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- <MODAL> -->
 
+    <div class="modal fade" id="taskUpdated" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addModalLabel">Task Information Updated!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <!--<div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-primary">Save changes</button>
+    </div>-->
+        </div>
+      </div>
+    </div>
+
+    <!-- <MODAL> -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">

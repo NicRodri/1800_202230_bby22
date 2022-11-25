@@ -81,13 +81,26 @@
         </div>
         <!-- Done button -->
         <div class="container d-grid gap-3 mt-4">
-          <button class="btn-lg btn-dark form-control" type="submit" id="submit">Done</button>
+          <button class="btn-lg btn-dark form-control" type="submit" id="submit" data-bs-toggle="modal" data-bs-target="#sleepUpdated">Done</button>
         </div>
       </form>
     </div>
 
 
-
+    <div class="modal fade" id="sleepUpdated" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addModalLabel">Sleep Information Updated!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <!--<div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-primary">Save changes</button>
+    </div>-->
+        </div>
+      </div>
+    </div>
 
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
