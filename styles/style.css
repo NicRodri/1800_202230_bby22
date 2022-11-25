@@ -26,7 +26,7 @@
 }
 
 .spacing-center {
-    padding-left: 40px;
+    padding-left: 11.5%;
 }
 
 /* .mt-6 {
@@ -48,6 +48,9 @@ body {
 
 .grey {
     background-color: #DCDCD4;
+}
+.unavailable{
+    color: #909090;
 }
 
 .blue {

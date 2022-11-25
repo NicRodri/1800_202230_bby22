@@ -167,4 +167,19 @@ function activityDetails(ID) {
 
 var ImageFile;      //global variable to store the File Object reference
 
+function createTask(){
+  const task = document.getElementById("CreateTasks");
+  task.addEventListener("click", function (e){
+    window.location.href = "/html/Tasks_And_Activities/task.html";
+  });
+}
 
+createTask();
+
+function createActivity(){
+  const activity = document.getElementById("CreateActivities");
+  activity.addEventListener("click", function (e){
+    window.location.href = "/html/Tasks_And_Activities/activity.html";
+  });
+}
+createActivity();
