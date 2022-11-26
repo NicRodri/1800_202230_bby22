@@ -42,6 +42,20 @@ function populateCardsDynamically(collection) {
             
             let testContactCard = contactCardTemplate.content.cloneNode(true);
             contactID = doc.id;
+
+            // Used to change the modal text to a specific contact name
+            testContactCard.querySelector(".card").setAttribute("data-whatever", firstName);
+            $('#exampleModal').on('show.bs.modal', function (event) {
+              var button = $(event.relatedTarget) // Button that triggered the modal
+              var recipient = button.data('whatever');// Extract info from data-* attributes
+              // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+              // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+              var modal = $(this)
+              modal.find('.modal-title').text('Send to ' + recipient)
+              modal.find('.modal-body input').val(recipient)
+            })
+
+
             testContactCard.querySelector('.card-title1').innerHTML = firstName;     //equiv getElementByClassName
             testContactCard.querySelector('.card-title2').innerHTML = lastName;
             testContactCard.querySelector('.card-title3').innerHTML = emailAddress;
@@ -54,7 +68,7 @@ function populateCardsDynamically(collection) {
 
             //attach to gallery
             document.getElementById(collection + "-go-here").appendChild(testContactCard);
-            // i++;   //if you want to use commented out section
+            i++;   //if you want to use commented out section
           })
         })
       // ...
