@@ -77,7 +77,7 @@
                   </div>
                 </div>
                 <!-- Estimated time -->
-                <div class="container mt-4 ">
+                <div class="container mt-3 ">
                   <div class="container d-flex align-items-center gap-1 p-0">
                     <p class="m-0"><span class="h3">Estimated Time</span></p>
                     <i class="material-icons md-18">help</i>
@@ -93,19 +93,22 @@
                   </div>
                 </div>
                 <!-- Due by -->
-                <div class="container mt-4 ">
+                <div class="container mt-3 ">
                   <div class="container d-flex align-items-center gap-1 p-0">
                     <p class="m-0"><span class="h3">Due by</span></p>
                     <i class="material-icons md-18">help</i>
                   </div>
                   <div class="container d-flex align-items-center mt-2">
+                    <i class="material-icons md-24 me-2">calendar_month</i>
+                    <input id="activityDate" type="date" class="form-control" placeholder="Date:" required>
+                  </div>
+                  <div class="container d-flex align-items-center mt-2">
                     <i class="material-icons md-24 me-2">schedule</i>
-                    <input id="activityDate" type="date" class="form-control" required>
-                    <input type="time" class="form-control" name="time" id="activityTime" required>
+                    <input type="time" class="form-control" name="time" id="activityTime" placeholder="Time:" required>
                   </div>
                 </div>
                 <!-- Commuting Time -->
-                <div class="container mt-4">
+                <div class="container mt-3">
                   <div class="container d-flex align-items-center gap-1 p-0">
                     <p class="m-0"><span class="h3">Commuting Time</span></p>
                     <i class="material-icons md-18">help</i>
@@ -116,7 +119,7 @@
                   </div>
                 </div>
                 <!-- Urgency Factors -->
-                <div class="container mt-4">
+                <div class="container mt-3">
                   <div class="container d-flex align-items-center gap-1 p-0">
                     <p class="m-0"><span class="h3">Urgency Factor</span></p>
                     <i class="material-icons md-18">help</i>
@@ -134,7 +137,7 @@
 
               <!-- Buttons at the end -->
             </form>
-            <div class="container d-grid mt-3">
+            <div class="container d-grid mt-4">
               <button class="btn-lg grey-web lavender-blush-text form-control mb-2" id="edit">Edit Info</button>
               <button class="btn-lg onyx lavender-blush-text form-control mb-2" id="save" data-bs-toggle="modal" data-bs-target="#activityUpdated">Save Info</button>
             </div>
