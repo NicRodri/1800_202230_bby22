@@ -49,11 +49,14 @@
       <div class="d-flex gap-3 ">
         <i id="back" class="material-icons md-36">arrow_back</i>
         <div class="d-flex column align-items-center">
-          <p class="m-0"><span id="nav2" class="h3"> Activity Details</span></p>
+          <p class="m-0"><span id="nav2" class="h3">Activity Details</span></p>
         </div>
       </div>
-      <i id="more" class="material-icons md-36 justify-self-end" data-bs-toggle="modal"
-      data-bs-target="#exampleModal">more_vert</i>
+      <div class="d-flex gap-3">
+        <i id="edit" class="material-icons md-36 justify-self-end">edit</i>
+        <i id="more" class="material-icons md-36 justify-self-end" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">more_vert</i>
+      </div>
     </div>
 
     <div class="card lavender-blush py-0 spacing-footer spacing-header" style="width: 100%;">
@@ -77,7 +80,7 @@
                   </div>
                 </div>
                 <!-- Estimated time -->
-                <div class="container mt-3 ">
+                <div class="container mt-4 ">
                   <div class="container d-flex align-items-center gap-1 p-0">
                     <p class="m-0"><span class="h3">Estimated Time</span></p>
                     <i class="material-icons md-18">help</i>
@@ -93,7 +96,7 @@
                   </div>
                 </div>
                 <!-- Due by -->
-                <div class="container mt-3 ">
+                <div class="container mt-4 ">
                   <div class="container d-flex align-items-center gap-1 p-0">
                     <p class="m-0"><span class="h3">Due by</span></p>
                     <i class="material-icons md-18">help</i>
@@ -108,7 +111,7 @@
                   </div>
                 </div>
                 <!-- Commuting Time -->
-                <div class="container mt-3">
+                <div class="container mt-4">
                   <div class="container d-flex align-items-center gap-1 p-0">
                     <p class="m-0"><span class="h3">Commuting Time</span></p>
                     <i class="material-icons md-18">help</i>
@@ -119,7 +122,7 @@
                   </div>
                 </div>
                 <!-- Urgency Factors -->
-                <div class="container mt-3">
+                <div class="container mt-4">
                   <div class="container d-flex align-items-center gap-1 p-0">
                     <p class="m-0"><span class="h3">Urgency Factor</span></p>
                     <i class="material-icons md-18">help</i>
@@ -138,7 +141,6 @@
               <!-- Buttons at the end -->
             </form>
             <div class="container d-grid mt-4">
-              <button class="btn-lg grey-web lavender-blush-text form-control mb-2" id="edit">Edit Info</button>
               <button class="btn-lg onyx lavender-blush-text form-control mb-2" id="save" data-bs-toggle="modal" data-bs-target="#activityUpdated">Save Info</button>
             </div>
           </div>
