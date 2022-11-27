@@ -56,7 +56,7 @@ function displayCardTasks(collection) {
             //give unique ids to all elements for future use
             newcard.querySelector('.date').setAttribute("id", "tdate" + i);
             newcard.querySelector('.card-title').setAttribute("id", "tTitle" + i);
-            newcard.querySelector('.card-title').setAttribute("class", "tTitle" + " btn btn-primary card-href card-title d-block");
+            newcard.querySelector('.card-title').setAttribute("class", "tTitle" + " btn onyx lavender-blush-text card-href card-title d-block");
             newcard.querySelector('.timeStart').setAttribute("id", "tStart" + i);
             newcard.querySelector('.timeEnd').setAttribute("id", "tEnd" + i);
 
@@ -116,7 +116,7 @@ function displayCardActivities(collection) {
             //give unique ids to all elements for future use
             newcard.querySelector('.date').setAttribute("id", "adate" + i);
             newcard.querySelector(".card-title").setAttribute("id", "aTitle" + i);
-            newcard.querySelector('.card-title').setAttribute("class", "aTitle" + " btn btn-primary card-href card-title d-block");
+            newcard.querySelector('.card-title').setAttribute("class", "aTitle" + " btn onyx lavender-blush-text card-href card-title d-block");
 
             newcard.querySelector(".estimatedTime").setAttribute("id", "estimatedTime" + i);
 

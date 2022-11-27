@@ -45,17 +45,7 @@ body {
 .grey {
     background-color: #DCDCD4;
 }
-.unavailable{
-    color: #909090;
-}
 
-.greyText{
-    color: #cacaca;
-}
-
-.blue {
-    background-color: #92DCE5;
-}
 
 /* To prevent touch to search*/
 .unselectable {
@@ -76,3 +66,68 @@ i{
     cursor: pointer;
 }
 /* (248, 249, 250) */
+
+
+/* COLORSSS */
+
+
+/* COLOR PALETTE COLORS */
+.dark-turquoise{
+    background-color: #52dee5;
+}
+
+.dark-turquoise-text{
+    color: #52dee5;
+}
+
+.middle-blue {
+    background-color: #92DCE5;
+}
+.middle-blue-text{
+    color: #92DCE5;
+}
+
+.grey-web{
+    background-color: #7c7c7c;
+}
+
+.grey-web-text{
+    color: #7c7c7c;
+}
+
+.lavender-blush{
+    background-color: #eee5e9;
+}
+
+.lavender-blush-text{
+    color: #eee5e9;
+}
+
+.onyx{
+    background-color: #383d3b;
+}
+
+.onyx-text{
+    color: #383d3b;
+}
+
+.form-control:disabled{
+    background-color: #eee5e9;
+}
+
+
+/* other colors */
+
+/* color for any feature that is not implemented */
+.unavailable{
+    color: #909090;
+}
+
+/* for extremely faded out text */
+.greyText{
+    color: #cacaca;
+}
+
+html{
+    background-color: #eee5e9;
+}

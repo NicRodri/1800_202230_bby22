@@ -45,7 +45,7 @@
     <!------------------------------>
 
     <!-- our own navbar goes here -->
-    <div class="d-flex justify-content-between bg-info pt-5 pb-2 ps-2 pe-2 fixed-top">
+    <div class="d-flex justify-content-between dark-turquoise pt-5 pb-2 ps-2 pe-2 fixed-top">
       <div class="d-flex gap-3 ">
         <i id="back" class="material-icons md-36">arrow_back</i>
         <div class="d-flex column align-items-center">
@@ -56,7 +56,7 @@
       data-bs-target="#exampleModal">more_vert</i>
     </div>
 
-    <div class="card bg-light py-0 spacing-footer spacing-header" style="width: 100%;">
+    <div class="card lavender-blush py-0 spacing-footer spacing-header" style="width: 100%;">
       <div class="card-body">
         <div class="text-center pt-0">
           <div class="container-fluid text-dark pt-0">
@@ -85,7 +85,7 @@
                   <div class="container d-flex align-items-center mt-2">
                     <i class="material-icons md-24 me-2">watch</i>
                     <input type="number" id="estimatedTime" class="form-control" min="0" placeholder="Time" required>
-                    <select class="form-select" name="estimatedTimeType" id="estimatedTimeType">
+                    <select class="form-select form-control" name="estimatedTimeType" id="estimatedTimeType">
                       <option value="Minutes">Minutes</option>
                       <option value="Hours">Hours</option>
                     </select>
@@ -123,7 +123,7 @@
                   </div>
                   <div class="container d-flex align-items-center mt-2">
                     <i class="material-icons md-24 me-2">priority_high</i>
-                    <select class="form-select" name="urgencyFactor" id="urgencyFactor">
+                    <select class="form-select form-control" name="urgencyFactor" id="urgencyFactor">
                       <option value="1">Must be done ASAP</option>
                       <option value="2">Can wait a little</option>
                       <option value="3">Can be done whenever</option>
@@ -135,8 +135,8 @@
               <!-- Buttons at the end -->
             </form>
             <div class="container d-grid mt-3">
-              <button class="btn-lg btn-light form-control mb-2" id="edit">Edit Info</button>
-              <button class="btn-lg btn-dark form-control mb-2" id="save" data-bs-toggle="modal" data-bs-target="#activityUpdated">Save Info</button>
+              <button class="btn-lg grey-web lavender-blush-text form-control mb-2" id="edit">Edit Info</button>
+              <button class="btn-lg onyx lavender-blush-text form-control mb-2" id="save" data-bs-toggle="modal" data-bs-target="#activityUpdated">Save Info</button>
             </div>
           </div>
         </div>
@@ -145,7 +145,7 @@
 
     <div class="modal fade" id="activityUpdated" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+        <div class="modal-content lavender-blush">
           <div class="modal-header">
             <h5 class="modal-title" id="addModalLabel">Activity Information Updated!</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -165,31 +165,31 @@
 
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
+                <div class="modal-content lavender-blush">
+                  <div class="modal-header dark-turquoise">
                     <h5 class="modal-title" id="addModalLabel">More</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="container modal-body d-grid col-7 gap-2 ms-auto ">
-                    <button id="share">
+                    <button id="share" class="onyx lavender-blush-text rounded">
                       <div class="d-flex align-content-center justify-content-start">
                         <i class="material-icons md-36 px-2">share</i>
                         <span class="align-self-center"> Share Activity</span>
                       </div>
                     </button>
-                    <button id="delete">
+                    <button id="delete" class="onyx lavender-blush-text rounded">
                       <div class="d-flex align-content-center justify-content-start">
                         <i class="material-icons md-36 px-2">delete</i>
                         <span class="align-self-center">Delete Activity</span>
                       </div>
                     </button>
-                    <button id="favourite">
+                    <button id="favourite" class="onyx lavender-blush-text rounded">
                       <div class="d-flex align-content-center justify-content-start" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#notavailable">
                         <i class="material-icons md-36 px-2 unavailable">bookmark_border</i>
                         <span class="align-self-center justify-self-start unavailable">Favourite</span>
                       </div>
                     </button>
-                    <button id="completedActivity">
+                    <button id="completedActivity" class="onyx lavender-blush-text rounded">
                       <div class="d-flex align-content-center justify-content-start" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#notavailable">
                         <i class="material-icons md-36 px-2 unavailable">done</i>
                         <span class="align-self-center justify-self-start unavailable">Mark as Done</span>

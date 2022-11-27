@@ -45,7 +45,7 @@
     <!------------------------------>
 
     <!-- our own navbar goes here -->
-    <div class="d-flex justify-content-between bg-info pt-5 pb-2 ps-2 pe-2 fixed-top">
+    <div class="d-flex justify-content-between dark-turquoise pt-5 pb-2 ps-2 pe-2 fixed-top">
       <div class="d-flex gap-3 ">
         <i id="back" class="material-icons md-36">arrow_back</i>
         <div class="d-flex column align-items-center">
@@ -59,7 +59,7 @@
 
 
 <!--BODY GOES HERE -->
-    <div class="card bg-light py-0 spacing-footer spacing-header" style="width: 100%;">
+    <div class="card lavender-blush py-0 spacing-footer spacing-header" style="width: 100%;">
       <div class="card-body">
         <div class="text-center pt-0">
           <div class="container-fluid text-dark pt-0">
@@ -104,7 +104,7 @@
 
                   <div class="container d-flex align-items-center mt-4">
                     <i class="material-icons md-24 me-2">event_repeat</i>
-                    <select class="form-select" name="does-not-repeat" id="does-not-repeat">
+                    <select class="form-select form-control" name="does-not-repeat" id="does-not-repeat">
                       <option value="1">Does not repeat</option>
                       <option value="2">Every day</option>
                       <option value="3">Every week</option>
@@ -128,8 +128,8 @@
             </form>
             <!-- Buttons at the end-->
             <div class="container gap-3 mt-3">
-              <button class="btn-lg btn-light form-control mb-2" id="edit">Edit Info</button>
-              <button class="btn-lg btn-dark form-control mb-2" id="save" data-bs-toggle="modal" data-bs-target="#taskUpdated">Save Info</button>
+              <button class="btn-lg grey-web lavender-blush-text form-control mb-2" id="edit">Edit Info</button>
+              <button class="btn-lg onyx lavender-blush-text form-control mb-2" id="save" data-bs-toggle="modal" data-bs-target="#taskUpdated">Save Info</button>
             </div>
           </div>
         </div>
@@ -138,7 +138,7 @@
 
     <div class="modal fade" id="taskUpdated" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+        <div class="modal-content lavender-blush">
           <div class="modal-header">
             <h5 class="modal-title" id="addModalLabel">Task Information Updated!</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -154,31 +154,31 @@
     <!-- <MODAL> -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
+        <div class="modal-content lavender-blush">
+          <div class="modal-header dark-turquoise">
             <h5 class="modal-title" id="addModalLabel">More</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="container modal-body d-grid col-7 gap-2 ms-auto ">
-            <button id="share">
+          <div class="container modal-body d-grid col-7 gap-2 ms-auto lavender-blush">
+            <button id="share" class="onyx lavender-blush-text rounded">
               <div class="d-flex align-content-center justify-content-start">
                 <i class="material-icons md-36 px-2">share</i>
                 <span class="align-self-center"> Share Task</span>
               </div>
             </button>
-            <button id="delete">
+            <button id="delete" class="onyx lavender-blush-text rounded">
               <div class="d-flex align-content-center justify-content-start">
                 <i class="material-icons md-36 px-2">delete</i>
                 <span class="align-self-center">Delete Task</span>
               </div>
             </button>
-            <button id="favourite">
+            <button id="favourite" class="onyx lavender-blush-text rounded">
               <div class="d-flex align-content-center justify-content-start" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#notavailable">
                 <i class="material-icons md-36 px-2 unavailable">bookmark_border</i>
                 <span class="align-self-center justify-self-start unavailable">Favourite</span>
               </div>
             </button>
-            <button id="completedTask">
+            <button id="completedTask" class="onyx lavender-blush-text rounded">
               <div class="d-flex align-content-center justify-content-start" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#notavailable">
                 <i class="material-icons md-36 px-2 unavailable">done</i>
                 <span class="align-self-center justify-self-start unavailable">Mark as Done</span>
