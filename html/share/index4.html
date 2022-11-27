@@ -97,13 +97,27 @@
 
       <!-- Buttons at the end-->
       <div class="container gap-3 mt-5">
-        <button class="btn-lg onyx lavender-blush-text form-control" type="submit" id="submit">Save</button>
+        <button class="btn-lg onyx lavender-blush-text form-control" type="submit" id="submit" data-bs-toggle="modal" data-bs-target="#activityUpdated">Save</button>
       </div>
     </form>
   </div>
   <!-- our own footer goes here-->
   <nav id="footerPlaceholder"></nav>
 
+  <div class="modal fade" id="activityUpdated" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content lavender-blush">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addModalLabel">Please wait a moment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!--<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+  </div>-->
+      </div>
+    </div>
+  </div>
   <!---------------------------------------------->
   <!-- Your own JavaScript functions go here    -->
   <!---------------------------------------------->
