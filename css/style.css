@@ -128,6 +128,11 @@ i{
     color: #cacaca;
 }
 
-html{
+html,
+body{
     background-color: #eee5e9;
+    /* font-family: playfair display; */
+}
+.btn:hover{
+    color: #eee5e9;
 }
