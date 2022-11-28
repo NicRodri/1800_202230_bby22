@@ -49,8 +49,8 @@
             <div class="close">
 
                 <!-- <div id="close"><a href="#"><span class="word">Close</span></a></div> -->
-                <div id="select"><a href="#"><span class="word">Select a contact</span></a></div>
-                <div id="multiple"><a href="#"><span class="word">multiple</span></a></div>
+                <div id="select"><a href="#"><span class="word"></span></a></div>
+                <div id="multiple"><a href="#"><span class="word"></span></a></div>
             </div>
 
             <div class="follow" id="search">
@@ -62,7 +62,7 @@
 
         <div class="recent">
             <div class="r1">
-                <div class="recentsent"><span class="r1w" id="recentsent"></span>
+                <div class="recentsent" data-bs-toggle="modal" data-bs-target="#exampleModal" data-whatever="Default"><span class="r1w" id="done">Done</span>
                 </div>
                 <div class="new"><span class="r1w" id="new">Add new contact</span>
                 </div>
@@ -74,7 +74,7 @@
                 </div>
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+            <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content lavender-blush">
                         <div class="modal-header dark-turquoise">
@@ -86,12 +86,12 @@
                             <button id="Confirm" data-bs-toggle="modal" data-bs-dismiss="modal"
                                 data-bs-target="#dataSent" class="onyx lavender-blush-text rounded">Confirm</button>
                             <button id="Cancel" data-bs-dismiss="modal" class="onyx lavender-blush-text rounded">Cancel</button>
-                        </div>
+                        </div> -->
                         <!--<div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Save changes</button>
               </div>-->
-                    </div>
+                   </div>
                 </div>
             </div>
 
@@ -113,16 +113,18 @@
                 <div class="card" data-bs-toggle="modal" data-bs-target="#exampleModal" data-whatever="Default">
                     <!-- <img class="card-img-top"> -->
                     <div class="card-body">
+                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                            <input type="checkbox" class="" id="btncheck1" autocomplete="off">
                         <div class="card-title0"></div>
                         <br>
                         <p class="card-title1">First name goes here</p>
                         <br>
-                        <p class="card-title2">Last name goes here</p>
+                        <!-- <p class="card-title2">Last name goes here</p>
                         <br>
                         <p class="card-title3">Email address goes here</p>
                         <br>
                         <p class="card-title4">Cellphone number goes here</p>
-                        <br>
+                        <br> -->
 
 
                     </div>
@@ -142,7 +144,7 @@
         <nav id="footerPlaceholder"></nav>
         <script src="/scripts/firebaseAPI_TEAM22.js"></script>
         <script src="/scripts/skeleton.js"></script>
-        <script src="/scripts/sharejs/share5.js"></script>
+        <script src="/scripts/sharejs/share6.js"></script>
         <script src="/scripts/EventListeners/navigationHeader.js"></script>
         <!-- <script src="/scripts/sharejs/confirmation.js"></script> -->
 </body>
