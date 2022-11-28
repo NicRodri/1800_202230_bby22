@@ -1,14 +1,14 @@
-function multipleSelect() {
-  const multibutton = document.getElementById("multiple");
+// function multipleSelect() {
+//   const multibutton = document.getElementById("multiple");
 
-  function multipleSelect() {
-    window.location.href = "/html/share/index6.html";
-  }
+//   function multipleSelect() {
+//     window.location.href = "/html/share/index6.html";
+//   }
 
-  multibutton.addEventListener("click", multipleSelect);
-}
+//   multibutton.addEventListener("click", multipleSelect);
+// }
 
-multipleSelect();
+// multipleSelect();
 
 // function closeSelect() {
 //   const closebutton = document.getElementById("close");
@@ -92,3 +92,15 @@ function addNewContact() {
 }
 
 addNewContact();
+
+function backToPrevious() {
+  const crossbutton = document.getElementById("cross");
+
+  function backToPrevious() {
+    window.location.href = "/html/share/index5.html";
+  }
+
+  crossbutton.addEventListener("click", backToPrevious);
+}
+
+backToPrevious();

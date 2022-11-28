@@ -49,11 +49,11 @@
             <div class="close">
 
                 <!-- <div id="close"><a href="#"><span class="word">Close</span></a></div> -->
-                <div id="select"><a href="#"><span class="word"></span></a></div>
-                <div id="multiple"><a href="#"><span class="word"></span></a></div>
+                <!-- <div id="select"><a href="#"><span class="word"></span></a></div>
+                <div id="multiple"><a href="#"><span class="word"></span></a></div> -->
             </div>
 
-            <div class="follow" id="search">
+            <div class="follow" data-bs-toggle="modal" data-bs-target="#notavailable" data-whatever="Default" id="search">
                 <form id="form1" action="/action_page.php">
                     <input id="input" type="text" placeholder="Search Contact" name="search" />
                 </form>
@@ -62,7 +62,7 @@
 
         <div class="recent">
             <div class="r1">
-                <div class="recentsent" data-bs-toggle="modal" data-bs-target="#dataSent" data-whatever="Default"><span class="r1w" id="done">Done</span>
+                <div class="recentsent" data-bs-toggle="modal" data-bs-target="#dataSent" data-whatever="Default"><span class="r1w" id="done">Send</span>
                 </div>
                 <div class="new"><span class="r1w" id="new">Add new contact</span>
                 </div>
@@ -100,7 +100,7 @@
                     <div class="modal-content lavender-blush">
                         <div class="modal-header">
                             <h5 class="modal-title" id="addModalLabel">Schedule sent Successfully</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="cross"></button>
                         </div>
                         <!--<div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
