@@ -195,5 +195,6 @@ body {
   height: 10%;
 }
 #btncheck1{
-  width:9%;
+  width:auto;
+  flex: 0 0 16px;
 }
