@@ -56,8 +56,8 @@ function populateCardsDynamically(collection) {
             })
 
 
-            testContactCard.querySelector('.card-title1').innerHTML = firstName;     //equiv getElementByClassName
-            testContactCard.querySelector('.card-title2').innerHTML = lastName;
+            testContactCard.querySelector('.card-title1').innerHTML = firstName + " "  + lastName;     //equiv getElementByClassName
+            // testContactCard.querySelector('.card-title2').innerHTML = lastName;
             testContactCard.querySelector('.card-title3').innerHTML = emailAddress;
             testContactCard.querySelector('.card-title4').innerHTML = phoneNumber;  //equiv getElementByClassName
             testContactCard.querySelector('.card-title0').appendChild (document.createElement('img')).src = picUrl;
