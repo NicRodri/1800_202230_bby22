@@ -34,7 +34,7 @@ function populateCardsDynamically(collection) {
           snap.forEach(doc => { //iterate thru each doc
             var firstName = doc.data().firstName; //gets the name field
             console.log("This is" + firstName);
-            // var lastName = doc.data().lastName;
+            var lastName = doc.data().lastName;
             // var emailAddress = doc.data().emailAddress;
             // var phoneNumber = doc.data().phoneNumber;
             var picUrl = doc.data().profilePic;
@@ -56,7 +56,7 @@ function populateCardsDynamically(collection) {
             })
 
 
-            testContactCard.querySelector('.card-title1').innerHTML = firstName;     //equiv getElementByClassName
+            testContactCard.querySelector('.card-title1').innerHTML = firstName + " " + lastName;     //equiv getElementByClassName
             // testContactCard.querySelector('.card-title2').innerHTML = lastName;
             // testContactCard.querySelector('.card-title3').innerHTML = emailAddress;
             // testContactCard.querySelector('.card-title4').innerHTML = phoneNumber;  //equiv getElementByClassName
