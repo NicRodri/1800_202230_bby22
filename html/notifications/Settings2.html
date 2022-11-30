@@ -205,8 +205,28 @@
 
 
     <div class="button spacing-footer">
-      <button class="btn-lg onyx btn-dark form-control" type="button" id="submit" onclick="saveSettings()">Save
+      <button class="btn-lg onyx btn-dark form-control" data-bs-toggle="modal" data-bs-target="#activityUpdated"
+      data-bs-backdrop="static" data-bs-keyboard="false" type="button" id="submit" onclick="saveSettings()">Save
         Changes</button>
+
+          <div class="modal fade" id="activityUpdated" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true"  data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content lavender-blush">
+        <div class="modal-header">
+          <h5 class="modal-title me-3" id="addModalLabel">Please wait a moment</h5>
+          <div class="d-flex align-items-center">
+            <strong></strong>
+            <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+          </div>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <!--<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+  </div>-->
+      </div>
+    </div>
+  </div>
     </div>
   </form>
 
