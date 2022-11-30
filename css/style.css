@@ -137,6 +137,39 @@ body{
     color: #eee5e9;
 }
 
+
+
+#cursor {
+    cursor: pointer;
+}
+
+#cursor1 {
+    cursor: pointer;
+}
+
+#cursor2 {
+    cursor: pointer;
+}
+
+#settings {
+    cursor: pointer;
+}
+
+#history {
+    cursor: pointer;
+}
+
+#favorites {
+    cursor: pointer;
+}
+
+#logout {
+    cursor: pointer;
+}
+
+.border {
+    cursor: pointer;
+}
 /* input[type="date"]:before {
     content: attr(placeholder) !important;
     color: #aaa;

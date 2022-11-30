@@ -30,16 +30,16 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-    <!-------------------------------------------------------->
-    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-    <!-------------------------------------------------------->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
   <!-------------------------------------------->
   <!-- Other libraries and styles of your own -->
@@ -69,6 +69,8 @@
       align-items: center;
       margin-top: 5px;
     }
+
+
   </style>
 
 
@@ -77,6 +79,7 @@
 
 <body>
   <!-- our own navbar goes here -->
+  <div class="id">
   <div class="d-flex justify-content-between dark-turquoise pt-5 pb-2 ps-2 pe-2 fixed-top">
     <div class="d-flex gap-3 ">
       <i id="back" class="material-icons md-36">arrow_back</i>
@@ -85,7 +88,7 @@
       </div>
     </div>
   </div>
-
+</div>
 
   <!------------------------------>
   <!-- Your HTML Layout go here -->
@@ -106,19 +109,35 @@
   <hr>
 
   <div class="d-flex column justify-content-center ">
-    <div class="d-flex row gap-1 m-0">
-      <i id="history" class="text-center fa-solid fa-clock-rotate-left fa-4x"></i>
-      <p class="m-0 text-center"><span class="fs-5">History</span></p>
+    <div class="d-flex row gap-1 m-0 unselectable unavailable" data-bs-toggle="modal" data-bs-target="#notavailable">
+      <i id="history" class="text-center fa-solid fa-clock-rotate-left fa-4x "></i>
+      <p id="cursor" class="m-0 text-center"><span class="fs-5">History</span></p>
     </div>
 
-    <div class="d-flex row gap-1 m-0">
+    <div class="d-flex row gap-1 m-0 unselectable unavailable" data-bs-toggle="modal" data-bs-target="#notavailable">
       <i id="favorites" class="text-center fa-solid fa-heart fa-4x"></i>
-      <p class="m-0 text-center"><span class="fs-5">Favorites</span></p>
+      <p id="cursor1" class="m-0 text-center"><span class="fs-5">Favorites</span></p>
     </div>
 
     <div class="d-flex row gap-1 m-0">
       <i id="settings" class="text-center fa-solid fa-gear fa-4x"></i>
-      <p class="m-0 text-center"><span class="fs-5">Settings</span></p>
+      <p id="cursor2" class="m-0 text-center"><span class="fs-5">Settings</span></p>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="notavailable" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content lavender-blush">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addModalLabel">Feature to be Implemented</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!--<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+  </div>-->
+      </div>
     </div>
   </div>
 
