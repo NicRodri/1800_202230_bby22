@@ -17,7 +17,7 @@ const notificationsInfo = document.getElementById("notification-information");
 const notificationsSubmit = document.getElementById("submit");
 const turnOnNoti = document.getElementById("notifications");
 const sound = document.getElementById("sound");
-const pause = document.getElementById("pause");
+// const pause = document.getElementById("pause");
 
 
 
@@ -38,7 +38,6 @@ notificationsSubmit.addEventListener('click', (e) => {
           // Can be changed for different forms
           notifications: turnOnNoti.value,
           sound: sound.value,
-          pause: pause.value,
 
         })
         .then(() => {
