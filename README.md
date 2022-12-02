@@ -5,9 +5,10 @@
 * [Contents](#content)
 
 ## General Info
-This browser based web application will allow for users to create tasks and activities and organize them
-based on urgency factor and due dates. Some additional features include the ability to customize you personal profile
-and share contacts to friends(This feature does not share tasks/activities yet but does create contacts).
+This browser based web application to ...
+*Hi my name is Bingdi Zhou. I am excited about this project because it is interesting.
+* Hi my name is Lucas, I am excited about this project because it will give me more oppotunity to learn more coding languages on html, css and javascript.
+* Hi my name is Nicolas. I'm excited about this project because ...
 	
 ## Technologies
 Technologies used for this project:
