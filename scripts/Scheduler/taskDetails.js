@@ -1,3 +1,45 @@
+// used to give functionality to the buttons in the more modal in task details.
+function moreFunctions(collection) {
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      var uid = user.uid;
+      console.log(uid);
+      db.collection("users").doc(uid).collection(collection).get()
+        .then(snap => {
+          var i = 1;  //if you want to use commented out section
+          snap.forEach(doc => { //iterate thru each doc
+            if (doc.data().ID_Name == localStorage.getItem("Task")) {
+              var dataName = doc.data().name;
+              var dataDetails = doc.data().details;
+              var dataDate = doc.data().date;
+              var dataCommute = doc.data().tasksCommute;
+              var timeStart = doc.data().timeFrom;
+              var timeEnd = doc.data().timeTo;
+              var doesNotRepeat = doc.data().tasksDoesNotRepeat;
+
+              document.getElementById("taskName").value = dataName;
+              document.getElementById("taskDetails").value = dataDetails;
+              document.getElementById("date").value = dataDate
+              document.getElementById("timeFrom").value = timeStart
+              document.getElementById("timeTo").value = timeEnd
+              document.getElementById("does-not-repeat").value = doesNotRepeat
+              document.getElementById("commute").value = dataCommute
+            }
+            i++;   //if you want to use commented out section
+          })
+          share();
+          deleteTask(uid);
+        })
+      // ...
+    } else {
+      // User is signed out
+      // ...
+    }
+  });
+}
+
+moreFunctions("tasks");
+
 // Opens the share page
 function share() {
   const share = document.getElementById("share");

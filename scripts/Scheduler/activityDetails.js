@@ -1,3 +1,51 @@
+// used to give functionality to the buttons in the more modal in activity details.
+function moreFunctions(collection) {
+  let cardTemplate = document.getElementById("activityDetails");
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      var uid = user.uid;
+      console.log(uid);
+      db.collection("users").doc(uid).collection(collection).get()
+        .then(snap => {
+          var i = 1;  //if you want to use commented out section
+          snap.forEach(doc => { //iterate thru each doc
+            if (doc.data().ID_Name == localStorage.getItem("Activity")) {
+              var dataName = doc.data().name;
+              var dataDetails = doc.data().details;
+              var dataDate = doc.data().dueDate;
+              var timeDue = doc.data().timeDue;
+              var timeEstimated = doc.data().timeEstimated;
+              var timeType = doc.data().timeType;
+              var urgencyFactor = doc.data().urgencyFactor;
+              var dataCommute = doc.data().commute;
+
+              document.getElementById("activityName").value = dataName;
+              document.getElementById("activityDetails").value = dataDetails;
+              document.getElementById("estimatedTime").value = timeEstimated;
+              document.getElementById("estimatedTimeType").value = timeType;
+              document.getElementById("activityDate").value = dataDate;
+              document.getElementById("activityTime").value = timeDue;
+              document.getElementById("activityCommute").value = dataCommute;
+              document.getElementById("urgencyFactor").value = urgencyFactor;
+            }
+            i++;   //if you want to use commented out section
+          })
+          share();
+          deleteActivity(uid);
+        })
+      // ...
+    } else {
+      // User is signed out
+      // ...
+    }
+  });
+}
+
+
+moreFunctions("activities");
+
 // Opens the share page
 function share() {
   const share = document.getElementById("share");
