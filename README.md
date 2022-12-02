@@ -110,6 +110,102 @@ Firebase hosting files:
 
 ```
 
+
+
+
+
+
+│   .firebaserc
+│   .gitignore
+│   404.html
+│   firebase.json
+│   firestore.indexes.json
+│   firestore.rules
+│   index.html
+│   README.md
+│   storage.rules
+│
+├───.firebase
+│       hosting..cache
+│
+├───css
+│   │   style.css
+│   │
+│   └───sharecss
+│           index1.css
+│           index2.css
+│
+├───html
+│   │   login.html
+│   │   main.html
+│   │
+│   ├───notifications
+│   │       contact.html
+│   │       personal.html
+│   │       settings0.html
+│   │       settings1.html
+│   │       settings2.html
+│   │
+│   ├───reusable-content
+│   │       add.html
+│   │       footer.html
+│   │       nav.html
+│   │
+│   ├───share
+│   │       index1.html
+│   │       index2.html
+│   │       index4.html
+│   │       index5.html
+│   │       index6.html
+│   │
+│   ├───sleep-time
+│   │       sleep.html
+│   │
+│   └───tasks-and-activities
+│           activity.html
+│           activityDetails.html
+│           task.html
+│           taskDetails.html
+│
+├───images
+│   │   default.jpg
+│   │   portrait.svg
+│   │
+│   └───landing-page
+│           balance.svg
+│           main.png
+│           notifications.png
+│           share.png
+│
+└───scripts
+    │   authentication.js
+    │   firebaseAPI_TEAM22.js
+    │   main.js
+    │   skeleton.js
+    │
+    ├───event-listeners
+    │       add.js
+    │       navigationFooter.js
+    │       navigationHeader.js
+    │       personal.js
+    │       settings0.js
+    │       settings1.js
+    │       settings2.js
+    │
+    ├───scheduler
+    │       activities.js
+    │       activityDetails.js
+    │       sleep.js
+    │       taskDetails.js
+    │       tasks.js
+    │
+    └───sharejs
+            share1.js
+            share2.js
+            share4.js
+            share5.js
+            share6.js
+
 Tips for file naming files and folders:
 * use lowercase with no spaces
 * use dashes (not underscore) for word separation
