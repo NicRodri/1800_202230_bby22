@@ -25,10 +25,6 @@
     margin-top: 92px;
 }
 
-/* .mt-6 {
-    margin-top: 15%;
-} */
-
 body {
     height: 100%;
     background-color: rgb(255, 243, 243);
@@ -46,7 +42,6 @@ body {
     background-color: #DCDCD4;
 }
 
-
 /* To prevent touch to search*/
 .unselectable {
     -webkit-user-select: none;
@@ -54,7 +49,8 @@ body {
     -ms-user-select: none;
     user-select: none;
 }
-i{
+
+i {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -62,56 +58,56 @@ i{
 }
 
 #CreateTasks,
-#CreateActivities{
+#CreateActivities {
     cursor: pointer;
 }
-/* (248, 249, 250) */
 
 
-/* COLORSSS */
 
+/* COLORS */
 
 /* COLOR PALETTE COLORS */
-.dark-turquoise{
+.dark-turquoise {
     background-color: #52dee5;
 }
 
-.dark-turquoise-text{
+.dark-turquoise-text {
     color: #52dee5;
 }
 
 .middle-blue {
     background-color: #92DCE5;
 }
-.middle-blue-text{
+
+.middle-blue-text {
     color: #92DCE5;
 }
 
-.grey-web{
+.grey-web {
     background-color: #7c7c7c;
 }
 
-.grey-web-text{
+.grey-web-text {
     color: #7c7c7c;
 }
 
-.lavender-blush{
+.lavender-blush {
     background-color: #eee5e9;
 }
 
-.lavender-blush-text{
+.lavender-blush-text {
     color: #eee5e9;
 }
 
-.onyx{
+.onyx {
     background-color: #383d3b;
 }
 
-.onyx-text{
+.onyx-text {
     color: #383d3b;
 }
 
-.form-control:disabled{
+.form-control:disabled {
     background-color: #eee5e9;
 }
 
@@ -119,26 +115,25 @@ i{
 /* other colors */
 
 /* color for any feature that is not implemented */
-.unavailable{
+.unavailable {
     color: #909090;
 }
 
 /* for extremely faded out text */
-.greyText{
+.greyText {
     color: #cacaca;
 }
 
 html,
-body{
+body {
     background-color: #eee5e9;
-    /* font-family: playfair display; */
 }
-.btn:hover{
+
+.btn:hover {
     color: #eee5e9;
 }
 
-
-
+/* css for cursor pointer */
 #cursor {
     cursor: pointer;
 }
@@ -170,22 +165,3 @@ body{
 .border {
     cursor: pointer;
 }
-/* input[type="date"]:before {
-    content: attr(placeholder) !important;
-    color: #aaa;
-    margin-right: 0.5em;
-  }
-  input[type="date"]:focus:before,
-  input[type="date"]:valid:before {
-    content: "";
-  }
-
-  input[type="time"]:before {
-    content: attr(placeholder) !important;
-    color: #aaa;
-    margin-right: 0.5em;
-  }
-  input[type="time"]:focus:before,
-  input[type="time"]:valid:before {
-    content: "";
-  } */

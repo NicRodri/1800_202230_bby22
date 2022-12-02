@@ -1,24 +1,7 @@
-// function saveSelect() {
-//     const submit = document.getElementById("submit");
-
-//     function getSave() {
-//         window.location.href = "/html/main.html";
-//     }
-
-//     submit.addEventListener("click", getSave);
-// }
-
-// saveSelect();
-
-
-
-
 const notificationsInfo = document.getElementById("notification-information");
 const notificationsSubmit = document.getElementById("submit");
 const turnOnNoti = document.getElementById("notifications");
 const sound = document.getElementById("sound");
-// const pause = document.getElementById("pause");
-
 
 
 notificationsSubmit.addEventListener('click', (e) => {

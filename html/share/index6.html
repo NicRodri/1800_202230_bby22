@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>index5</title>
     <link rel="stylesheet" type="text/css" href="/css/sharecss/index1.css" />
@@ -10,10 +10,10 @@
     <!-- Bootstrap Library CSS JS CDN go here -->
     <!------------------------------------------>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+      </script>
 
     <!-------------------------------------------------------->
     <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
@@ -32,122 +32,79 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/sharecss/index2.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="d-flex justify-content-between dark-turquoise pt-5 pb-2 ps-2 pe-2 fixed-top">
-        <div class="d-flex gap-3 ">
-            <i id="back" class="material-icons md-36">arrow_back</i>
-            <div class="d-flex column align-items-center">
-                <p class="m-0"><span id="nav2" class="h3">Share</span></p>
-            </div>
+      <div class="d-flex gap-3 ">
+        <i id="back" class="material-icons md-36">arrow_back</i>
+        <div class="d-flex column align-items-center">
+          <p class="m-0"><span id="nav2" class="h3">Share</span></p>
         </div>
+      </div>
     </div>
     <div id="container" class="spacing-footer spacing-header">
 
-        <div class="topnav">
-            <div class="close">
-
-                <!-- <div id="close"><a href="#"><span class="word">Close</span></a></div> -->
-                <!-- <div id="select"><a href="#"><span class="word"></span></a></div>
-                <div id="multiple"><a href="#"><span class="word"></span></a></div> -->
-            </div>
-
-            <div class="follow" data-bs-toggle="modal" data-bs-target="#notavailable" data-whatever="Default" id="search">
-                <form id="form1" action="/action_page.php">
-                    <input id="input" type="text" placeholder="Search Contact" name="search" autocomplete="off"/>
-                </form>
-            </div>
+      <div class="topnav">
+        <div class="close">
         </div>
 
-        <div class="recent">
-            <div class="r1">
-                <div class="recentsent" data-bs-toggle="modal" data-bs-target="#dataSent" data-whatever="Default"><span class="r1w" id="done">Send</span>
-                </div>
-                <div class="new"><span class="r1w" id="new">Add new contact</span>
-                </div>
-            </div>
+        <div class="follow" data-bs-toggle="modal" data-bs-target="#notavailable" data-whatever="Default" id="search">
+          <form id="form1" action="/action_page.php">
+            <input id="input" type="text" placeholder="Search Contact" name="search" autocomplete="off" />
+          </form>
+        </div>
+      </div>
 
-            <div class="container">
-                <h1>Contacts</h1>
-                <div id="contacts-go-here" class="row row-cols-auto">
-                </div>
-
-            <!-- Modal -->
-            <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content lavender-blush">
-                        <div class="modal-header dark-turquoise">
-                            <h5 class="modal-title" id="addModalLabel">Send To Carly <span id="name"></span></h5>
-    
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="container modal-body d-grid col-7 gap-2 ms-auto ">
-                            <button id="Confirm" data-bs-toggle="modal" data-bs-dismiss="modal"
-                                data-bs-target="#dataSent" class="onyx lavender-blush-text rounded">Confirm</button>
-                            <button id="Cancel" data-bs-dismiss="modal" class="onyx lavender-blush-text rounded">Cancel</button>
-                        </div> -->
-                        <!--<div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>-->
-                   </div>
-                </div>
-            </div>
-
-            <div class="modal fade" id="dataSent" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content lavender-blush">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="addModalLabel">Schedule sent Successfully</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="cross"></button>
-                        </div>
-                        <!--<div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>-->
-                    </div>
-                </div>
-            </div>
-            <template id="contactCardTemplate">
-                <div class="card middle-blue" data-bs-toggle="modal" data-bs-target="#exampleModal" data-whatever="Default">
-                    <!-- <img class="card-img-top"> -->
-                    <div class="card-body middle-blue">
-                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                            <input type="checkbox" class="" id="btncheck1" autocomplete="off">
-                        <div class="card-title0"></div>
-                        <br>
-                        <p class="card-title1">First name goes here</p>
-                        <br>
-                        <!-- <p class="card-title2">Last name goes here</p>
-                        <br>
-                        <p class="card-title3">Email address goes here</p>
-                        <br>
-                        <p class="card-title4">Cellphone number goes here</p>
-                        <br> -->
-
-
-                    </div>
-                </div>
-            </template>
-
-
-
-            <!-- <div class="end-menu"> -->
-
-            <!-- <nav id="footerPlaceholder"></nav> -->
-
-            <!-- </div> -->
+      <div class="recent">
+        <div class="r1">
+          <div class="recentsent" data-bs-toggle="modal" data-bs-target="#dataSent" data-whatever="Default">
+            <span class="r1w" id="done">Send</span>
+          </div>
+          <div class="new"><span class="r1w" id="new">Add new contact</span>
+          </div>
         </div>
 
+        <div class="container">
+          <h1>Contacts</h1>
+          <div id="contacts-go-here" class="row row-cols-auto">
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <nav id="footerPlaceholder"></nav>
-        <script src="/scripts/firebaseAPI_TEAM22.js"></script>
-        <script src="/scripts/skeleton.js"></script>
-        <script src="/scripts/sharejs/share6.js"></script>
-        <script src="/scripts/EventListeners/navigationHeader.js"></script>
-        <!-- <script src="/scripts/sharejs/confirmation.js"></script> -->
-</body>
+    <div class="modal fade" id="dataSent" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content lavender-blush">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addModalLabel">Schedule sent Successfully</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="cross"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <template id="contactCardTemplate">
+      <div class="card middle-blue" data-bs-toggle="modal" data-bs-target="#exampleModal" data-whatever="Default">
+        <div class="card-body middle-blue">
+          <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+            <input type="checkbox" class="" id="btncheck1" autocomplete="off">
+            <div class="card-title0"></div>
+            <br>
+            <p class="card-title1">First name goes here</p>
+            <br>
+          </div>
+        </div>
+    </template>
+    </div>
+
+
+    <nav id="footerPlaceholder"></nav>
+    <script src="/scripts/firebaseAPI_TEAM22.js"></script>
+    <script src="/scripts/skeleton.js"></script>
+    <script src="/scripts/sharejs/share6.js"></script>
+    <script src="/scripts/event-listeners/navigationHeader.js"></script>
+  </body>
 
 
 </html>

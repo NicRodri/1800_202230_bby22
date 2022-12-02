@@ -144,7 +144,7 @@ function taskDetails(ID) {
   for (let i = 0; i < tasksNum.length; i++) {
     tasksNum[i].addEventListener("click", function (e) {
     localStorage.setItem("Task", ID[i]);
-    window.location.href = "/html/Tasks_And_Activities/taskDetails.html?" + tasksNum[i].innerText;
+    window.location.href = "/html/tasks-and-activities/taskDetails.html?" + tasksNum[i].innerText;
     });
   }
 }
@@ -157,7 +157,7 @@ function activityDetails(ID) {
   for (let i = 0; i < activitiesNum.length; i++) {
     activitiesNum[i].addEventListener("click", function (e) {
     localStorage.setItem("Activity", ID[i]);
-    window.location.href = "/html/Tasks_And_Activities/activityDetails.html?" + activitiesNum[i].innerText;
+    window.location.href = "/html/tasks-and-activities/activityDetails.html?" + activitiesNum[i].innerText;
     });
   }
 }
@@ -170,7 +170,7 @@ var ImageFile;      //global variable to store the File Object reference
 function createTask(){
   const task = document.getElementById("CreateTasks");
   task.addEventListener("click", function (e){
-    window.location.href = "/html/Tasks_And_Activities/task.html";
+    window.location.href = "/html/tasks-and-activities/task.html";
   });
 }
 
@@ -179,7 +179,7 @@ createTask();
 function createActivity(){
   const activity = document.getElementById("CreateActivities");
   activity.addEventListener("click", function (e){
-    window.location.href = "/html/Tasks_And_Activities/activity.html";
+    window.location.href = "/html/tasks-and-activities/activity.html";
   });
 }
 createActivity();
