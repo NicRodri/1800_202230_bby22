@@ -10,7 +10,7 @@ function navigationFooter(){
   home.addEventListener("click", goHome);
 
   function goPerson(){
-    window.location.href = "/html/notifications/Settings0.html";
+    window.location.href = "/html/notifications/settings0.html";
   }
   person.addEventListener("click", goPerson);
 

@@ -131,7 +131,7 @@ function displayCardTasks(collection) {
     for (let i = 0; i < activitiesNum.length; i++) {
       activitiesNum[i].addEventListener("click", function (e) {
       localStorage.setItem("Activity", ID[i]);
-      window.location.href = "/html/Tasks_And_Activities/activityDetails.html?" + activitiesNum[i].innerText;
+      window.location.href = "/html/tasks-and-activities/activityDetails.html?" + activitiesNum[i].innerText;
       });
     }
   }
