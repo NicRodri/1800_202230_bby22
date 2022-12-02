@@ -1,4 +1,5 @@
-function displayCardTasks(collection) {
+// used to give functionality to the buttons in the more modal in activity details.
+function moreFunctions(collection) {
   let cardTemplate = document.getElementById("activityDetails");
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -43,8 +44,9 @@ function displayCardTasks(collection) {
 }
 
 
-displayCardTasks("activities");
+moreFunctions("activities");
 
+// Opens the share page
 function share() {
   const share = document.getElementById("share");
   share.addEventListener("click", function (e) {
@@ -52,29 +54,22 @@ function share() {
   });
 }
 
-function deleteActivity(uid){
+// Deletes the activity
+function deleteActivity(uid) {
   const deleteActivity = document.getElementById("delete");
   const completedActivity = document.getElementById("completedActivity");
-  deleteActivity.addEventListener("click", function (e){
+  deleteActivity.addEventListener("click", function (e) {
     db.collection("users").doc(uid).collection("activities").doc(localStorage.getItem("Activity")).delete().then(() => {
       console.log("Document successfully deleted!");
       window.location.href = "/html/main.html";
 
-  }).catch((error) => {
+    }).catch((error) => {
       console.error("Error removing document: ", error);
+    });
   });
-  });
-  // completedActivity.addEventListener("click", function (e){
-  //   db.collection("users").doc(uid).collection("activities").doc(localStorage.getItem("Activity")).delete().then(() => {
-  //     console.log("Document successfully deleted!");
-  //     window.location.href = "/html/main.html";
-
-  // }).catch((error) => {
-  //     console.error("Error removing document: ", error);
-  // });
-  // });
 }
 
+// Allows the activity to editable
 function editUserInfo() {
   //Enable the form fields
   document.getElementById("edit").addEventListener("click", function (e) {
@@ -83,6 +78,7 @@ function editUserInfo() {
 }
 editUserInfo();
 
+//Saves/updates the user activity info
 function saveUserInfo() {
   const activityName = document.getElementById("activityName");
   const activityDetails = document.getElementById("activityDetails");
@@ -95,12 +91,10 @@ function saveUserInfo() {
   const activitySubmit = document.getElementById("save");
 
   activitySubmit.addEventListener('click', (e) => {
-    // e.preventDefault();
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         var uid = user.uid;
         db.collection("users").doc(uid).collection("activities").doc(localStorage.getItem("Activity")).update({
-          // Can be changed for different forms
           name: activityName.value,
           details: activityDetails.value,
           timeEstimated: estimatedTime.value,
@@ -111,8 +105,8 @@ function saveUserInfo() {
           urgencyFactor: urgencyFactor.value,
         })
           .then(() => {
-              document.querySelector('.activityFieldSet').disabled = true;
-              console.log("Document successfully updated!");
+            document.querySelector('.activityFieldSet').disabled = true;
+            console.log("Document successfully updated!");
           });
         // ...
       } else {

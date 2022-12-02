@@ -49,88 +49,54 @@
       <div class="d-flex gap-3 ">
         <i id="back" class="material-icons md-36">arrow_back</i>
         <div class="d-flex column align-items-center">
-          <p class="m-0"><span id="nav2" class="h3">Activity</span></p>
+          <p class="m-0"><span id="nav2" class="h3">Daily Sleep Time</span></p>
         </div>
       </div>
     </div>
 
     <!-- the body of your page goes here -->
-    <div class="container-fluid lavender-blush text-dark pt-4 spacing-footer spacing-header">
-      <form id="activityInfo" name="activityInfo">
-        <!-- add activity name and details -->
+    <div class="container-fluid bg-light text-dark pt-4 spacing-footer spacing-header">
+      <form id="sleepInfo" name="sleepInfo">
+        <!-- Sleep Time-->
         <div class="container">
-          <div class="container d-flex align-items-center">
-            <i class="material-icons md-24 me-2">task_alt</i>
-            <input class="form-control" type="text" id="activityName" name="activityName" placeholder="Add activity name" required>
-          </div>
-          <div class="container d-flex align-items-center mt-2">
-            <i class="material-icons md-24 me-2">edit_note</i>
-            <textarea id="activityDetails" class="form-control" placeholder="Add activity details"></textarea>
-            </textarea>
-          </div>
-        </div>
-        <!-- Estimated time -->
-        <div class="container mt-4 ">
           <div class="container d-flex align-items-center gap-1 p-0">
-            <p class="m-0"><span class="h3">Estimated Time</span></p>
+            <p class="m-0"><span class="h1">Sleep Time</span></p>
             <i class="material-icons md-18">help</i>
           </div>
           <div class="container d-flex align-items-center mt-2">
-            <i class="material-icons md-24 me-2">watch</i>
-            <input type="number" id="estimatedTime" class="form-control" min="0" placeholder="Time" required>
-            <select class="form-select" name="estimatedTimeType" id="estimatedTimeType">
-              <option value="Minutes">Minutes</option>
-              <option value="Hours">Hours</option>
-            </select>
-
+            <i class="material-icons md-24 me-2">hotel</i>
+            <input type="time" class="form-control" name="sleepTime" id="sleepTime">
           </div>
         </div>
-        <!-- Due by -->
-        <div class="container mt-4 ">
-          <div class="container d-flex align-items-center gap-1 p-0">
-            <p class="m-0"><span class="h3">Due by</span></p>
-            <i class="material-icons md-18">help</i>
-          </div>
-          <div class="container d-flex align-items-center mt-2">
-            <i class="material-icons md-24 me-2">calendar_month</i>
-            <input id="activityDate" type="date" class="form-control" placeholder="Date:" required>
-          </div>
-          <div class="container d-flex align-items-center mt-2">
-            <i class="material-icons md-24 me-2">schedule</i>
-            <input type="time" class="form-control" name="time" id="activityTime" placeholder="Time:" required>
-          </div>
-        </div>
-        <!-- Commuting Time -->
+        <!-- Sleep Hours-->
         <div class="container mt-4">
           <div class="container d-flex align-items-center gap-1 p-0">
-            <p class="m-0"><span class="h3">Commuting Time</span></p>
-            <i class="material-icons md-18">help</i>
-          </div>
-          <div class="container d-flex align-items-center mt-2 mb-0">
-            <i class="material-icons md-24 me-2">commute</i>
-            <input id="activityCommute" type="number" class="form-control" placeholder="Minutes" min="0">
-          </div>
-        </div>
-        <!-- Urgency Factors -->
-        <div class="container mt-4">
-          <div class="container d-flex align-items-center gap-1 p-0">
-            <p class="m-0"><span class="h3">Urgency Factor</span></p>
+            <p class="m-0"><span class="h1">Sleep Hours</span></p>
             <i class="material-icons md-18">help</i>
           </div>
           <div class="container d-flex align-items-center mt-2">
-            <i class="material-icons md-24 me-2">priority_high</i>
-            <select class="form-select" name="urgencyFactor" id="urgencyFactor">
-              <option value="1">Must be done ASAP</option>
-              <option value="2">Can wait a little</option>
-              <option value="3">Can be done whenever</option>
-            </select>
+            <i class="material-icons md-24 me-2">bedtime</i>
+            <input type="number" class="form-control" placeholder="Hours" min="0" name="sleepHours" id="sleepHours">
           </div>
         </div>
-        <!-- Buttons at the end -->
+        <!-- Done button -->
         <div class="container d-grid gap-3 mt-4">
-          <button class="btn-lg onyx lavender-blush-text form-control" type="submit" id="submit">Save Info</button>
+          <button class="btn-lg onyx lavender-blush-text form-control" type="submit" id="submit" data-bs-toggle="modal"
+            data-bs-target="#sleepUpdated">Save Info</button>
         </div>
       </form>
+    </div>
+
+
+    <div class="modal fade" id="sleepUpdated" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content lavender-blush">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addModalLabel">Sleep Information Updated!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- our own footer goes here-->
@@ -141,11 +107,8 @@
     <!---------------------------------------------->
     <script src="/scripts/firebaseAPI_TEAM22.js"></script>
     <script src="/scripts/skeleton.js"></script>
-    <!-- <script src="/scripts/main.js"></script> -->
-    <!-- <script src="/scripts/date.js"></script>
-    <script src="/scripts/time.js"></script> -->
-    <script src="/scripts/Scheduler/activities.js"></script>
-    <script src="/scripts/EventListeners/navigationHeader.js"></script>
+    <script src="/scripts/event-listeners/navigationHeader.js"></script>
+    <script src="/scripts/Scheduler/sleep.js"></script>
 
   </body>
 

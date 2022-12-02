@@ -59,14 +59,14 @@
       </div>
     </div>
 
+    <!-- Body of the page -->
     <div class="card lavender-blush py-0 spacing-footer spacing-header" style="width: 100%;">
       <div class="card-body">
         <div class="text-center pt-0">
           <div class="container-fluid text-dark pt-0">
-            <!-- <div id="activities-go-here" class="row row-cols-auto"> -->
             <form id="activityInfo" name="activityInfo">
+              <!-- Activity name/details -->
               <fieldset class="activityFieldSet" disabled>
-                <!-- add activity name and details -->
                 <div class="container">
                   <div class="container d-flex align-items-center">
                     <i class="material-icons md-24 me-2">task_alt</i>
@@ -141,13 +141,15 @@
               <!-- Buttons at the end -->
             </form>
             <div class="container d-grid mt-4">
-              <button class="btn-lg onyx lavender-blush-text form-control mb-2" id="save" data-bs-toggle="modal" data-bs-target="#activityUpdated">Save Info</button>
+              <button class="btn-lg onyx lavender-blush-text form-control mb-2" id="save" data-bs-toggle="modal"
+                data-bs-target="#activityUpdated">Save Info</button>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Modal that is used to let user know that the activity has been updated -->
     <div class="modal fade" id="activityUpdated" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content lavender-blush">
@@ -155,10 +157,6 @@
             <h5 class="modal-title" id="addModalLabel">Activity Information Updated!</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <!--<div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      <button type="button" class="btn btn-primary">Save changes</button>
-    </div>-->
         </div>
       </div>
     </div>
@@ -166,51 +164,53 @@
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
 
-          <!-- <MODAL> -->
+    <!-- <MODAL that appears to share, delete, favourite, and to mark an activity as done> -->
 
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content lavender-blush">
-                  <div class="modal-header dark-turquoise">
-                    <h5 class="modal-title" id="addModalLabel">More</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="container modal-body d-grid col-7 gap-2 ms-auto ">
-                    <button id="share" class="onyx lavender-blush-text rounded">
-                      <div class="d-flex align-content-center justify-content-start">
-                        <i class="material-icons md-36 px-2">share</i>
-                        <span class="align-self-center"> Share Activity</span>
-                      </div>
-                    </button>
-                    <button id="delete" class="onyx lavender-blush-text rounded">
-                      <div class="d-flex align-content-center justify-content-start">
-                        <i class="material-icons md-36 px-2">delete</i>
-                        <span class="align-self-center">Delete Activity</span>
-                      </div>
-                    </button>
-                    <button id="favourite" class="onyx lavender-blush-text rounded">
-                      <div class="d-flex align-content-center justify-content-start" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#notavailable">
-                        <i class="material-icons md-36 px-2 unavailable">bookmark_border</i>
-                        <span class="align-self-center justify-self-start unavailable">Favourite</span>
-                      </div>
-                    </button>
-                    <button id="completedActivity" class="onyx lavender-blush-text rounded">
-                      <div class="d-flex align-content-center justify-content-start" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#notavailable">
-                        <i class="material-icons md-36 px-2 unavailable">done</i>
-                        <span class="align-self-center justify-self-start unavailable">Mark as Done</span>
-                      </div>
-                    </button>
-                  </div>
-                </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content lavender-blush">
+          <div class="modal-header dark-turquoise">
+            <h5 class="modal-title" id="addModalLabel">More</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="container modal-body d-grid col-7 gap-2 ms-auto ">
+            <button id="share" class="onyx lavender-blush-text rounded">
+              <div class="d-flex align-content-center justify-content-start">
+                <i class="material-icons md-36 px-2">share</i>
+                <span class="align-self-center"> Share Activity</span>
               </div>
-            </div>
+            </button>
+            <button id="delete" class="onyx lavender-blush-text rounded">
+              <div class="d-flex align-content-center justify-content-start">
+                <i class="material-icons md-36 px-2">delete</i>
+                <span class="align-self-center">Delete Activity</span>
+              </div>
+            </button>
+            <button id="favourite" class="onyx lavender-blush-text rounded">
+              <div class="d-flex align-content-center justify-content-start" data-bs-dismiss="modal"
+                data-bs-toggle="modal" data-bs-target="#notavailable">
+                <i class="material-icons md-36 px-2 unavailable">bookmark_border</i>
+                <span class="align-self-center justify-self-start unavailable">Favourite</span>
+              </div>
+            </button>
+            <button id="completedActivity" class="onyx lavender-blush-text rounded">
+              <div class="d-flex align-content-center justify-content-start" data-bs-dismiss="modal"
+                data-bs-toggle="modal" data-bs-target="#notavailable">
+                <i class="material-icons md-36 px-2 unavailable">done</i>
+                <span class="align-self-center justify-self-start unavailable">Mark as Done</span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
     <script src="/scripts/firebaseAPI_TEAM22.js"></script>
     <script src="/scripts/skeleton.js"></script>
-    <script src="/scripts/EventListeners/navigationHeader.js"></script>
-    <script src="/scripts/Scheduler/activityDetails.js"></script>
+    <script src="/scripts/event-listeners/navigationHeader.js"></script>
+    <script src="/scripts/scheduler/activityDetails.js"></script>
 
   </body>
 

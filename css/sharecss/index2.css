@@ -1,40 +1,31 @@
+
+/* make the grid */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
 #container {
-  /* background-color: orange; */
   display: grid;
   height: 85vh;
   grid-template-columns: 100%;
-  grid-template-rows: 15% 25% 60% ;
+  grid-template-rows: 15% 25% 60%;
   overflow: auto;
 }
-/* .top-menu {
-  display: grid;
-  grid-column: 1 / span 1;
-  grid-row: 1 / span 1; */
-  /* background-color: blue;       */
 
 .topnav {
   display: grid;
   grid-column: 1 / span 1;
   grid-row: 1 / span 1;
-  /* background-color: rgb(37, 236, 149); */
   grid-template-rows: 50% 50%;
 }
 
 .close {
   grid-column: 1 / span 1;
   grid-row: 1 / span 1;
-  /* background-color: rgb(227, 35, 35); */
   display: grid;
   grid-template-columns: 50% 50%;
 }
-/* #close {
-  grid-column: 1 / span 1;
-  grid-row: 1 / span 1;
-} */
+
 #select {
   grid-column: 1 / span 1;
   grid-row: 1 / span 1;
@@ -48,14 +39,13 @@ body {
 .follow {
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
-  /* background-color: rgb(218, 231, 38); */
+ 
 }
 
 .recent {
   display: grid;
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
-  /* background-color: yellow; */
   grid-template-rows: 20% 80%;
 }
 .r1 {
@@ -78,10 +68,8 @@ body {
 .r2 {
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
-  /* background-color: rgb(151, 28, 222); */
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
- 
 }
 #carly {
   grid-column: 1 / span 1;
@@ -103,13 +91,12 @@ body {
   display: grid;
   grid-column: 1 / span 1;
   grid-row: 3 / span 1;
-  /* background-color: rgb(37, 236, 149); */
   grid-template-rows: 10% 90%;
 }
 .c1 {
   grid-column: 1 / span 1;
   grid-row: 1 / span 1;
-  /* background-color: pink; */
+  
 }
 .c2 {
   grid-column: 1 / span 1;
@@ -119,6 +106,8 @@ body {
   grid-template-rows: 25% 25% 25% 25%;
 }
 
+
+/* change the font style and font size and image size */
 .topnav a {
   text-decoration: none;
   color: black;
@@ -134,17 +123,16 @@ body {
   border-style: hidden;
 }
 
-#form1{
+#form1 {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  
 }
 
 .word {
   font-size: 18px;
 }
-#select{
+#select {
   text-align: center;
 }
 #multiple {
@@ -157,9 +145,7 @@ body {
   margin-left: 20%;
   font-weight: bold;
 }
-/* #recentsent {
-  margin-left: 9%;
-} */
+
 #close {
   text-align: center;
 }
@@ -193,8 +179,6 @@ body {
   margin-left: 8%;
 }
 
-
-
 .r2 input[type="radio"] {
   content: "";
   display: inline-block;
@@ -206,9 +190,8 @@ body {
   margin-top: 25%;
 }
 
-.text{
-margin-left: 35%;
-
+.text {
+  margin-left: 35%;
 }
 .c2 input[type="radio"] {
   content: "";
@@ -220,6 +203,6 @@ margin-left: 35%;
   height: 2em;
   margin-top: 5%;
 }
-#nav2{
+#nav2 {
   font-weight: bold;
 }

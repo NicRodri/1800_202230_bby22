@@ -57,19 +57,16 @@
         <i id="more" class="material-icons md-36 justify-self-end" data-bs-toggle="modal"
           data-bs-target="#exampleModal">more_vert</i>
       </div>
-
     </div>
-
-
 
     <!--BODY GOES HERE -->
     <div class="card lavender-blush py-0 spacing-footer spacing-header" style="width: 100%;">
       <div class="card-body">
         <div class="text-center pt-0">
-          <div class="container-fluid text-dark pt-0">
+          <div class="container-fluid text-dark pt-0">           
             <form id="task-information" action="">
               <fieldset class="taskFieldSet" disabled>
-                <!-- add task name and details-->
+                <!-- Task Name / Details -->
                 <div class="container">
                   <div class="container d-flex align-items-center">
                     <i class="material-icons md-24 me-2">task_alt</i>
@@ -137,12 +134,13 @@
           </div>
           <div class="container gap-3 mt-5">
             <button class="btn-lg onyx lavender-blush-text form-control" type="submit" id="save" data-bs-toggle="modal"
-            data-bs-target="#taskUpdated">Save Info</button>
+              data-bs-target="#taskUpdated">Save Info</button>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Modal letting user know task has been updated -->
     <div class="modal fade" id="taskUpdated" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content lavender-blush">
@@ -150,15 +148,11 @@
             <h5 class="modal-title" id="addModalLabel">Task Information Updated!</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <!--<div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      <button type="button" class="btn btn-primary">Save changes</button>
-    </div>-->
         </div>
       </div>
     </div>
 
-    <!-- <MODAL> -->
+    <!-- <MODAL to let user select share, delete, favourite, and mark a task as done > -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content lavender-blush">
@@ -205,8 +199,8 @@
     <!---------------------------------------------->
     <script src="/scripts/firebaseAPI_TEAM22.js"></script>
     <script src="/scripts/skeleton.js"></script>
-    <script src="/scripts/EventListeners/navigationHeader.js"></script>
-    <script src="/scripts/Scheduler/taskDetails.js"></script>
+    <script src="/scripts/event-listeners/navigationHeader.js"></script>
+    <script src="/scripts/scheduler/taskDetails.js"></script>
 
   </body>
 

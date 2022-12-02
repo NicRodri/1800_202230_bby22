@@ -38,20 +38,19 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <style>
-        p {
-            text-align: center;
+        .title {
+            text-align: left;
+            
         }
 
-        .borderExtra {
-            padding: 20px;
-        }
+
     </style>
 
 </head>
 
 <body>
     <!-- our own navbar goes here -->
-    <div class="d-flex justify-content-between dark-turquoise pt-5 pb-2 ps-2 pe-2 fixed-top">
+    <div class="d-flex justify-content-between dark-turquoise pt-5 pb-2 ps-2 pe-2">
         <div class="d-flex gap-3 ">
             <i id="back" class="material-icons md-36">arrow_back</i>
             <div class="d-flex column align-items-center">
@@ -66,57 +65,79 @@
     <!------------------------------>
     <br>
     <hr>
-    <br>
 
     <br>
-    <!-- This is where contact information for our app is stored.
-        We have customer service here. -->
-    <div class="borderExtra spacing-header">
-        <p style="font-size:larger"><b>Questions?</b></p>
-        <p style="font-size:larger"><b>Contact us via:</b></p>
-    </div>
+    <h1>History: </h1>
+    <hr>
+    <div class="container spacing-footer spacing-header pt-2 spacing-center">
+        <h1 class="text-start">Tasks:</h1>
+        <!-- Here is Task container for cards  -->
+        <div class="container">
+          <div id="tasks-go-here" class="row row-cols-auto">
+          </div>
+        </div>
+        <h1 class="text-start pt-3">Activities:</h1>
+        <!-- Here is Activity container for cards  -->
+        <div class="container">
+          <div id="activities-go-here" class="row row-cols-auto">
+          </div>
+        </div>
+  
+        <!-- Pop up for add button -->
+        <div id="addPlaceholder"></div>
+  
+        <!-- our own footer goes here-->
+        <nav id="footerPlaceholder"></nav>
+  
+        <!-- Templates for general use, not displayed  TASKS-->
+        <template id="taskCardTemplate">
+          <div class="card py-2 mx-2 middle-blue" style="width: 18rem;">
+            <div class="card-body text-center ">
+  
+              <a class="btn onyx card-href card-title d-block">Get
+                Details</a>
+              <div class="text-center">
+                <p class="date d-block my-1">Date goes here</p>
+                <p class="timeStart d-inline">Start Time goes here</p>
+                <p class="timeEnd d-inline">End Time goes here</p>
+              </div>
+  
+            </div>
+          </div>
+        </template>
+      </div>
+  
+      <!-- Templates for general use, not displayed  ACTIVITIES-->
+      <template id="activityCardTemplate">
+        <div class="card py-2 mx-2 middle-blue" style="width: 18rem;">
+          <div class="card-body">
+  
+            <a class="btn onyx card-href card-title d-block">Get Details</a>
+            <div class="text-center">
+              <p class="date d-block my-1">Date goes here</p>
+              <p class="estimatedTime d-inline">Start Time goes here test</p>
+            </div>
+          </div>
+        </div>
+      </template>
 
-    <!-- Separated by padding for each div. -->
-    <div class="borderExtra">
-        <p style="font-size:larger"><b>Phone: 778-888-8889</b></p>
-        <p style="font-size:larger"><b>Email: BaLaNce@gmail.com</b></p>
-        <p style="font-size:larger"><b>Instagram: BaLaNce_99</b></p>
-    </div>
-
-    <div class="borderExtra spacing-footer">
-        <p style="font-size:larger"><b>Hours:</b></p>
-        <p style="font-size:larger"><b>Monday: 11:00 - 22:00</b></p>
-        <p style="font-size:larger"><b>Tuesday: 11:00 - 22:00</b></p>
-        <p style="font-size:larger"><b>Wednesday: 11:00 - 22:00</b></p>
-        <p style="font-size:larger"><b>Thursday: 11:00 - 22:00</b></p>
-        <p style="font-size:larger"><b>Friday: 11:00 - 22:00</b></p>
-        <p style="font-size:larger"><b>Saturday: CLOSED</b></p>
-        <p style="font-size:larger"><b>Sunday: CLOSED</b></p>
-    </div>
 
 
 
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
 
-<<<<<<< HEAD
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
     <script src="/scripts/firebaseAPI_TEAM22.js"></script>
     <script src="/scripts/skeleton.js"></script>
-    <script src="/scripts/EventListeners/navigationHeader.js"></script>
+    <!-- <script src="/scripts/main.js"></script> -->
+    <script src="/scripts/event-listeners/navigationHeader.js"></script>
+    <script src="/scripts/event-listeners/history.js"></script>
 
+    <!-- <script src="./scripts/script.js"></script> -->
 
 </body>
-=======
-        <!---------------------------------------------->
-        <!-- Your own JavaScript functions go here    -->
-        <!---------------------------------------------->
-        <script src="/scripts/firebaseAPI_TEAM22.js"></script>
-        <script src="/scripts/skeleton.js"></script>
-        <script src="/scripts/event-listeners/navigationHeader.js" ></script>
-    </body>
->>>>>>> e720648cc8d99e6096ee814aef0da9770b20730b
 
 </html>

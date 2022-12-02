@@ -31,38 +31,7 @@ infoSubmit.addEventListener("click", (e) => {
   saveNewContact();
  setTimeout(changePage, 3000);
 });
-//   firebase.auth().onAuthStateChanged((user) => {
-//     if (user) {
-//       // User is signed in, see docs for a list of available properties
-//       // https://firebase.google.com/docs/reference/js/firebase.User
 
-//       var uid = user.uid;
-
-//       console.log(uid);
-
-//       db.collection("users")
-//         .doc(uid)
-//         .collection("contacts")
-//         .doc()
-//         .set({
-//           // Can be changed for different forms
-//           firstName: firstName.value,
-//           lastName: lastName.value,
-//           emailAddress: emailAddress.value,
-//           phoneNumber: phoneNumber.value,
-//         })
-//         .then(() => {
-//           contactsInfo.reset();
-//           window.location.href = "/html/share/index5.html";
-//         });
-
-//       // ...
-//     } else {
-//       // User is signed out
-//       // ...
-//     }
-//   });
-// });
 function changePage(){
   window.location.href = "/html/share/index5.html";
 }
@@ -97,13 +66,14 @@ function saveNewContact() {
       })
       .then((doc) => {
         console.log("Added new contact profile info to Firestore.");
-        contactID = doc.id;
+        contactID = doc.id;//get the contact ID
         saveContactPicture(contactID);
         // setTimeout(window.location.href = "/html/share/index5.html", 1500);
       })
   });
 }
 
+//save the contact picture to the firebase storage
 function saveContactPicture(cid) {
   firebase.auth().onAuthStateChanged(function (user) {
     var uid = user.uid;
@@ -135,6 +105,7 @@ function saveContactPicture(cid) {
   });
 }
 
+//display the contact portrait picture
 function displayContactProfilePic() {
   console.log("hi");
   firebase.auth().onAuthStateChanged(function (user) {
@@ -149,12 +120,9 @@ function displayContactProfilePic() {
       .then(function (doc) {
         var picUrl = doc.data().profilePic; //extract pic url
 
-        // use this line if "mypicdiv" is a "div"
-        //$("#mypicdiv").append("<img src='" + picUrl + "'>")
-
         // use this line if "mypic-goes-here" is an "img"
         $("#mypic-goes-here").attr("src", picUrl);
       });
   });
 }
-// displayContactProfilePic();
+

@@ -1,31 +1,6 @@
-
-function insertName() {
-  firebase.auth().onAuthStateChanged(user => {
-    // Check if a user is signed in:
-    if (user) {
-      // Do something for the currently logged-in user here: 
-      console.log(user.uid);
-      console.log(user.displayName);
-      user_Name = user.displayName;
-
-
-      //method #1:  insert with html only
-      //document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
-      //method #2:  insert using jquery
-      $("#name-goes-here").text(user_Name); //using jquery
-
-    } else {
-      // No user is signed in.
-    }
-  });
-}
-insertName(); 
-
-
+// Used to display tasks on main page.
 function displayCardTasks(collection) {
   let cardTemplate = document.getElementById("taskCardTemplate");
-
-
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
@@ -34,9 +9,9 @@ function displayCardTasks(collection) {
       console.log(uid);
       var ID = [];
       db.collection("users").doc(uid).collection(collection)
-      .orderBy("date").orderBy("timeFrom")
-      .limit(5)
-      .get()
+        .orderBy("date").orderBy("timeFrom") //activities are ordered bydate and timeFrom
+        .limit(5) // only a limit of 5 tasks present at once.
+        .get()
         .then(snap => {
           var i = 1;  //if you want to use commented out section
           snap.forEach(doc => { //iterate thru each doc
@@ -50,7 +25,7 @@ function displayCardTasks(collection) {
             //update title and text and image
             newcard.querySelector('.date').innerHTML = "Date: " + date;
             newcard.querySelector('.card-title').innerHTML = title;
-            newcard.querySelector('.timeStart').innerHTML = "Time: " +timeStart + " - ";
+            newcard.querySelector('.timeStart').innerHTML = "Time: " + timeStart + " - ";
             newcard.querySelector('.timeEnd').innerHTML = timeEnd;
 
             //give unique ids to all elements for future use
@@ -75,10 +50,9 @@ function displayCardTasks(collection) {
     }
   });
 }
-
-
 displayCardTasks("tasks");
 
+// Used to display activities on main page.
 function displayCardActivities(collection) {
   let cardTemplate = document.getElementById("activityCardTemplate");
 
@@ -89,10 +63,11 @@ function displayCardActivities(collection) {
       var uid = user.uid;
       console.log(uid);
       var ID = [];
+
       db.collection("users").doc(uid).collection(collection)
-      .orderBy("dueDate").orderBy("urgencyFactor")
-      .limit(5)
-      .get()
+        .orderBy("dueDate").orderBy("urgencyFactor") //activities are ordered by due date and urgencyfactor      
+        .limit(5) // only a limit of 5 activities present at once.
+        .get()
         .then(allActivities => {
           var i = 1;  //if you want to use commented out section
           allActivities.forEach(doc => { //iterate thru each doc
@@ -106,8 +81,9 @@ function displayCardActivities(collection) {
             //update title and text and image
             newcard.querySelector(".date").innerHTML = "Due: " + date;
             newcard.querySelector(".card-title").innerHTML = title;
-            // newcard.querySelector('.estimatedTime').innerHTML = " Estimated Time: ";
-            if (Number(timeEstimated) >0){
+
+            // use to check if no time was entered, and if so have a default output.
+            if (Number(timeEstimated) > 0) {
               newcard.querySelector('.estimatedTime').innerHTML = " Estimated Time: " + timeEstimated + " " + timeEstimatedType;
             } else {
               newcard.querySelector('.estimatedTime').innerHTML = " Estimated Time: " + "0" + " " + timeEstimatedType;
@@ -122,7 +98,7 @@ function displayCardActivities(collection) {
 
             //attach to gallery
             document.getElementById(collection + "-go-here").appendChild(newcard);
-            i++;   //if you want to use commented out section
+            i++;
           })
           activityDetails(ID);
 
@@ -134,52 +110,44 @@ function displayCardActivities(collection) {
     }
   });
 }
-
 displayCardActivities("activities");
 
-
+// Used to open task details page and pass the current information to next page
 function taskDetails(ID) {
-  console.log(ID);
   const tasksNum = document.getElementsByClassName("tTitle");
   for (let i = 0; i < tasksNum.length; i++) {
     tasksNum[i].addEventListener("click", function (e) {
-    localStorage.setItem("Task", ID[i]);
-    window.location.href = "/html/Tasks_And_Activities/taskDetails.html?" + tasksNum[i].innerText;
+      localStorage.setItem("Task", ID[i]);
+      window.location.href = "/html/tasks-and-activities/taskDetails.html?" + tasksNum[i].innerText;
     });
   }
 }
-// Doesnt run function till after information loads
-// setTimeout(taskDetails, 1500);
 
-
+// Used to open activity details page and pass the current information to next page.
 function activityDetails(ID) {
   const activitiesNum = document.getElementsByClassName("aTitle");
   for (let i = 0; i < activitiesNum.length; i++) {
     activitiesNum[i].addEventListener("click", function (e) {
-    localStorage.setItem("Activity", ID[i]);
-    window.location.href = "/html/Tasks_And_Activities/activityDetails.html?" + activitiesNum[i].innerText;
+      localStorage.setItem("Activity", ID[i]);
+      window.location.href = "/html/tasks-and-activities/activityDetails.html?" + activitiesNum[i].innerText;
     });
   }
 }
 
-// Doesnt run function till after information loads
-// setTimeout(activityDetails, 1500);
-
-var ImageFile;      //global variable to store the File Object reference
-
-function createTask(){
+// Used to open a page to create a task.
+function createTask() {
   const task = document.getElementById("CreateTasks");
-  task.addEventListener("click", function (e){
-    window.location.href = "/html/Tasks_And_Activities/task.html";
+  task.addEventListener("click", function (e) {
+    window.location.href = "/html/tasks-and-activities/task.html";
   });
 }
-
 createTask();
 
-function createActivity(){
+// Used to open a page to create an activity.
+function createActivity() {
   const activity = document.getElementById("CreateActivities");
-  activity.addEventListener("click", function (e){
-    window.location.href = "/html/Tasks_And_Activities/activity.html";
+  activity.addEventListener("click", function (e) {
+    window.location.href = "/html/tasks-and-activities/activity.html";
   });
 }
 createActivity();

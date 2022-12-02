@@ -1,3 +1,5 @@
+
+//Make the button clickable and direct to another page
 function multipleSelect() {
     const multibutton = document.getElementById("multiple");
 
@@ -10,6 +12,7 @@ function multipleSelect() {
 
  multipleSelect();
  
+ //Make the button clickable and direct to another page
  function closeSelect() {
     const closebutton = document.getElementById("close");
 

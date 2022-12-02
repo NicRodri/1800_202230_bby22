@@ -1,4 +1,5 @@
-function displayCardTasks(collection) {
+// used to give functionality to the buttons in the more modal in task details.
+function moreFunctions(collection) {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       var uid = user.uid;
@@ -37,8 +38,9 @@ function displayCardTasks(collection) {
   });
 }
 
-displayCardTasks("tasks");
+moreFunctions("tasks");
 
+// Opens the share page
 function share() {
   const share = document.getElementById("share");
   share.addEventListener("click", function (e) {
@@ -46,6 +48,7 @@ function share() {
   });
 }
 
+// Deletes the task
 function deleteTask(uid) {
   const deleteTask = document.getElementById("delete");
   const completedTask = document.getElementById("completedTask");
@@ -58,17 +61,9 @@ function deleteTask(uid) {
       console.error("Error removing document: ", error);
     });
   });
-  // completedTask.addEventListener("click", function (e) {
-  //   db.collection("users").doc(uid).collection("tasks").doc(localStorage.getItem("Task")).delete().then(() => {
-  //     console.log("Document successfully deleted!");
-  //     window.location.href = "/html/main.html";
-
-  //   }).catch((error) => {
-  //     console.error("Error removing document: ", error);
-  //   });
-  // });
 }
 
+// Allows the task to editable
 function editUserInfo() {
   //Enable the form fields
   document.getElementById("edit").addEventListener("click", function (e) {
@@ -76,9 +71,9 @@ function editUserInfo() {
 
   });
 }
-
 editUserInfo();
 
+//Saves/updates the user task info
 function saveUserInfo() {
   const tasksName = document.getElementById("taskName");
   const tasksDetails = document.getElementById("taskDetails");
@@ -90,12 +85,10 @@ function saveUserInfo() {
   const tasksSubmit = document.getElementById("save");
 
   tasksSubmit.addEventListener('click', (e) => {
-    // e.preventDefault();
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         var uid = user.uid;
         db.collection("users").doc(uid).collection("tasks").doc(localStorage.getItem("Task")).update({
-          // Can be changed for different forms
           name: tasksName.value,
           details: tasksDetails.value,
           date: tasksDate.value,
@@ -105,8 +98,8 @@ function saveUserInfo() {
           tasksCommute: tasksCommute.value,
         })
           .then(() => {
-              document.querySelector('.taskFieldSet').disabled = true;
-              console.log("Document successfully updated!");
+            document.querySelector('.taskFieldSet').disabled = true;
+            console.log("Document successfully updated!");
           });
         // ...
       } else {

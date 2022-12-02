@@ -1,28 +1,4 @@
-
-function insertName() {
-    firebase.auth().onAuthStateChanged(user => {
-      // Check if a user is signed in:
-      if (user) {
-        // Do something for the currently logged-in user here: 
-        console.log(user.uid);
-        console.log(user.displayName);
-        user_Name = user.displayName;
-  
-  
-        //method #1:  insert with html only
-        //document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
-        //method #2:  insert using jquery
-        $("#name-goes-here").text(user_Name); //using jquery
-  
-      } else {
-        // No user is signed in.
-      }
-    });
-  }
-  insertName(); 
-  
-  
-  function displayCardTasks(collection) {
+function displayCardTasks(collection) {
     let cardTemplate = document.getElementById("taskCardTemplate");
   
   
@@ -155,13 +131,10 @@ function insertName() {
     for (let i = 0; i < activitiesNum.length; i++) {
       activitiesNum[i].addEventListener("click", function (e) {
       localStorage.setItem("Activity", ID[i]);
-      window.location.href = "/html/Tasks_And_Activities/activityDetails.html?" + activitiesNum[i].innerText;
+      window.location.href = "/html/tasks-and-activities/activityDetails.html?" + activitiesNum[i].innerText;
       });
     }
   }
   
   // Doesnt run function till after information loads
   // setTimeout(activityDetails, 1500);
-  
-  
-  

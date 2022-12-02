@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <title>BaLaNce</title>
     <meta name="comp1800 template" content="My 1800 App">
 
@@ -11,12 +11,12 @@
 
     <!-- Bootstrap Library CSS CDN go here -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- Boostrap Library JS CDN  go here -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
 
     <!-- Other libraries go here -->
 
@@ -28,13 +28,13 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-    <link rel="stylesheet" href="/css/style.css">
+
     <!-- Link to styles of your own -->
-    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+    <link rel="stylesheet" href="/css/style.css">
 
-</head>
+  </head>
 
-<body>
+  <body>
 
     <!------------------------------>
     <!-- Your HTML Layout go here -->
@@ -42,97 +42,97 @@
 
     <!--Nav Bar-->
     <nav class="navbar navbar-expand-lg navbar-light dark-turquoise">
-        <div class="container-fluid">
-            <img class="navbar-brand" src="/images/landingpage/balance.svg" alt="" width="72" height="57">
-            <a class="navbar-brand " href="#">BaLaNce (Life Scheduler)</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link ">My Account</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link ">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Help</a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container-fluid">
+        <img class="navbar-brand" src="/images/landing-page/balance.svg" alt="" width="72" height="57">
+        <a class="navbar-brand " href="#">BaLaNce (Life Scheduler)</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link ">My Account</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link ">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Help</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!--Login buttons and Mission Statment-->
     <div class="px-4 py-5 my-5 text-center">
-        <h1 class="display-5 fw-bold">Mission Statement</h1>
-        <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">Our team BBY22 (Bingdi, Lucas, Nicolas) is developing BaLaNce(web application) to help
-                busy people to increase their personal time by automatically organizing their times and schedules based
-                on urgency factors and due dates.</p>
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <a href="/html/login.html" class="btn dark-turquoise btn-lg px-4 gap-3">Sign up/Login</a>
-                <!--NOTE!!! This feature will be implimented if we have time-->
-                <button type="button" class="btn grey-web btn-lg px-4">Continue as Guest</button>
-            </div>
+      <h1 class="display-5 fw-bold">Mission Statement</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Our team BBY22 (Bingdi, Lucas, Nicolas) is developing BaLaNce(web application) to help
+          busy people to increase their personal time by automatically organizing their times and schedules based
+          on urgency factors and due dates.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <a href="/html/login.html" class="btn dark-turquoise btn-lg px-4 gap-3">Sign up/Login</a>
+          <!--NOTE!!! This feature will be implimented if we have time-->
+          <button type="button" class="btn grey-web btn-lg px-4">Continue as Guest</button>
         </div>
+      </div>
     </div>
 
     <!--Content (cards with text and pictures)-->
     <div class="card-group lavender-blush">
-        <div class="card lavender-blush">
-            <img src="/images/landingpage/Function_Preview_Main_Highlighted.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Automatic Scheduler</h5>
-                <p class="card-text"> After having added your tasks and activities, click on "Schedule" to organize your
-                    busy life!</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
+      <div class="card lavender-blush">
+        <img src="/images/landing-page/Function_Preview_Main_Highlighted.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Automatic Scheduler</h5>
+          <p class="card-text"> After having added your tasks and activities, click on "Schedule" to organize your
+            busy life!</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
-        <div class="card lavender-blush">
-            <img src="/images/landingpage/Function_Share_highlighted.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Share Sub-function</h5>
-                <p class="card-text">This share function can do one contact choice or multiple contacts choices.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
+      </div>
+      <div class="card lavender-blush">
+        <img src="/images/landing-page/Function_Share_highlighted.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Share Sub-function</h5>
+          <p class="card-text">This share function can do one contact choice or multiple contacts choices.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
-        <div class="card lavender-blush">
-            <img src="/images/landingpage/Notifications Function preview.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Notifications</h5>
-                <p class="card-text">Go to "My Profiles" and there you can turn on the useful function called
-                    "notifications" where the app can remind you of important notices and events so you do not forget or
-                    fall behind.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
+      </div>
+      <div class="card lavender-blush">
+        <img src="/images/landing-page/Notifications Function preview.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Notifications</h5>
+          <p class="card-text">Go to "My Profiles" and there you can turn on the useful function called
+            "notifications" where the app can remind you of important notices and events so you do not forget or
+            fall behind.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
+      </div>
     </div>
 
     <!--Page Footer-->
     <div class="container">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <p class="col-md-4 mb-0 text-muted">&copy; 2022 BaLaNce, Inc</p>
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">&copy; 2022 BaLaNce, Inc</p>
 
-            <a href="/"
-                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                <svg class="bi me-2" width="40" height="32">
-                    <use xlink:href="#bootstrap" />
-                </svg>
-            </a>
+        <a href="/"
+          class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32">
+            <use xlink:href="#bootstrap" />
+          </svg>
+        </a>
 
-            <ul class="nav col-md-4 justify-content-end">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact Us</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-            </ul>
-        </footer>
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact Us</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+        </ul>
+      </footer>
     </div>
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
@@ -140,9 +140,6 @@
     <script src="./scripts/firebaseAPI_TEAM22.js"></script>
     <script src="./scripts/skeleton.js"></script>
 
-    <!-- Link to scripts of your own -->
-    <!-- <script src="./scripts/script.js"></script> -->
-
-</body>
+  </body>
 
 </html>
