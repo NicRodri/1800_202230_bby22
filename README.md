@@ -17,6 +17,7 @@ Technologies used for this project:
 Content of the project folder:
 
 ```
+ Top level of project folder: 
 │   .firebaserc
 │   .gitignore                      # Git ignore file
 │   404.html
