@@ -61,51 +61,50 @@
       <div class="container">
         <!-- accept file input -->
         <div class="container text-center py-3">
-          Upload Contact Portrait              
-         <!-- accept image file only -->
-         <!-- this is input ID -->
-        <div class="container text-center py-3">
-          <img id="mypic-goes-here" src="/images/share/portrait.svg" width=50 height=50/>
-          <input type="file" id="mypic-input" accept="image/*" />
-        </div>
-        
-        <div class="container d-flex align-items-center">
-          <i class="material-icons md-24 me-2">person_add</i>
-          <input class="form-control" type="text" id="firstName" name="firstName" placeholder="First Name"
-            required />
+          Upload Contact Portrait
+          <!-- accept image file only -->
+          <!-- this is input ID -->
+          <div class="container text-center py-3">
+            <img id="mypic-goes-here" src="/images/share/portrait.svg" width=50 height=50 />
+            <input type="file" id="mypic-input" accept="image/*" />
+          </div>
+
+          <div class="container d-flex align-items-center">
+            <i class="material-icons md-24 me-2">person_add</i>
+            <input class="form-control" type="text" id="firstName" name="firstName" placeholder="First Name" required />
+          </div>
+
+          <div class="container d-flex align-items-center mt-2">
+            <i class="material-icons md-24 me-2">mood</i>
+            <input class="form-control" type="text" id="lastName" name="lastName" placeholder="Last Name" required />
+          </div>
+
+          <div class="container d-flex align-items-center mt-2">
+            <i class="material-icons md-24 me-2">mood</i>
+            <input class="form-control" type="email" id="emailAddress" name="emailAddress" placeholder="Email Address"
+              required />
+          </div>
+
+          <div class="container d-flex align-items-center mt-2">
+            <i class="material-icons md-24 me-2">mood</i>
+            <input class="form-control" type="number" id="phoneNumber" name="phoneNumber" placeholder="Cellphone Number"
+              required />
+          </div>
+
         </div>
 
-        <div class="container d-flex align-items-center mt-2">
-          <i class="material-icons md-24 me-2">mood</i>
-          <input class="form-control" type="text" id="lastName" name="lastName" placeholder="Last Name"
-            required />
+        <!-- Buttons at the end-->
+        <div class="container gap-3 mt-5">
+          <button class="btn-lg onyx lavender-blush-text form-control" type="submit" id="submit" data-bs-toggle="modal"
+            data-bs-target="#activityUpdated" data-bs-backdrop="static" data-bs-keyboard="false">Save</button>
         </div>
-      
-        <div class="container d-flex align-items-center mt-2">
-          <i class="material-icons md-24 me-2">mood</i>
-          <input class="form-control" type="email" id="emailAddress" name="emailAddress" placeholder="Email Address"
-            required />
-        </div>
-      
-        <div class="container d-flex align-items-center mt-2">
-          <i class="material-icons md-24 me-2">mood</i>
-          <input class="form-control" type="number" id="phoneNumber" name="phoneNumber" placeholder="Cellphone Number"
-            required />
-        </div>
-      
-      </div>
-
-      <!-- Buttons at the end-->
-      <div class="container gap-3 mt-5">
-        <button class="btn-lg onyx lavender-blush-text form-control" type="submit" id="submit" data-bs-toggle="modal" data-bs-target="#activityUpdated"
-        data-bs-backdrop="static" data-bs-keyboard="false">Save</button>
-      </div>
     </form>
   </div>
   <!-- our own footer goes here-->
   <nav id="footerPlaceholder"></nav>
 
-  <div class="modal fade" id="activityUpdated" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true"  data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal fade" id="activityUpdated" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true"
+    data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content lavender-blush">
         <div class="modal-header">
@@ -133,7 +132,7 @@
         <script src="/scripts/time.js"></script> -->
   <script src="/scripts/sharejs/share4.js"></script>
   <script src="/scripts/event-listeners/navigationHeader.js"></script>
- 
+
 
 </body>
 
