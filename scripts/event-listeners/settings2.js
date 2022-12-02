@@ -4,12 +4,12 @@ const turnOnNoti = document.getElementById("notifications");
 const sound = document.getElementById("sound");
 
 
+//Stores information of toggles inside firestore.
 notificationsSubmit.addEventListener('click', (e) => {
   e.preventDefault();
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
 
 
 
@@ -37,7 +37,7 @@ notificationsSubmit.addEventListener('click', (e) => {
 });
 
 
-
+//saves notification status.
 function saveSettings() {
   firebase.auth().onAuthStateChanged(user => { //find out who's logged in
     console.log("in save function");
@@ -49,6 +49,7 @@ function saveSettings() {
   })
 }
 
+//shows notification status so when user revisits it stays in its current condition.
 function showSettings() {
   firebase.auth().onAuthStateChanged(user => {
     db.collection("users").doc(user.uid)

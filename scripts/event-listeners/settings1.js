@@ -1,3 +1,5 @@
+
+//EventListener to lead user to notifications page.
 function borderSelect() {
 
   const border11 = document.getElementById("border11");
@@ -12,6 +14,8 @@ function borderSelect() {
 
 borderSelect();
 
+
+//EventListener to lead user to personal page.
 function profileSelect() {
 
   const profile = document.getElementById("profile");
@@ -26,6 +30,8 @@ function profileSelect() {
 
 profileSelect();
 
+
+//EventListener to lead user to contact page.
 function contactUsSelect() {
 
   const contactUs = document.getElementById("contactUs");
@@ -40,6 +46,8 @@ function contactUsSelect() {
 
 contactUsSelect();
 
+
+//EventListener to lead user to logout.
 function logoutSelect1() {
   const logout = document.getElementById("logout");
 

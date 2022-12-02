@@ -10,14 +10,12 @@ const offline = document.getElementById("setD_offline");
 const doNotDisturb = document.getElementById("setD_doNotDisturb");
 
 
-
+//Add information and stores them into firebase.
 profileSubmit.addEventListener('click', (e) => {
     e.preventDefault();
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-  
+        // User is signed in, see docs for a list of available properties  
   
   
         var uid = user.uid;

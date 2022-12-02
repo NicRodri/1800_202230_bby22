@@ -1,3 +1,5 @@
+
+//EventListener to lead user inside settings page.
 function notificationSelect() {
     const settings = document.getElementById("settings");
 
@@ -10,11 +12,7 @@ function notificationSelect() {
 
 notificationSelect();
 
-
-
-
-favoriteSelect();
-
+//EventListener to lead user to logout.
 function logoutSelect() {
     const rcorners1 = document.getElementById("rcorners1");
 
@@ -78,6 +76,7 @@ function saveUserInfo() {
   })
 }
 
+//retrieve picture information.
 function populateInfo() {
   firebase.auth().onAuthStateChanged(user => {
           if (user) {
@@ -90,8 +89,6 @@ function populateInfo() {
 
                       if (picUrl != null){
                           console.log(picUrl);
-                          // use this line if "mypicdiv" is a "div"
-                          //$("#mypicdiv").append("<img src='" + picUrl + "'>")
                           $("#mypic-goes-here").attr("src", picUrl);
                       }
                       else
