@@ -9,8 +9,8 @@ function displayCardTasks(collection) {
       console.log(uid);
       var ID = [];
       db.collection("users").doc(uid).collection(collection)
-        .orderBy("date").orderBy("timeFrom")
-        .limit(5)
+        .orderBy("date").orderBy("timeFrom") //activities are ordered bydate and timeFrom
+        .limit(5) // only a limit of 5 tasks present at once.
         .get()
         .then(snap => {
           var i = 1;  //if you want to use commented out section
@@ -63,9 +63,10 @@ function displayCardActivities(collection) {
       var uid = user.uid;
       console.log(uid);
       var ID = [];
+
       db.collection("users").doc(uid).collection(collection)
-        .orderBy("dueDate").orderBy("urgencyFactor")
-        .limit(5)
+        .orderBy("dueDate").orderBy("urgencyFactor") //activities are ordered by due date and urgencyfactor      
+        .limit(5) // only a limit of 5 activities present at once.
         .get()
         .then(allActivities => {
           var i = 1;  //if you want to use commented out section
