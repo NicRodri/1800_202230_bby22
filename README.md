@@ -110,7 +110,5 @@ Content of the project folder:
             share6.js
 
 ```
-Tips for file naming files and folders:
-* use lowercase with no spaces
-* use dashes (not underscore) for word separation
+
 
