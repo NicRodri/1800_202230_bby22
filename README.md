@@ -29,9 +29,8 @@ Content of the project folder:
 It has the following subfolders and files:
 ├── css                      # Folder for css files
     ├── sharecss             # Folder for css files for share feature
-        
-        /index1.css
-	    /index2.css
+       └── /index1.css
+       └── /index2.css
     /style.css
 
 ├── .git                     # Folder for git repo
