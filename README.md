@@ -15,7 +15,6 @@ Technologies used for this project:
 * HTML, CSS, git
 * JavaScript
 * Bootstrap 
-* java
 	
 ## Content
 Content of the project folder:
@@ -28,17 +27,83 @@ Content of the project folder:
 └── README.md
 
 It has the following subfolders and files:
+├── css                      # Folder for css files
+    ├── sharecss             # Folder for css files for share feature
+        /index1.css
+	/index2.css
+    /style.css
 ├── .git                     # Folder for git repo
+├── html                     # Folder for html files
+    ├── notifications        # Html for notification
+    	/contact.html
+	/favourites.html
+	/history.html
+	/personal.html
+	/settings0.html
+	/settings1.html
+	/settings2.html
+    ├── reusable-content    # Html for reusable-content
+    	/add.html
+	/footer.html
+	/nav.html
+    ├── share               # Html for the share feature
+    	/index1.html
+	/index2.html
+	/index4.html
+	/index5.html
+	/index6.html
+    ├── sleep-time          # Html for the sleep feature
+    	/sleep.html
+    ├── tasks-and-activities  # Html for the tasks and activities
+    	/activity.html
+	/activityDetails.html
+	/task.html
+	/taskDetails.html
+    /login.html
+    /main.html
 ├── images                   # Folder for images
-    /blah.jpg                # 
+    ├── landing-page         # Images for the landing page
+    	/balance.svg
+	/main-page.png
+	/share.png
+	/notifications.png
+    /portrait.svg	
+    /default.jpg              
 ├── scripts                  # Folder for scripts
-    /blah.js                 # 
-├── styles                   # Folder for styles
-    /blah.css                # 
+    ├── event-listeners      # Folder for eventlisteners and notification javascript
+    	/add.js
+	/favourites.js
+	/history.js
+	/navigationFooter.js
+	/navigationHeader.js
+	/personal.js
+	/settings0.js
+	/settings1.js
+	/settings2.js
+    ├── scheduler  	    # Folder for scheduler javascript
+    	/activities.js
+	/activityDetails.js
+	/sleep.js
+	/taskDetails.js
+	/tasks.js
+    ├── sharejs             # Folder for share function javascript
+    	/share1.js
+	/share2.js
+	/share4.js
+	/share5.js
+	/share6.js
+    /authentication.js
+    /firebaseAPI_TEAM22.js
+    /main.js
+    /skeleton.js
+
 
 Firebase hosting files: 
 ├── firebase.json
-
+├── 404.html
+├── firestore.indexes.json
+├── firestore.rules
+└── storage.rules
 
 ```
 
