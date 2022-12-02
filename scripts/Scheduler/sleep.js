@@ -1,21 +1,24 @@
+// Used to make code simpler to see.
 var currentUser;
+
+// Gets the elements from the sleep form
 const sleepInfo = document.getElementById("sleepInfo");
 const sleepTime = document.getElementById("sleepTime");
 const sleepHours = document.getElementById("sleepHours");
 const sleepSubmit = document.getElementById("submit");
 
+// Updates the sleep information
 sleepSubmit.addEventListener('click', (e) => {
   e.preventDefault();
   saveUserInfo();
   populateInfo();
 });
 
-
+// populates the info on the sleep page
 function populateInfo() {
   firebase.auth().onAuthStateChanged(user => {
     // Check if user is signed in:
     if (user) {
-
       //go to the correct user document by referencing to the user uid
       currentUser = db.collection("users").doc(user.uid)
       //get the document for current user.
@@ -41,6 +44,7 @@ function populateInfo() {
 }
 populateInfo();
 
+// Saves the updated info to firebase
 function saveUserInfo() {
   firebase.auth().onAuthStateChanged(user => {
     // Check if user is signed in:

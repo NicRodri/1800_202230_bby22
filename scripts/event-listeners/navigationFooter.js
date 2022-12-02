@@ -1,3 +1,4 @@
+//The navigaion menu at the bottom of all pages.
 function navigationFooter(){
   const home = document.getElementById("home");
   const history = document.getElementById("history");
@@ -13,14 +14,6 @@ function navigationFooter(){
     window.location.href = "/html/notifications/settings0.html";
   }
   person.addEventListener("click", goPerson);
-
-
-  // history.addEventListener("click" , function (e){
-  //   window.location.href = "/html/All_Tasks_and_Activities/history.html";
-  // });
-  // completed.addEventListener("click", function (e){
-  //   window.location.href = "/html/Completed_Tasks_and_Activities/completed.html";
-  // });
 
 }
 

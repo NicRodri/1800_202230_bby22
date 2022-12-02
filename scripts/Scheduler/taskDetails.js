@@ -1,44 +1,4 @@
-function displayCardTasks(collection) {
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      var uid = user.uid;
-      console.log(uid);
-      db.collection("users").doc(uid).collection(collection).get()
-        .then(snap => {
-          var i = 1;  //if you want to use commented out section
-          snap.forEach(doc => { //iterate thru each doc
-            if (doc.data().ID_Name == localStorage.getItem("Task")) {
-              var dataName = doc.data().name;
-              var dataDetails = doc.data().details;
-              var dataDate = doc.data().date;
-              var dataCommute = doc.data().tasksCommute;
-              var timeStart = doc.data().timeFrom;
-              var timeEnd = doc.data().timeTo;
-              var doesNotRepeat = doc.data().tasksDoesNotRepeat;
-
-              document.getElementById("taskName").value = dataName;
-              document.getElementById("taskDetails").value = dataDetails;
-              document.getElementById("date").value = dataDate
-              document.getElementById("timeFrom").value = timeStart
-              document.getElementById("timeTo").value = timeEnd
-              document.getElementById("does-not-repeat").value = doesNotRepeat
-              document.getElementById("commute").value = dataCommute
-            }
-            i++;   //if you want to use commented out section
-          })
-          share();
-          deleteTask(uid);
-        })
-      // ...
-    } else {
-      // User is signed out
-      // ...
-    }
-  });
-}
-
-displayCardTasks("tasks");
-
+// Opens the share page
 function share() {
   const share = document.getElementById("share");
   share.addEventListener("click", function (e) {
@@ -46,6 +6,7 @@ function share() {
   });
 }
 
+// Deletes the task
 function deleteTask(uid) {
   const deleteTask = document.getElementById("delete");
   const completedTask = document.getElementById("completedTask");
@@ -58,17 +19,9 @@ function deleteTask(uid) {
       console.error("Error removing document: ", error);
     });
   });
-  // completedTask.addEventListener("click", function (e) {
-  //   db.collection("users").doc(uid).collection("tasks").doc(localStorage.getItem("Task")).delete().then(() => {
-  //     console.log("Document successfully deleted!");
-  //     window.location.href = "/html/main.html";
-
-  //   }).catch((error) => {
-  //     console.error("Error removing document: ", error);
-  //   });
-  // });
 }
 
+// Allows the task to editable
 function editUserInfo() {
   //Enable the form fields
   document.getElementById("edit").addEventListener("click", function (e) {
@@ -76,9 +29,9 @@ function editUserInfo() {
 
   });
 }
-
 editUserInfo();
 
+//Saves/updates the user task info
 function saveUserInfo() {
   const tasksName = document.getElementById("taskName");
   const tasksDetails = document.getElementById("taskDetails");
@@ -90,12 +43,10 @@ function saveUserInfo() {
   const tasksSubmit = document.getElementById("save");
 
   tasksSubmit.addEventListener('click', (e) => {
-    // e.preventDefault();
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         var uid = user.uid;
         db.collection("users").doc(uid).collection("tasks").doc(localStorage.getItem("Task")).update({
-          // Can be changed for different forms
           name: tasksName.value,
           details: tasksDetails.value,
           date: tasksDate.value,
@@ -105,8 +56,8 @@ function saveUserInfo() {
           tasksCommute: tasksCommute.value,
         })
           .then(() => {
-              document.querySelector('.taskFieldSet').disabled = true;
-              console.log("Document successfully updated!");
+            document.querySelector('.taskFieldSet').disabled = true;
+            console.log("Document successfully updated!");
           });
         // ...
       } else {

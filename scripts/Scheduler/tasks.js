@@ -1,3 +1,4 @@
+// Gets the elements from the task form.
 const tasksInfo = document.getElementById("task-information");
 const tasksName = document.getElementById("taskName");
 const tasksDetails = document.getElementById("taskDetails");
@@ -8,15 +9,13 @@ const tasksDoesNotRepeat = document.getElementById("does-not-repeat");
 const tasksCommute = document.getElementById("commute");
 const tasksSubmit = document.getElementById("submit");
 
+// Submits the data stored into firebase
 tasksSubmit.addEventListener('click', (e) => {
   e.preventDefault();
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
-
-
-
       var uid = user.uid;
 
       console.log(uid);

@@ -1,50 +1,4 @@
-function displayCardTasks(collection) {
-  let cardTemplate = document.getElementById("activityDetails");
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-      var uid = user.uid;
-      console.log(uid);
-      db.collection("users").doc(uid).collection(collection).get()
-        .then(snap => {
-          var i = 1;  //if you want to use commented out section
-          snap.forEach(doc => { //iterate thru each doc
-            if (doc.data().ID_Name == localStorage.getItem("Activity")) {
-              var dataName = doc.data().name;
-              var dataDetails = doc.data().details;
-              var dataDate = doc.data().dueDate;
-              var timeDue = doc.data().timeDue;
-              var timeEstimated = doc.data().timeEstimated;
-              var timeType = doc.data().timeType;
-              var urgencyFactor = doc.data().urgencyFactor;
-              var dataCommute = doc.data().commute;
-
-              document.getElementById("activityName").value = dataName;
-              document.getElementById("activityDetails").value = dataDetails;
-              document.getElementById("estimatedTime").value = timeEstimated;
-              document.getElementById("estimatedTimeType").value = timeType;
-              document.getElementById("activityDate").value = dataDate;
-              document.getElementById("activityTime").value = timeDue;
-              document.getElementById("activityCommute").value = dataCommute;
-              document.getElementById("urgencyFactor").value = urgencyFactor;
-            }
-            i++;   //if you want to use commented out section
-          })
-          share();
-          deleteActivity(uid);
-        })
-      // ...
-    } else {
-      // User is signed out
-      // ...
-    }
-  });
-}
-
-
-displayCardTasks("activities");
-
+// Opens the share page
 function share() {
   const share = document.getElementById("share");
   share.addEventListener("click", function (e) {
@@ -52,29 +6,22 @@ function share() {
   });
 }
 
-function deleteActivity(uid){
+// Deletes the activity
+function deleteActivity(uid) {
   const deleteActivity = document.getElementById("delete");
   const completedActivity = document.getElementById("completedActivity");
-  deleteActivity.addEventListener("click", function (e){
+  deleteActivity.addEventListener("click", function (e) {
     db.collection("users").doc(uid).collection("activities").doc(localStorage.getItem("Activity")).delete().then(() => {
       console.log("Document successfully deleted!");
       window.location.href = "/html/main.html";
 
-  }).catch((error) => {
+    }).catch((error) => {
       console.error("Error removing document: ", error);
+    });
   });
-  });
-  // completedActivity.addEventListener("click", function (e){
-  //   db.collection("users").doc(uid).collection("activities").doc(localStorage.getItem("Activity")).delete().then(() => {
-  //     console.log("Document successfully deleted!");
-  //     window.location.href = "/html/main.html";
-
-  // }).catch((error) => {
-  //     console.error("Error removing document: ", error);
-  // });
-  // });
 }
 
+// Allows the activity to editable
 function editUserInfo() {
   //Enable the form fields
   document.getElementById("edit").addEventListener("click", function (e) {
@@ -83,6 +30,7 @@ function editUserInfo() {
 }
 editUserInfo();
 
+//Saves/updates the user activity info
 function saveUserInfo() {
   const activityName = document.getElementById("activityName");
   const activityDetails = document.getElementById("activityDetails");
@@ -95,12 +43,10 @@ function saveUserInfo() {
   const activitySubmit = document.getElementById("save");
 
   activitySubmit.addEventListener('click', (e) => {
-    // e.preventDefault();
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         var uid = user.uid;
         db.collection("users").doc(uid).collection("activities").doc(localStorage.getItem("Activity")).update({
-          // Can be changed for different forms
           name: activityName.value,
           details: activityDetails.value,
           timeEstimated: estimatedTime.value,
@@ -111,8 +57,8 @@ function saveUserInfo() {
           urgencyFactor: urgencyFactor.value,
         })
           .then(() => {
-              document.querySelector('.activityFieldSet').disabled = true;
-              console.log("Document successfully updated!");
+            document.querySelector('.activityFieldSet').disabled = true;
+            console.log("Document successfully updated!");
           });
         // ...
       } else {

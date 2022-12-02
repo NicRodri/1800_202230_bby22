@@ -1,3 +1,4 @@
+// The back button navigation.
 function navigationHeader() {
   const back = document.getElementById("back");
 
