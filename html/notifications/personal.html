@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <style>
+        /* aligning text and color change with padding. */
         p {
             text-align: right;
         }
@@ -89,8 +90,10 @@
     <br>
 
     <br>
+    <!-- A form to edit user's personal information and stores in firebase. -->
     <form id="profile-information">
 
+        <!-- Changing name form. -->
         <div class="border spacing-header">
             <div>
                 <form method="post">
@@ -103,6 +106,7 @@
             </div>
         </div>
 
+         <!-- Changing email form. -->
         <div class="border">
             <div>
                 <form method="post">
@@ -115,6 +119,7 @@
             </div>
         </div>
 
+         <!-- Changing phone number form. -->
         <div class="border">
             <div>
                 <form method="post">
@@ -127,6 +132,7 @@
             </div>
         </div>
 
+         <!-- Changing gender form. -->
         <div class="border">
             <fieldset id="setD">
                 <p style="font-size:larger"><b>Change Gender:</b></p>
@@ -134,11 +140,15 @@
                 <label for="setD_male">Male</label>
                 <input id="setD_female" type="radio" name="setD_gender" value="">
                 <label for="setD_female">Female</label>
+                <input id="setD_other" type="radio" name="setD_gender" value="">
+                <label for="setD_female">Other</label>
 
             </fieldset>
 
         </div>
 
+
+        <!-- Changing Account status form. -->
         <div class="border">
             <fieldset id="setD1">
                 <p style="font-size:larger"><b>Change Account Status:</b></p>
@@ -153,6 +163,7 @@
 
         </div>
 
+        <!-- button to save changes. -->
         <div class="button">
             <button class="btn-lg btn-dark form-control spacing-footer" type="submit" id="submit1">Save Changes</button>
         </div>
@@ -168,13 +179,9 @@
     <!---------------------------------------------->
     <script src="/scripts/firebaseAPI_TEAM22.js"></script>
     <script src="/scripts/skeleton.js"></script>
-    <!-- <script src="/scripts/main.js"></script> -->
     <script src="/scripts/EventListeners/personal.js"></script>
     <script src="/scripts/EventListeners/navigationHeader.js"></script>
 
-
-
-    <!-- <script src="./scripts/script.js"></script> -->
 
 </body>
 

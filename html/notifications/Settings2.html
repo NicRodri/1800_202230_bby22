@@ -31,16 +31,16 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-    <!-------------------------------------------------------->
-    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-    <!-------------------------------------------------------->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
   <!-------------------------------------------->
   <!-- Other libraries and styles of your own -->
@@ -85,6 +85,7 @@
       transition: .4s;
     }
 
+    /* color cheme changes */
     .slider:before {
       position: absolute;
       content: "";
@@ -166,17 +167,20 @@
 
   <br>
   <hr>
+  <!-- the turn on notifications toggle. -->
   <form id="notification-information">
     <div class="border3">
       <p style="font-size:larger"><b>Turn on Notifications</b>
-        <label class="switch" >
-          <input id="notifications" type="checkbox" >
+        <label class="switch">
+          <input id="notifications" type="checkbox">
           <span class="slider round"></span>
         </label>
       </p>
     </div>
 
     <hr>
+
+    <!-- the turn on sounds toggle. -->
     <div class="border2">
       <p style="font-size:larger"><b>Sounds</b>
         <label class="switch">
@@ -187,46 +191,36 @@
     </div>
     <hr>
 
-    <!-- <div class="border1 unselectable unavailable" data-bs-toggle="modal" data-bs-target="#notavailable">
-      <p style="font-size:larger"><b>Pause All</b>
-        <label class="switch">
-          <input id="pause" type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </p>
-    </div> -->
-
-
+    <!-- the advanced function to be implemented in the future. -->
     <div class="border unselectable unavailable" data-bs-toggle="modal" data-bs-target="#notavailable">
       <p style="font-size:larger"><b>Advanced</b></p>
     </div>
 
     <br>
 
-
+    <!-- The save settings button and stores information inside firestore. -->
     <div class="button spacing-footer">
       <button class="btn-lg onyx btn-dark form-control" data-bs-toggle="modal" data-bs-target="#activityUpdated"
-      data-bs-backdrop="static" data-bs-keyboard="false" type="button" id="submit" onclick="saveSettings()">Save
+        data-bs-backdrop="static" data-bs-keyboard="false" type="button" id="submit" onclick="saveSettings()">Save
         Changes</button>
 
-          <div class="modal fade" id="activityUpdated" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true"  data-bs-backdrop="static" data-bs-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content lavender-blush">
-        <div class="modal-header">
-          <h5 class="modal-title me-3" id="addModalLabel">Please wait a moment</h5>
-          <div class="d-flex align-items-center">
-            <strong></strong>
-            <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+        <!-- When users click on save changes, the app will allow the user to wait a few seconds, and then
+        redirect them to the main page. -->
+      <div class="modal fade" id="activityUpdated" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true"
+        data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content lavender-blush">
+            <div class="modal-header">
+              <h5 class="modal-title me-3" id="addModalLabel">Please wait a moment</h5>
+              <div class="d-flex align-items-center">
+                <strong></strong>
+                <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+              </div>
+            </div>
+
           </div>
-          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
         </div>
-        <!--<div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    <button type="button" class="btn btn-primary">Save changes</button>
-  </div>-->
       </div>
-    </div>
-  </div>
     </div>
   </form>
 
@@ -239,11 +233,9 @@
   <!---------------------------------------------->
   <script src="/scripts/firebaseAPI_TEAM22.js"></script>
   <script src="/scripts/skeleton.js"></script>
-  <!-- <script src="/scripts/main.js"></script> -->
-  <script src="/scripts/EventListeners/Settings2.js"></script>
+  <script src="/scripts/EventListeners/settings2.js"></script>
   <script src="/scripts/EventListeners/navigationHeader.js"></script>
 
-  <!-- <script src="./scripts/script.js"></script> -->
 
 </body>
 

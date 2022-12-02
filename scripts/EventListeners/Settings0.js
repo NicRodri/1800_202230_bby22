@@ -11,15 +11,7 @@ function notificationSelect() {
 notificationSelect();
 
 
-function favoriteSelect() {
-    const favorites = document.getElementById("favorites");
 
-    function getFavorites() {
-        // window.location.href = "/html/notifications/favorites.html";
-    }
-
-    favorites.addEventListener("click", getFavorites);
-}
 
 favoriteSelect();
 
@@ -34,19 +26,6 @@ function logoutSelect() {
 }
 
 logoutSelect();
-
-function historySelect() {
-    const history = document.getElementById("history");
-
-    function getHistory() {
-        // window.location.href = "/html/notifications/history.html";
-    }
-
-    history.addEventListener("click", getHistory);
-}
-
-historySelect();
-
 
 
 
