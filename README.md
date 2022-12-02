@@ -29,19 +29,23 @@ Content of the project folder:
 It has the following subfolders and files:
 ├── css                      # Folder for css files
     ├── sharecss             # Folder for css files for share feature
+        
         /index1.css
 	    /index2.css
     /style.css
+
 ├── .git                     # Folder for git repo
 ├── html                     # Folder for html files
     ├── notifications        # Html for notification
-    	/contact.html
+    	
+        /contact.html
 	    /favourites.html
 	    /history.html
 	    /personal.html
 	    /settings0.html
 	    /settings1.html
 	    /settings2.html
+    
     ├── reusable-content    # Html for reusable-content
     	/add.html
 	    /footer.html
