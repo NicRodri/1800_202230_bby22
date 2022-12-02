@@ -116,12 +116,12 @@ Firebase hosting files:
 
 ```
 │   .firebaserc
-│   .gitignore
+│   .gitignore                    # Git ignore file
 │   404.html
 │   firebase.json
 │   firestore.indexes.json
 │   firestore.rules
-│   index.html
+│   index.html                    # landing HTML file, this is what users see when you come to url
 │   README.md
 │   storage.rules
 │
@@ -129,61 +129,61 @@ Firebase hosting files:
 │       hosting..cache
 │
 ├───css
-│   │   style.css
+│   │   style.css                  # Folder for css files
 │   │
-│   └───sharecss
+│   └───sharecss                   # Folder for css files for share feature
 │           index1.css
 │           index2.css
 │
-├───html
+├───html                           # Folder for html files
 │   │   login.html
 │   │   main.html
 │   │
-│   ├───notifications
+│   ├───notifications              # Html for notification
 │   │       contact.html
 │   │       personal.html
 │   │       settings0.html
 │   │       settings1.html
 │   │       settings2.html
 │   │
-│   ├───reusable-content
+│   ├───reusable-content            # Html for reusable-content
 │   │       add.html
 │   │       footer.html
 │   │       nav.html
 │   │
-│   ├───share
+│   ├───share                       # Html for the share feature
 │   │       index1.html
 │   │       index2.html
 │   │       index4.html
 │   │       index5.html
 │   │       index6.html
 │   │
-│   ├───sleep-time
+│   ├───sleep-time                  # Html for the sleep feature
 │   │       sleep.html
 │   │
-│   └───tasks-and-activities
+│   └───tasks-and-activities        # Html for the tasks and activities
 │           activity.html
 │           activityDetails.html
 │           task.html
 │           taskDetails.html
 │
-├───images
+├───images                          # Folder for images
 │   │   default.jpg
 │   │   portrait.svg
 │   │
-│   └───landing-page
+│   └───landing-page                # Images for the landing page
 │           balance.svg
 │           main.png
 │           notifications.png
 │           share.png
 │
-└───scripts
+└───scripts                         # Folder for scripts
     │   authentication.js
     │   firebaseAPI_TEAM22.js
     │   main.js
     │   skeleton.js
     │
-    ├───event-listeners
+    ├───event-listeners             # Folder for eventlisteners and notification javascript
     │       add.js
     │       navigationFooter.js
     │       navigationHeader.js
@@ -192,14 +192,14 @@ Firebase hosting files:
     │       settings1.js
     │       settings2.js
     │
-    ├───scheduler
+    ├───scheduler                   # Folder for scheduler javascript
     │       activities.js
     │       activityDetails.js
     │       sleep.js
     │       taskDetails.js
     │       tasks.js
     │
-    └───sharejs
+    └───sharejs                     # Folder for share function javascript
             share1.js
             share2.js
             share4.js
