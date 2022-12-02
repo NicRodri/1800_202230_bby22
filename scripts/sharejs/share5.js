@@ -10,18 +10,8 @@ function multipleSelect() {
 
 multipleSelect();
 
-// function closeSelect() {
-//   const closebutton = document.getElementById("close");
 
-//   function closeSelect() {
-//     window.history.back();
-//   }
-
-//   closebutton.addEventListener("click", closeSelect);
-// }
-
-// closeSelect();
-
+//populate the contact info
 function populateCardsDynamically(collection) {
   let cardTemplate = document.getElementById("contactCardTemplate");
   firebase.auth().onAuthStateChanged((user) => {
@@ -57,14 +47,10 @@ function populateCardsDynamically(collection) {
 
 
             testContactCard.querySelector('.card-title1').innerHTML = firstName + " "  + lastName;     //equiv getElementByClassName
-            // testContactCard.querySelector('.card-title2').innerHTML = lastName;
             testContactCard.querySelector('.card-title3').innerHTML = emailAddress;
             testContactCard.querySelector('.card-title4').innerHTML = phoneNumber;  //equiv getElementByClassName
             testContactCard.querySelector('.card-title0').appendChild (document.createElement('img')).src = picUrl;
-            // $("#mypic-goes-here").attr("src", picUrl);
-            // $(".card-title0").append("<img src='" + picUrl + "'>");
-            // i++;
-            // testContactCard.querySelector('.card-title0').innerHTML = `./images/${contactID}.jpg`;   //equiv getElementByTagName
+            
 
             //attach to gallery
             document.getElementById(collection + "-go-here").appendChild(testContactCard);
@@ -80,7 +66,7 @@ function populateCardsDynamically(collection) {
 }
 populateCardsDynamically("contacts");
 
-
+//make the button clickable and direct to the new page
 function addNewContact() {
   const addbutton = document.getElementById("new");
 

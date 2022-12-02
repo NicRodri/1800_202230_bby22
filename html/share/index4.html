@@ -57,9 +57,7 @@
   <!-- the body of your page goes here -->
   <div class="container-fluid  text-dark pt-4 spacing-footer spacing-header lavender-blush">
     <form id="contact-information" method="post">
-      <!-- add task name and details-->
       <div class="container">
-        <!-- accept file input -->
         <div class="container text-center py-3">
           Upload Contact Portrait
           <!-- accept image file only -->
@@ -68,23 +66,23 @@
             <img id="mypic-goes-here" src="/images/share/portrait.svg" width=50 height=50 />
             <input type="file" id="mypic-input" accept="image/*" />
           </div>
-
+           <!-- add first name -->
           <div class="container d-flex align-items-center">
             <i class="material-icons md-24 me-2">person_add</i>
             <input class="form-control" type="text" id="firstName" name="firstName" placeholder="First Name" required />
           </div>
-
+            <!-- add last name -->
           <div class="container d-flex align-items-center mt-2">
             <i class="material-icons md-24 me-2">mood</i>
             <input class="form-control" type="text" id="lastName" name="lastName" placeholder="Last Name" required />
           </div>
-
+            <!-- add email address-->
           <div class="container d-flex align-items-center mt-2">
             <i class="material-icons md-24 me-2">mood</i>
             <input class="form-control" type="email" id="emailAddress" name="emailAddress" placeholder="Email Address"
               required />
           </div>
-
+             <!-- add cellphone number-->
           <div class="container d-flex align-items-center mt-2">
             <i class="material-icons md-24 me-2">mood</i>
             <input class="form-control" type="number" id="phoneNumber" name="phoneNumber" placeholder="Cellphone Number"
@@ -113,12 +111,7 @@
             <strong></strong>
             <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
           </div>
-          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
         </div>
-        <!--<div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    <button type="button" class="btn btn-primary">Save changes</button>
-  </div>-->
       </div>
     </div>
   </div>
@@ -127,9 +120,6 @@
   <!---------------------------------------------->
   <script src="/scripts/firebaseAPI_TEAM22.js"></script>
   <script src="/scripts/skeleton.js"></script>
-  <!-- <script src="/scripts/main.js"></script> -->
-  <!-- <script src="/scripts/date.js"></script>
-        <script src="/scripts/time.js"></script> -->
   <script src="/scripts/sharejs/share4.js"></script>
   <script src="/scripts/event-listeners/navigationHeader.js"></script>
 

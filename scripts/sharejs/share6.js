@@ -1,27 +1,5 @@
-// function multipleSelect() {
-//   const multibutton = document.getElementById("multiple");
 
-//   function multipleSelect() {
-//     window.location.href = "/html/share/index6.html";
-//   }
-
-//   multibutton.addEventListener("click", multipleSelect);
-// }
-
-// multipleSelect();
-
-// function closeSelect() {
-//   const closebutton = document.getElementById("close");
-
-//   function closeSelect() {
-//     window.history.back();
-//   }
-
-//   closebutton.addEventListener("click", closeSelect);
-// }
-
-// closeSelect();
-
+//populate the contact info
 function populateCardsDynamically(collection) {
   let cardTemplate = document.getElementById("contactCardTemplate");
   firebase.auth().onAuthStateChanged((user) => {
@@ -35,8 +13,6 @@ function populateCardsDynamically(collection) {
             var firstName = doc.data().firstName; //gets the name field
             console.log("This is" + firstName);
             var lastName = doc.data().lastName;
-            // var emailAddress = doc.data().emailAddress;
-            // var phoneNumber = doc.data().phoneNumber;
             var picUrl = doc.data().profilePic;
             console.log("This is" + picUrl);
             
@@ -57,15 +33,9 @@ function populateCardsDynamically(collection) {
 
 
             testContactCard.querySelector('.card-title1').innerHTML = firstName + " " + lastName;     //equiv getElementByClassName
-            // testContactCard.querySelector('.card-title2').innerHTML = lastName;
-            // testContactCard.querySelector('.card-title3').innerHTML = emailAddress;
-            // testContactCard.querySelector('.card-title4').innerHTML = phoneNumber;  //equiv getElementByClassName
+    
             testContactCard.querySelector('.card-title0').appendChild (document.createElement('img')).src = picUrl;
-            // $("#mypic-goes-here").attr("src", picUrl);
-            // $(".card-title0").append("<img src='" + picUrl + "'>");
-            // i++;
-            // testContactCard.querySelector('.card-title0').innerHTML = `./images/${contactID}.jpg`;   //equiv getElementByTagName
-
+           
             //attach to gallery
             document.getElementById(collection + "-go-here").appendChild(testContactCard);
             i++;   //if you want to use commented out section
@@ -80,7 +50,7 @@ function populateCardsDynamically(collection) {
 }
 populateCardsDynamically("contacts");
 
-
+//make the button clickable
 function addNewContact() {
   const addbutton = document.getElementById("new");
 
@@ -93,6 +63,7 @@ function addNewContact() {
 
 addNewContact();
 
+//direct to another page after click cross in the modal
 function backToPrevious() {
   const crossbutton = document.getElementById("cross");
 
