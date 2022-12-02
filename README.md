@@ -115,7 +115,7 @@ Firebase hosting files:
 
 
 
-
+```
 │   .firebaserc
 │   .gitignore
 │   404.html
@@ -207,6 +207,7 @@ Firebase hosting files:
             share5.js
             share6.js
 
+```
 Tips for file naming files and folders:
 * use lowercase with no spaces
 * use dashes (not underscore) for word separation
